@@ -1,0 +1,41 @@
+;; shadow-cljs configuration
+{:source-paths
+ ["src"]
+
+ :npm-scripts [["bcryptjs" "^2.4.3"]
+               ["cookie-parser" "^1.4.7"] 
+               ["crypto" "^1.0.1"]
+               ["dotenv" "^16.4.7"]
+               ["express" "^4.21.2"]
+               ["jsonwebtoken" "^9.0.2"]
+               ["mailtrap" "^3.4.0"]
+               ["mongoose" "^8.9.3"]]
+ 
+
+ :dependencies [[binaryage/devtools "0.9.7"]
+                [reagent "0.8.0-alpha2"]]
+
+ ;; set an nrepl port for connection to a REPL.
+ :nrepl        {:port 8777}
+
+ :builds 
+ {:app {:target :browser
+        :output-to  "public/js/main.js"
+        :output-dir "public/js"
+        :asset-path "/js"
+
+        :main backend.core/init
+        
+        :modules
+        {:main
+         {:entries [backend.core]}}
+
+        :devtools
+        ;; before live-reloading any code call this function
+        {:before-load backend.core/stop
+         ;; after live-reloading finishes call this function
+         :after-load backend.core/start
+         ;; serve the public directory over http at port 8700
+         :http-root    "public"
+         :http-port    8700
+         :preloads     [devtools.preload]}}}}
