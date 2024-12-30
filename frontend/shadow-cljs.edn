@@ -1,0 +1,15 @@
+{:source-paths
+ ["src"]
+
+ :dependencies
+ [[reagent "1.2.0"]
+  [re-frame "1.4.3"]]
+
+ :builds
+ {:app
+  {:target :browser
+   :output-dir "public/js"   ;; Output directory under the public folder
+   :asset-path "/js"          ;; Path used for accessing the assets
+   :modules {:main 
+             {:init-fn frontend.core/init}}
+   :build-hooks [(shadow.build-hooks/with-dotenv)]}}}
