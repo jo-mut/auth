@@ -13,7 +13,8 @@
  
 
  :dependencies [[binaryage/devtools "0.9.7"]
-                [reagent "1.2.0"]]
+                [reagent "1.2.0"]
+                [funcool/promesa "10.0.594"]]
 
  ;; set an nrepl port for connection to a REPL.
  :nrepl        {:port 8777}
@@ -25,6 +26,7 @@
         :output-to  "public/backend/main.js"
         :output-dir "public/backend"
         :asset-path "/backend"
+        :externs ["externs.js"]
 
         :main backend.core/init
         

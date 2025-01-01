@@ -6,7 +6,7 @@
 
 (defn start [] 
   (println "Server listening")
-  (server/listening))
+  (server/init-server))
 
 (defn ^:export init []
   (start))
