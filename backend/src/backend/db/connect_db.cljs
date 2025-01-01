@@ -5,9 +5,6 @@
 
 (def connection-string "mongodb+srv://jo_ngei:2078j.el@cluster0.l5plc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 
-(defn get-env []
-  (aget js/process.env "MONGO_URI"))
-
 (defn connect []
   (-> mongoose (.connect connection-string)
       (p/then (fn [conn]

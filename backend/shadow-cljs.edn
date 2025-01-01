@@ -26,7 +26,6 @@
         :output-to  "public/backend/main.js"
         :output-dir "public/backend"
         :asset-path "/backend"
-        :externs ["externs.js"]
 
         :main backend.core/init
         

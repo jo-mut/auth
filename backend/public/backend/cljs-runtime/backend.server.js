@@ -1,13 +1,7 @@
 goog.provide('backend.server');
 backend.server.app = shadow.js.shim.module$express();
-backend.server.setup_routes = (function backend$server$setup_routes(){
-return backend.server.app.get("/",(function (req,res){
-return res.send("Hello, world!");
-}));
-});
+backend.server.app.use("/api/auth",backend.routes.auth_route.setup_routes());
 backend.server.init_server = (function backend$server$init_server(){
-backend.server.setup_routes();
-
 return backend.server.app.listen((3000),(function (){
 backend.db.connect_db.connect();
 

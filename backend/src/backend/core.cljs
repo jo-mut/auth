@@ -3,12 +3,15 @@
    [reagent.core :as reagent]
    [backend.server :as server]))
 
+(defn get-env []
+  (aget js/process.env "MONGO_URI"))
 
-(defn start [] 
+(defn start []
   (println "Server listening")
   (server/init-server))
 
 (defn ^:export init []
+  (js/console.log  "enviroment variables" (get-env))
   (start))
 
 (defn stop []

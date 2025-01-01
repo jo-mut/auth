@@ -1501,6 +1501,8 @@ SHADOW_IMPORT("promesa.exec.js");
 SHADOW_IMPORT("promesa.impl.js");
 SHADOW_IMPORT("promesa.core.js");
 SHADOW_IMPORT("backend.db.connect_db.js");
+SHADOW_IMPORT("backend.controllers.auth_controllers.js");
+SHADOW_IMPORT("backend.routes.auth_route.js");
 SHADOW_IMPORT("backend.server.js");
 SHADOW_IMPORT("backend.core.js");
 SHADOW_IMPORT("shadow.module.main.append.js");
