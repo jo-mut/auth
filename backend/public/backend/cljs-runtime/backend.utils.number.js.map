@@ -1,0 +1,1 @@
+{"version":3,"sources":["backend/utils/number.cljs"],"mappings":";AAEA,AAAKA,4BAAKC;AAEV,AAAKC,4BAAKC;AAEV,AAAKC,6BAAMC","names":["backend.utils.number/math","js/Math","backend.utils.number/date","js/Date","backend.utils.number/error","js/Error"],"sourcesContent":["(ns backend.utils.number)\n\n(def math js/Math)\n\n(def date js/Date)\n\n(def error js/Error)"]}

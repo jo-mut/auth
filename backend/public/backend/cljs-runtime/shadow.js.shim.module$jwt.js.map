@@ -1,0 +1,9 @@
+{
+"version":3,
+"file":"shadow.js.shim.module$jwt.js",
+"lineCount":5,
+"mappings":"AAAAA,IAAKC,CAAAA,OAAL,CAAa,2BAAb,CAAA;AACAD,IAAKC,CAAAA,OAAL,CAAa,kCAAb,CAAA;AACAC,MAAOC,CAAAA,EAAGC,CAAAA,IAAKC,CAAAA,UAAf,GAA4BH,MAAOC,CAAAA,EAAGG,CAAAA,cAAV,CAAyB,KAAzB,CAA5B,GAA8DC,OAAA,CAAQ,KAAR,CAA9D;AACAC,gCAAiCC,CAAAA,OAAjC,GAA2CP,MAAOC,CAAAA,EAAGC,CAAAA,IAAKC,CAAAA,UAA1D;;",
+"sources":["shadow.js.shim.module$jwt.js"],
+"sourcesContent":["goog.provide(\"shadow.js.shim.module$jwt\");\ngoog.provide(\"module$shadow_js_shim_module$jwt\");\nshadow.js.shim.module$jwt = shadow.js.nativeProvides[\"jwt\"] = require(\"jwt\");\nmodule$shadow_js_shim_module$jwt.default = shadow.js.shim.module$jwt;\n"],
+"names":["goog","provide","shadow","js","shim","module$jwt","nativeProvides","require","module$shadow_js_shim_module$jwt","default"]
+}
