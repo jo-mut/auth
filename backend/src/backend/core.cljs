@@ -8,7 +8,7 @@
 
 (defn start []
   (println "Server listening")
-  (server/init-server))
+  (server/listening))
 
 (defn ^:export init []
   (js/console.log  "enviroment variables" (get-env))

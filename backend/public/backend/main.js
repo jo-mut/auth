@@ -10,7 +10,7 @@ try {require('source-map-support').install();} catch (e) {console.warn('no "sour
 
 global.CLOSURE_NO_DEPS = true;
 
-global.CLOSURE_DEFINES = {"shadow.cljs.devtools.client.env.repl_pprint":false,"shadow.cljs.devtools.client.env.reload_strategy":"optimized","shadow.cljs.devtools.client.env.devtools_url":"","shadow.cljs.devtools.client.env.autoload":true,"shadow.cljs.devtools.client.env.proc_id":"d2a3be34-45d1-478e-96fc-17ae2236a174","shadow.cljs.devtools.client.env.use_document_protocol":false,"goog.ENABLE_DEBUG_LOADER":false,"shadow.cljs.devtools.client.env.server_port":9630,"shadow.cljs.devtools.client.env.server_token":"2a2b6998-e60d-4198-95ec-ad409ecb69ef","shadow.cljs.devtools.client.env.use_document_host":true,"shadow.cljs.devtools.client.env.module_format":"goog","goog.LOCALE":"en","shadow.cljs.devtools.client.env.build_id":"app","shadow.cljs.devtools.client.env.ignore_warnings":false,"goog.DEBUG":true,"cljs.core._STAR_target_STAR_":"nodejs","shadow.cljs.devtools.client.env.log":true,"shadow.cljs.devtools.client.env.ssl":false,"shadow.cljs.devtools.client.env.enabled":true,"shadow.cljs.devtools.client.env.server_host":"localhost","shadow.cljs.devtools.client.env.worker_client_id":2,"goog.TRANSPILE":"never"};
+global.CLOSURE_DEFINES = {"shadow.cljs.devtools.client.env.repl_pprint":false,"shadow.cljs.devtools.client.env.reload_strategy":"optimized","shadow.cljs.devtools.client.env.devtools_url":"","shadow.cljs.devtools.client.env.autoload":true,"shadow.cljs.devtools.client.env.proc_id":"48deea82-bf96-47a3-8aae-78ed697e7725","shadow.cljs.devtools.client.env.use_document_protocol":false,"goog.ENABLE_DEBUG_LOADER":false,"shadow.cljs.devtools.client.env.server_port":9630,"shadow.cljs.devtools.client.env.server_token":"174cc242-056a-4cb9-b920-6aad8a6fb5e2","shadow.cljs.devtools.client.env.use_document_host":true,"shadow.cljs.devtools.client.env.module_format":"goog","goog.LOCALE":"en","shadow.cljs.devtools.client.env.build_id":"app","shadow.cljs.devtools.client.env.ignore_warnings":false,"goog.DEBUG":true,"cljs.core._STAR_target_STAR_":"nodejs","shadow.cljs.devtools.client.env.log":true,"shadow.cljs.devtools.client.env.ssl":false,"shadow.cljs.devtools.client.env.enabled":true,"shadow.cljs.devtools.client.env.server_host":"localhost","shadow.cljs.devtools.client.env.worker_client_id":2,"goog.TRANSPILE":"never"};
 
 var goog = global.goog = {};
 
@@ -1502,11 +1502,10 @@ SHADOW_IMPORT("promesa.impl.js");
 SHADOW_IMPORT("promesa.core.js");
 SHADOW_IMPORT("backend.db.connect_db.js");
 SHADOW_IMPORT("shadow.js.shim.module$bcryptjs.js");
-SHADOW_IMPORT("shadow.js.shim.module$jwt.js");
-SHADOW_IMPORT("backend.utils.number.js");
+SHADOW_IMPORT("shadow.js.shim.module$jsonwebtoken.js");
 SHADOW_IMPORT("backend.models.user_models.js");
 SHADOW_IMPORT("backend.controllers.auth_controllers.js");
-SHADOW_IMPORT("backend.routes.auth_route.js");
+SHADOW_IMPORT("backend.routes.auth_routes.js");
 SHADOW_IMPORT("backend.server.js");
 SHADOW_IMPORT("backend.core.js");
 SHADOW_IMPORT("shadow.module.main.append.js");

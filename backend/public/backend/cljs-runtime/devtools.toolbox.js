@@ -6,64 +6,64 @@ goog.provide('devtools.toolbox');
  * @implements {cljs.core.IMeta}
  * @implements {cljs.core.IWithMeta}
 */
-devtools.toolbox.t_devtools$toolbox15563 = (function (obj,header,style,tag,meta15564){
+devtools.toolbox.t_devtools$toolbox15476 = (function (obj,header,style,tag,meta15477){
 this.obj = obj;
 this.header = header;
 this.style = style;
 this.tag = tag;
-this.meta15564 = meta15564;
+this.meta15477 = meta15477;
 this.cljs$lang$protocol_mask$partition0$ = 393216;
 this.cljs$lang$protocol_mask$partition1$ = 0;
 });
-(devtools.toolbox.t_devtools$toolbox15563.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = (function (_15565,meta15564__$1){
+(devtools.toolbox.t_devtools$toolbox15476.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = (function (_15478,meta15477__$1){
 var self__ = this;
-var _15565__$1 = this;
-return (new devtools.toolbox.t_devtools$toolbox15563(self__.obj,self__.header,self__.style,self__.tag,meta15564__$1));
+var _15478__$1 = this;
+return (new devtools.toolbox.t_devtools$toolbox15476(self__.obj,self__.header,self__.style,self__.tag,meta15477__$1));
 }));
 
-(devtools.toolbox.t_devtools$toolbox15563.prototype.cljs$core$IMeta$_meta$arity$1 = (function (_15565){
+(devtools.toolbox.t_devtools$toolbox15476.prototype.cljs$core$IMeta$_meta$arity$1 = (function (_15478){
 var self__ = this;
-var _15565__$1 = this;
-return self__.meta15564;
+var _15478__$1 = this;
+return self__.meta15477;
 }));
 
-(devtools.toolbox.t_devtools$toolbox15563.prototype.devtools$protocols$IFormat$ = cljs.core.PROTOCOL_SENTINEL);
+(devtools.toolbox.t_devtools$toolbox15476.prototype.devtools$protocols$IFormat$ = cljs.core.PROTOCOL_SENTINEL);
 
-(devtools.toolbox.t_devtools$toolbox15563.prototype.devtools$protocols$IFormat$_header$arity$1 = (function (_){
+(devtools.toolbox.t_devtools$toolbox15476.prototype.devtools$protocols$IFormat$_header$arity$1 = (function (_){
 var self__ = this;
 var ___$1 = this;
 return devtools.formatters.templating.render_markup(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [self__.tag,self__.style], null),((cljs.core.fn_QMARK_(self__.header))?(self__.header.cljs$core$IFn$_invoke$arity$1 ? self__.header.cljs$core$IFn$_invoke$arity$1(self__.obj) : self__.header.call(null, self__.obj)):self__.header)], null));
 }));
 
-(devtools.toolbox.t_devtools$toolbox15563.prototype.devtools$protocols$IFormat$_has_body$arity$1 = (function (_){
+(devtools.toolbox.t_devtools$toolbox15476.prototype.devtools$protocols$IFormat$_has_body$arity$1 = (function (_){
 var self__ = this;
 var ___$1 = this;
 return true;
 }));
 
-(devtools.toolbox.t_devtools$toolbox15563.prototype.devtools$protocols$IFormat$_body$arity$1 = (function (_){
+(devtools.toolbox.t_devtools$toolbox15476.prototype.devtools$protocols$IFormat$_body$arity$1 = (function (_){
 var self__ = this;
 var ___$1 = this;
 return devtools.formatters.templating.render_markup(devtools.formatters.markup._LT_body_GT_(devtools.formatters.markup._LT_standard_body_reference_GT_(self__.obj)));
 }));
 
-(devtools.toolbox.t_devtools$toolbox15563.getBasis = (function (){
-return new cljs.core.PersistentVector(null, 5, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Symbol(null,"obj","obj",-1672671807,null),new cljs.core.Symbol(null,"header","header",1759972661,null),new cljs.core.Symbol(null,"style","style",1143888791,null),new cljs.core.Symbol(null,"tag","tag",350170304,null),new cljs.core.Symbol(null,"meta15564","meta15564",259822050,null)], null);
+(devtools.toolbox.t_devtools$toolbox15476.getBasis = (function (){
+return new cljs.core.PersistentVector(null, 5, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Symbol(null,"obj","obj",-1672671807,null),new cljs.core.Symbol(null,"header","header",1759972661,null),new cljs.core.Symbol(null,"style","style",1143888791,null),new cljs.core.Symbol(null,"tag","tag",350170304,null),new cljs.core.Symbol(null,"meta15477","meta15477",401471061,null)], null);
 }));
 
-(devtools.toolbox.t_devtools$toolbox15563.cljs$lang$type = true);
+(devtools.toolbox.t_devtools$toolbox15476.cljs$lang$type = true);
 
-(devtools.toolbox.t_devtools$toolbox15563.cljs$lang$ctorStr = "devtools.toolbox/t_devtools$toolbox15563");
+(devtools.toolbox.t_devtools$toolbox15476.cljs$lang$ctorStr = "devtools.toolbox/t_devtools$toolbox15476");
 
-(devtools.toolbox.t_devtools$toolbox15563.cljs$lang$ctorPrWriter = (function (this__5287__auto__,writer__5288__auto__,opt__5289__auto__){
-return cljs.core._write(writer__5288__auto__,"devtools.toolbox/t_devtools$toolbox15563");
+(devtools.toolbox.t_devtools$toolbox15476.cljs$lang$ctorPrWriter = (function (this__5287__auto__,writer__5288__auto__,opt__5289__auto__){
+return cljs.core._write(writer__5288__auto__,"devtools.toolbox/t_devtools$toolbox15476");
 }));
 
 /**
- * Positional factory function for devtools.toolbox/t_devtools$toolbox15563.
+ * Positional factory function for devtools.toolbox/t_devtools$toolbox15476.
  */
-devtools.toolbox.__GT_t_devtools$toolbox15563 = (function devtools$toolbox$__GT_t_devtools$toolbox15563(obj,header,style,tag,meta15564){
-return (new devtools.toolbox.t_devtools$toolbox15563(obj,header,style,tag,meta15564));
+devtools.toolbox.__GT_t_devtools$toolbox15476 = (function devtools$toolbox$__GT_t_devtools$toolbox15476(obj,header,style,tag,meta15477){
+return (new devtools.toolbox.t_devtools$toolbox15476(obj,header,style,tag,meta15477));
 });
 
 
@@ -75,8 +75,8 @@ return (new devtools.toolbox.t_devtools$toolbox15563(obj,header,style,tag,meta15
  *   via disclosure triangle. The header can be styled and you can optionally specify preferred wrapping tag (advanced).
  */
 devtools.toolbox.envelope = (function devtools$toolbox$envelope(var_args){
-var G__15548 = arguments.length;
-switch (G__15548) {
+var G__15475 = arguments.length;
+switch (G__15475) {
 case 1:
 return devtools.toolbox.envelope.cljs$core$IFn$_invoke$arity$1((arguments[(0)]));
 
@@ -112,7 +112,7 @@ return devtools.toolbox.envelope.cljs$core$IFn$_invoke$arity$4(obj,header,style,
 }));
 
 (devtools.toolbox.envelope.cljs$core$IFn$_invoke$arity$4 = (function (obj,header,style,tag){
-return (new devtools.toolbox.t_devtools$toolbox15563(obj,header,style,tag,cljs.core.PersistentArrayMap.EMPTY));
+return (new devtools.toolbox.t_devtools$toolbox15476(obj,header,style,tag,cljs.core.PersistentArrayMap.EMPTY));
 }));
 
 (devtools.toolbox.envelope.cljs$lang$maxFixedArity = 4);
