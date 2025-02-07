@@ -3,6 +3,7 @@
    ["bcryptjs" :as bcryptjs]
    ["jsonwebtoken" :as jwt]
    [promesa.core :as p]
+   [backend.mailtrap.emails :as emails]
    [backend.models.user-models :as models]))
 
 (defn get-env [key]
@@ -24,6 +25,10 @@
                                        :maxAge   (* 7 24 60 60 1000)}))
     token))
 
+(defn send-email
+  [email verification-token]
+  (emails/send-verification-email email verification-token))
+
 (defn handle-sign-up
   [res {:keys [email password name]}]
   (let [token-expires-at   (+ (* 24 60 60 1000) (.now js/Date))
@@ -40,17 +45,18 @@
                       (js/console.log "saved user: " saved-user)
                       (set! (.-password saved-user) nil)
                       (generate-token-and-set-cookies res (:_id (js->clj saved-user)) "mysecret")
+                      (send-email "johnmutuku628@gmail.com" verification-token)
                       (-> res
                           (.status 201)
                           (.json #js {:success true
                                       :message "User created successfully"
-                                      :user    (js->clj saved-user)}))
-                      (p/catch (fn [err]
-                                 (-> res
-                                     (.status 500)
-                                     (.json #js {:success false
-                                                 :message "Error saving user"
-                                                 :error   (.-message err)})))))))))
+                                      :user    (js->clj saved-user)})))
+                    (p/catch (fn [err]
+                               (-> res
+                                   (.status 500)
+                                   (.json #js {:success false
+                                               :message "Error saving user"
+                                               :error   (.-message err)}))))))))
         (.catch (fn [err]
                   (-> res
                       (.status 500)
