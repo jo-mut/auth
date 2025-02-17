@@ -12,4 +12,5 @@
   (.post router "/signup" (controllers/sign-up))
   (.post router "/login" (controllers/login))
   (.post router "/logout" (controllers/logout))
+  (.post router "/verify-email" (controllers/verify-email))
   router)

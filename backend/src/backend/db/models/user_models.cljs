@@ -1,4 +1,4 @@
-(ns backend.models.user-models
+(ns backend.db.models.user-models
   (:require ["mongoose" :as mongoose]))
 
 

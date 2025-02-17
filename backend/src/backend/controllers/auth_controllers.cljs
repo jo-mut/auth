@@ -4,7 +4,7 @@
    ["jsonwebtoken" :as jwt]
    [promesa.core :as p]
    [backend.mailtrap.emails :as emails]
-   [backend.models.user-models :as models]))
+   [backend.db.models.user-models :as models]))
 
 (defn get-env [key]
   (aget js/process.env key))
@@ -25,10 +25,6 @@
                                        :maxAge   (* 7 24 60 60 1000)}))
     token))
 
-(defn send-email
-  [email verification-token]
-  (emails/send-verification-email email verification-token))
-
 (defn handle-sign-up
   [res {:keys [email password name]}]
   (let [token-expires-at   (+ (* 24 60 60 1000) (.now js/Date))
@@ -42,10 +38,9 @@
                                                :verificationToken          verification-token})]
                    (->
                     (p/let [saved-user (.save user)]
-                      (js/console.log "saved user: " saved-user)
                       (set! (.-password saved-user) nil)
                       (generate-token-and-set-cookies res (:_id (js->clj saved-user)) "mysecret")
-                      (send-email "johnmutuku628@gmail.com" verification-token)
+                      (emails/send-verification-email "johnmutuku628@gmail.com" verification-token)
                       (-> res
                           (.status 201)
                           (.json #js {:success true
@@ -92,9 +87,57 @@
 
 
 (defn login []
-  (fn [req, res]
+  (fn [req res]
     (-> res (.send "log in route"))))
 
 (defn logout []
-  (fn [req, res]
+  (fn [req res]
     (-> res (.send "log out route"))))
+
+(defn verify-email []
+  (fn [req res]
+    (let [{:keys [code]} (:body (js->clj req))]
+      (js/console.log "code -===== " req)
+      (->
+       (p/let [user (-> (.findOne models/user #js {:verificationToken "497655"
+                                                   :verificationTokenExpiredAt #js {:$gt (js/Date.now)}})
+                        (p/then (fn [user]
+                                  (let [user-map (js->clj user)]
+                                    user-map)))
+                        (p/catch (fn [e]
+                                   (js/console.log "user not found " e))))]
+
+         (when-not user
+           (-> res
+               (.status 400)
+               (.json #js {:subject false
+                           :message "Invalid or expired verification code"})))
+
+         (assoc user :isVerified true :verificationToken nil :verificationTokenExpiredAt nil)
+         (js/console.log "user ===== " user)
+
+        ;;  (set! (.-isVerified user) true)
+        ;;  (set! (.-verificationToken user) nil)
+        ;;  (set! (.-verificationTokenExpiredAt user) nil))
+
+         (->
+          (.save (clj->js user))
+          (.then (fn []
+                   (emails/send-welcome-email (:email user) (:name user))
+                   (js/console.log "saved user ")))
+          (.catch (fn [e]
+                    (js/console.log "Failed to save user"))))
+
+         (let [passwordless-user (clj->js (assoc user :password nil))]
+           (-> res
+               (.status 200)
+               (.json #js {:subject true
+                           :message "Email verified successfully"
+                           :user    passwordless-user})))
+
+
+         (p/catch (fn [e]
+                    (-> res
+                        (.status 500)
+                        (.json #js {:success false
+                                    :message (.-message e)})))))))))

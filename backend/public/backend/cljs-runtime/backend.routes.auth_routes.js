@@ -7,6 +7,8 @@ backend.routes.auth_routes.router.post("/login",backend.controllers.auth_control
 
 backend.routes.auth_routes.router.post("/logout",backend.controllers.auth_controllers.logout());
 
+backend.routes.auth_routes.router.post("/verify-email",backend.controllers.auth_controllers.verify_email());
+
 return backend.routes.auth_routes.router;
 });
 
