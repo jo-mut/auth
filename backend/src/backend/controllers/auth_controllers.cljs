@@ -40,7 +40,7 @@
                     (p/let [saved-user (.save user)]
                       (set! (.-password saved-user) nil)
                       (generate-token-and-set-cookies res (:_id (js->clj saved-user)) "mysecret")
-                      (emails/send-verification-email "johnmutuku628@gmail.com" verification-token)
+                      (emails/send-verification-email (get-env "EMAIL") verification-token)
                       (-> res
                           (.status 201)
                           (.json #js {:success true
