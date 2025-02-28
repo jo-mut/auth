@@ -16,8 +16,9 @@
            (js/Math.floor))))
 
 (defn generate-token-and-set-cookies
-  [res user-id secret]
-  (let [options #js {:expiresIn "7d"}
+  [res user-id]
+  (let [secret "mysecret"
+        options #js {:expiresIn "7d"}
         token (.sign jwt (clj->js {:user-id user-id}) secret options)]
     (-> (.cookie res "auth" token #js {:httpOnly true
                                        :secure   false
@@ -39,7 +40,7 @@
                    (->
                     (p/let [saved-user (.save user)]
                       (set! (.-password saved-user) nil)
-                      (generate-token-and-set-cookies res (:_id (js->clj saved-user)) "mysecret")
+                      (generate-token-and-set-cookies res (:_id (js->clj saved-user)))
                       (emails/send-verification-email (get-env "EMAIL") verification-token)
                       (-> res
                           (.status 201)
@@ -65,13 +66,12 @@
     (let [body (js->clj (.-body req) :keywordize-keys true)
           {:keys [email password name]} body]
       (println res)
-      (p/let [user-exist? (-> (.findOne models/user #js {:email email}) (p/promise))]
+      (p/let [user-exist? (.findOne models/user #js {:email email}) (p/promise)]
         (if user-exist?
-          (do
-            (-> res
-                (.status 400)
-                (.json #js {:success false
-                            :message "User already exists"})))
+          (-> res
+              (.status 400)
+              (.json #js {:success false
+                          :message "User already exists"}))
           (try
             ;; (when-not (or email password name)
             ;;   (throw (js/Error. "All fields are required")))
@@ -85,25 +85,70 @@
                               :message (.-message e)})))))))))
 
 
+(defn isPasswordValid [res password user]
+  (->
+   (bcryptjs/compare password (.-password user))
+   (p/then
+    (fn [isPasswordValid]
+      (when-not isPasswordValid
+        (-> res
+            (.status 400)
+            (.json #js {:success false
+                        :message "Invalid password"})))))))
 
 (defn login []
   (fn [req res]
-    (-> res (.send "log in route"))))
+    (let [body (.-body req)
+          email (.-email body)
+          password (.-password body)]
+      (->
+       (p/let [user (.findOne models/user #js {:email email})]
+         (if user
+           (do
+             (isPasswordValid res password user)
+             (generate-token-and-set-cookies res (.-_id user))
+             (set! (.-lastLogin user) (js/Date.))
+
+             (->
+              (.save user)
+              (p/then
+               (fn [_]
+                 (set! (.-password user) nil)
+                 (-> res
+                     (.status 200)
+                     (.json #js {:success true
+                                 :message "Logged in successfully"
+                                 :user    user}))))))
+
+           (->
+            res
+            (.status 400)
+            (.json #js {:subject false
+                        :message "Invalid credentials"}))))
+
+       (p/catch
+        (fn [e]
+          (-> res
+              (.status 200)
+              (.json #js {:success true
+                          :message (.-message e)}))))))))
 
 (defn logout []
   (fn [req res]
-    (-> res (.send "log out route"))))
+    (.clearCookie res "token")
+    (-> res
+        (.status 200)
+        (.json #js {:success true
+                    :message "Logged out successfully"}))))
+
 
 (defn verify-email []
   (fn [req res]
-    (let [{:keys [code]} (:body (js->clj req))]
-      (js/console.log "code -===== " req)
+    (let [body (.-body req)
+          code (.-code body)]
       (->
-       (p/let [user (-> (.findOne models/user #js {:verificationToken "497655"
+       (p/let [user (-> (.findOne models/user #js {:verificationToken code
                                                    :verificationTokenExpiredAt #js {:$gt (js/Date.now)}})
-                        (p/then (fn [user]
-                                  (let [user-map (js->clj user)]
-                                    user-map)))
                         (p/catch (fn [e]
                                    (js/console.log "user not found " e))))]
 
@@ -113,31 +158,22 @@
                (.json #js {:subject false
                            :message "Invalid or expired verification code"})))
 
-         (assoc user :isVerified true :verificationToken nil :verificationTokenExpiredAt nil)
-         (js/console.log "user ===== " user)
-
-        ;;  (set! (.-isVerified user) true)
-        ;;  (set! (.-verificationToken user) nil)
-        ;;  (set! (.-verificationTokenExpiredAt user) nil))
+         (set! (.-isVerified user) true)
+         (set! (.-verificationToken user) nil)
+         (set! (.-verificationTokenExpiredAt user) nil)
 
          (->
-          (.save (clj->js user))
-          (.then (fn []
-                   (emails/send-welcome-email (:email user) (:name user))
-                   (js/console.log "saved user ")))
-          (.catch (fn [e]
-                    (js/console.log "Failed to save user"))))
-
-         (let [passwordless-user (clj->js (assoc user :password nil))]
-           (-> res
-               (.status 200)
-               (.json #js {:subject true
-                           :message "Email verified successfully"
-                           :user    passwordless-user})))
-
-
-         (p/catch (fn [e]
+          (.save user)
+          (p/then (fn [_]
+                    (emails/send-welcome-email (.-email user) (.-name user))
+                    (set! (.-password user) nil)
                     (-> res
-                        (.status 500)
-                        (.json #js {:success false
-                                    :message (.-message e)})))))))))
+                        (.status 200)
+                        (.json #js {:subject true
+                                    :message "Email verified successfully"
+                                    :user    user}))))))
+       (p/catch (fn [e]
+                  (-> res
+                      (.status 500)
+                      (.json #js {:success false
+                                  :message (.-message e)}))))))))

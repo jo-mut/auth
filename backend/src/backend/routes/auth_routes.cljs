@@ -1,9 +1,5 @@
 (ns backend.routes.auth-routes
   (:require ["express" :as express]
-            ["bcryptjs" :as bcryptjs]
-            ["jsonwebtoken" :as jwt]
-            [promesa.core :as p]
-            [backend.models.user-models :as models]
             [backend.controllers.auth-controllers :as controllers]))
 
 (def router (.Router express))
