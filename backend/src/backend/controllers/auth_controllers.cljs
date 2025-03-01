@@ -1,6 +1,7 @@
 (ns backend.controllers.auth-controllers
   (:require
    ["bcryptjs" :as bcryptjs]
+   ["crypto" :as crypto]
    ["jsonwebtoken" :as jwt]
    [promesa.core :as p]
    [backend.mailtrap.emails :as emails]
@@ -66,7 +67,7 @@
     (let [body (js->clj (.-body req) :keywordize-keys true)
           {:keys [email password name]} body]
       (println res)
-      (p/let [user-exist? (.findOne models/user #js {:email email}) (p/promise)]
+      (p/let [user-exist? (.findOne models/user #js {:email email})]
         (if user-exist?
           (-> res
               (.status 400)
@@ -147,10 +148,8 @@
     (let [body (.-body req)
           code (.-code body)]
       (->
-       (p/let [user (-> (.findOne models/user #js {:verificationToken code
-                                                   :verificationTokenExpiredAt #js {:$gt (js/Date.now)}})
-                        (p/catch (fn [e]
-                                   (js/console.log "user not found " e))))]
+       (p/let [user (.findOne models/user #js {:verificationToken code
+                                               :verificationTokenExpiredAt #js {:$gt (js/Date.now)}})]
 
          (when-not user
            (-> res
@@ -177,3 +176,67 @@
                       (.status 500)
                       (.json #js {:success false
                                   :message (.-message e)}))))))))
+
+
+
+
+(defn forgot-password []
+  (fn [req res]
+    (let [body (.-body req)
+          email (.-email body)
+          token (.toString (.randomBytes crypto 20) "hex")
+          expire-at (+ (* 1 60 60 1000) (.now js/Date))
+          reset-url (str (get-env "CLIENT_URL") "/reset-password/" token)]
+      (->
+       (p/let [user (.findOne models/user #js {:email email})]
+
+         (when-not user
+           (-> res
+               (.status 400)
+               (.json #js {:subject false
+                           :message "User not found"})))
+         (set! (.-resetPasswordToken user) token)
+         (set! (.-resetPasswordExpiredAt user) expire-at)
+
+         (->
+          (.save user)
+          (p/then (fn []
+                    (emails/send-password-reset-email (.-email user) reset-url)))))
+       (p/catch
+        (fn [e]
+          (-> res
+              (.status 400)
+              (.json #js {:success false
+                          :message (.-message e)}))))))))
+
+(defn reset-password []
+  (fn [req res]
+    (let [token (-> req (.-params) (.-token))
+          password (-> req (.-body) (.-password))
+          hashed-password (-> (bcryptjs/hash password 10))]
+            (js/console.log " reset url ***** " password)
+
+      (->
+       (p/let [user (.findOne models/user #js {:resetPasswordToken         token
+                                               :resetPasswordExpiredAt #js {:&gt (js/Date.now)}})]
+         (when-not user
+           (-> res
+               (.status 400)
+               (.json #js {:subject false
+                           :message "User not found"})))
+
+         (set! (.-password user) hashed-password)
+         (set! (.-resetPasswordToken user) nil)
+         (set! (.-resetPasswordExpiredAt user) nil)
+
+         (->
+          (.save user)
+          (p/then
+           (fn []
+             (emails/send-reset-password-success-email (.-email user))))))
+       (p/catch
+        (fn [e]
+          (-> res
+              (.status 400)
+              (.json #js {:success false
+                          :message (.-message e)}))))))))

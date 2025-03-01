@@ -15,5 +15,21 @@ return console.log("Welcome email sent succefully",res);
 return console.log("Failed to send welcome email",err);
 }));
 });
+backend.mailtrap.emails.send_password_reset_email = (function backend$mailtrap$emails$send_password_reset_email(email,reset_url){
+var recipient = [({"email": email})];
+return backend.mailtrap.core.mailtrap_client.send(({"from": backend.mailtrap.core.sender, "to": recipient, "subject": "Reset your password!", "html": backend.mailtrap.email_templates.password_reset_request_template(reset_url), "category": "Password Reset"})).then((function (res){
+return console.log("Password reset email sent successfully",res);
+})).catch((function (err){
+return console.log("Error sending password reset email",err);
+}));
+});
+backend.mailtrap.emails.send_reset_password_success_email = (function backend$mailtrap$emails$send_reset_password_success_email(email){
+var recipient = [({"email": email})];
+return backend.mailtrap.core.mailtrap_client.send(({"from": backend.mailtrap.core.sender, "to": recipient, "subject": "Password Reset Successful", "html": backend.mailtrap.email_templates.password_reset_success_template(), "category": "Password Reset"})).then((function (res){
+return console.log("Password reset success email sent successfully",res);
+})).catch((function (err){
+return console.log("Error sending password reset success email",err);
+}));
+});
 
 //# sourceMappingURL=backend.mailtrap.emails.js.map

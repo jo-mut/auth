@@ -13,12 +13,12 @@ res.cookie("auth",token,({"httpOnly": true, "secure": false, "sameSite": "strict
 
 return token;
 });
-backend.controllers.auth_controllers.handle_sign_up = (function backend$controllers$auth_controllers$handle_sign_up(res,p__12158){
-var map__12159 = p__12158;
-var map__12159__$1 = cljs.core.__destructure_map(map__12159);
-var email = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__12159__$1,new cljs.core.Keyword(null,"email","email",1415816706));
-var password = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__12159__$1,new cljs.core.Keyword(null,"password","password",417022471));
-var name = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__12159__$1,new cljs.core.Keyword(null,"name","name",1843675177));
+backend.controllers.auth_controllers.handle_sign_up = (function backend$controllers$auth_controllers$handle_sign_up(res,p__12154){
+var map__12155 = p__12154;
+var map__12155__$1 = cljs.core.__destructure_map(map__12155);
+var email = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__12155__$1,new cljs.core.Keyword(null,"email","email",1415816706));
+var password = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__12155__$1,new cljs.core.Keyword(null,"password","password",417022471));
+var name = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__12155__$1,new cljs.core.Keyword(null,"name","name",1843675177));
 var token_expires_at = (((((24) * (60)) * (60)) * (1000)) + Date.now());
 var verification_token = backend.controllers.auth_controllers.generate_token();
 return shadow.js.shim.module$bcryptjs.hash(password,(10)).then((function (hashed_password){
@@ -43,17 +43,17 @@ return res.status((500)).json(({"success": false, "message": "Error hashing pass
 backend.controllers.auth_controllers.sign_up = (function backend$controllers$auth_controllers$sign_up(){
 return (function (req,res){
 var body = cljs.core.js__GT_clj.cljs$core$IFn$_invoke$arity$variadic(req.body,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"keywordize-keys","keywordize-keys",1310784252),true], 0));
-var map__12160 = body;
-var map__12160__$1 = cljs.core.__destructure_map(map__12160);
-var email = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__12160__$1,new cljs.core.Keyword(null,"email","email",1415816706));
-var password = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__12160__$1,new cljs.core.Keyword(null,"password","password",417022471));
-var name = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__12160__$1,new cljs.core.Keyword(null,"name","name",1843675177));
+var map__12156 = body;
+var map__12156__$1 = cljs.core.__destructure_map(map__12156);
+var email = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__12156__$1,new cljs.core.Keyword(null,"email","email",1415816706));
+var password = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__12156__$1,new cljs.core.Keyword(null,"password","password",417022471));
+var name = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__12156__$1,new cljs.core.Keyword(null,"name","name",1843675177));
 cljs.core.println.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([res], 0));
 
 return promesa.protocols._bind(promesa.protocols._promise(null),(function (___11991__auto__){
 return promesa.protocols._bind(promesa.protocols._promise(backend.db.models.user_models.user.findOne(({"email": email}))),(function (user_exist_QMARK_){
 return promesa.protocols._promise((cljs.core.truth_(user_exist_QMARK_)?res.status((400)).json(({"success": false, "message": "User already exists"})):(function (){try{return backend.controllers.auth_controllers.handle_sign_up(res,new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"email","email",1415816706),email,new cljs.core.Keyword(null,"password","password",417022471),password,new cljs.core.Keyword(null,"name","name",1843675177),name], null));
-}catch (e12161){var e = e12161;
+}catch (e12157){var e = e12157;
 return res.status((500)).json(({"success": false, "message": e.message}));
 }})()));
 }));
@@ -108,9 +108,7 @@ return (function (req,res){
 var body = req.body;
 var code = body.code;
 return promesa.core.catch$.cljs$core$IFn$_invoke$arity$2(promesa.protocols._bind(promesa.protocols._promise(null),(function (___11991__auto__){
-return promesa.protocols._bind(promesa.protocols._promise(promesa.core.catch$.cljs$core$IFn$_invoke$arity$2(backend.db.models.user_models.user.findOne(({"verificationToken": code, "verificationTokenExpiredAt": ({"$gt": Date.now()})})),(function (e){
-return console.log("user not found ",e);
-}))),(function (user){
+return promesa.protocols._bind(promesa.protocols._promise(backend.db.models.user_models.user.findOne(({"verificationToken": code, "verificationTokenExpiredAt": ({"$gt": Date.now()})}))),(function (user){
 return promesa.protocols._bind(promesa.protocols._promise((cljs.core.truth_(user)?null:res.status((400)).json(({"subject": false, "message": "Invalid or expired verification code"})))),(function (___11959__auto__){
 return promesa.protocols._bind(promesa.protocols._promise((user.isVerified = true)),(function (___11959__auto____$1){
 return promesa.protocols._bind(promesa.protocols._promise((user.verificationToken = null)),(function (___11959__auto____$2){
@@ -129,6 +127,56 @@ return res.status((200)).json(({"subject": true, "message": "Email verified succ
 }));
 })),(function (e){
 return res.status((500)).json(({"success": false, "message": e.message}));
+}));
+});
+});
+backend.controllers.auth_controllers.forgot_password = (function backend$controllers$auth_controllers$forgot_password(){
+return (function (req,res){
+var body = req.body;
+var email = body.email;
+var token = shadow.js.shim.module$crypto.randomBytes((20)).toString("hex");
+var expire_at = (((((1) * (60)) * (60)) * (1000)) + Date.now());
+var reset_url = [cljs.core.str.cljs$core$IFn$_invoke$arity$1(backend.controllers.auth_controllers.get_env("CLIENT_URL")),"/reset-password/",cljs.core.str.cljs$core$IFn$_invoke$arity$1(token)].join('');
+return promesa.core.catch$.cljs$core$IFn$_invoke$arity$2(promesa.protocols._bind(promesa.protocols._promise(null),(function (___11991__auto__){
+return promesa.protocols._bind(promesa.protocols._promise(backend.db.models.user_models.user.findOne(({"email": email}))),(function (user){
+return promesa.protocols._bind(promesa.protocols._promise((cljs.core.truth_(user)?null:res.status((400)).json(({"subject": false, "message": "User not found"})))),(function (___11959__auto__){
+return promesa.protocols._bind(promesa.protocols._promise((user.resetPasswordToken = token)),(function (___11959__auto____$1){
+return promesa.protocols._bind(promesa.protocols._promise((user.resetPasswordExpiredAt = expire_at)),(function (___11959__auto____$2){
+return promesa.protocols._promise(promesa.core.then.cljs$core$IFn$_invoke$arity$2(user.save(),(function (){
+return backend.mailtrap.emails.send_password_reset_email(user.email,reset_url);
+})));
+}));
+}));
+}));
+}));
+})),(function (e){
+return res.status((400)).json(({"success": false, "message": e.message}));
+}));
+});
+});
+backend.controllers.auth_controllers.reset_password = (function backend$controllers$auth_controllers$reset_password(){
+return (function (req,res){
+var token = req.params.token;
+var password = req.body.password;
+var hashed_password = shadow.js.shim.module$bcryptjs.hash(password,(10));
+console.log(" reset url ***** ",password);
+
+return promesa.core.catch$.cljs$core$IFn$_invoke$arity$2(promesa.protocols._bind(promesa.protocols._promise(null),(function (___11991__auto__){
+return promesa.protocols._bind(promesa.protocols._promise(backend.db.models.user_models.user.findOne(({"resetPasswordToken": token, "resetPasswordExpiredAt": ({"&gt": Date.now()})}))),(function (user){
+return promesa.protocols._bind(promesa.protocols._promise((cljs.core.truth_(user)?null:res.status((400)).json(({"subject": false, "message": "User not found"})))),(function (___11959__auto__){
+return promesa.protocols._bind(promesa.protocols._promise((user.password = hashed_password)),(function (___11959__auto____$1){
+return promesa.protocols._bind(promesa.protocols._promise((user.resetPasswordToken = null)),(function (___11959__auto____$2){
+return promesa.protocols._bind(promesa.protocols._promise((user.resetPasswordExpiredAt = null)),(function (___11959__auto____$3){
+return promesa.protocols._promise(promesa.core.then.cljs$core$IFn$_invoke$arity$2(user.save(),(function (){
+return backend.mailtrap.emails.send_reset_password_success_email(user.email);
+})));
+}));
+}));
+}));
+}));
+}));
+})),(function (e){
+return res.status((400)).json(({"success": false, "message": e.message}));
 }));
 });
 });

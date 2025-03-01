@@ -7,7 +7,11 @@ backend.routes.auth_routes.router.post("/login",backend.controllers.auth_control
 
 backend.routes.auth_routes.router.post("/logout",backend.controllers.auth_controllers.logout());
 
+backend.routes.auth_routes.router.post("/forgot-password",backend.controllers.auth_controllers.forgot_password());
+
 backend.routes.auth_routes.router.post("/verify-email",backend.controllers.auth_controllers.verify_email());
+
+backend.routes.auth_routes.router.post("/reset-password:token",backend.controllers.auth_controllers.reset_password());
 
 return backend.routes.auth_routes.router;
 });
