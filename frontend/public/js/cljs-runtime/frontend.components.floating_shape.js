@@ -1,0 +1,14 @@
+goog.provide('frontend.components.floating_shape');
+var module$node_modules$framer_motion$dist$cjs$index=shadow.js.require("module$node_modules$framer_motion$dist$cjs$index", {});
+frontend.components.floating_shape.view = (function frontend$components$floating_shape$view(p__11894){
+var map__11895 = p__11894;
+var map__11895__$1 = cljs.core.__destructure_map(map__11895);
+var color = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__11895__$1,new cljs.core.Keyword(null,"color","color",1011675173));
+var size = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__11895__$1,new cljs.core.Keyword(null,"size","size",1098693007));
+var top = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__11895__$1,new cljs.core.Keyword(null,"top","top",-1856271961));
+var left = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__11895__$1,new cljs.core.Keyword(null,"left","left",-399115937));
+var delay = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__11895__$1,new cljs.core.Keyword(null,"delay","delay",-574225219));
+return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,">",">",-555517146),module$node_modules$framer_motion$dist$cjs$index.motion.div,new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"className","className",-1983287057),["absolute rounded-full opacity-20 \n                     blur-xl",cljs.core.str.cljs$core$IFn$_invoke$arity$1(color),cljs.core.str.cljs$core$IFn$_invoke$arity$1(size)].join(''),new cljs.core.Keyword(null,"style","style",-496642736),[cljs.core.str.cljs$core$IFn$_invoke$arity$1(top),cljs.core.str.cljs$core$IFn$_invoke$arity$1(left)].join(''),new cljs.core.Keyword(null,"animate","animate",1850194573),new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"y","y",-1757859776),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, ["0%","100%","0%"], null),new cljs.core.Keyword(null,"x","x",2099068185),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, ["0%","100%","0%"], null),new cljs.core.Keyword(null,"rotate","rotate",152705015),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [(0),(360)], null)], null),new cljs.core.Keyword(null,"transition","transition",765692007),new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"duration","duration",1444101068),(20),new cljs.core.Keyword(null,"ease","ease",-1427802543),"linear",new cljs.core.Keyword(null,"repeat","repeat",832692087),"infinity",new cljs.core.Keyword(null,"delay","delay",-574225219),delay], null),new cljs.core.Keyword(null,"aria-hidden","aria-hidden",399337029),true], null)], null);
+});
+
+//# sourceMappingURL=frontend.components.floating_shape.js.map

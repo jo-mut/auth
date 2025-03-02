@@ -1,6 +1,7 @@
 goog.provide('backend.server');
 backend.server.app = shadow.js.shim.module$express();
 backend.server.app.use(shadow.js.shim.module$express.json());
+backend.server.app.use(shadow.js.shim.module$cookie_parser());
 backend.server.app.use("/api/auth",backend.routes.auth_routes.setup_routes());
 backend.server.listening = (function backend$server$listening(){
 return backend.server.app.listen((3000),(function (){

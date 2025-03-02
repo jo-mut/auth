@@ -5,68 +5,87 @@
    ["jsonwebtoken" :as jwt]
    [promesa.core :as p]
    [backend.mailtrap.emails :as emails]
+   [backend.utils.core :as utils]
    [backend.db.models.user-models :as models]))
-
-(defn get-env [key]
-  (aget js/process.env key))
-
-(defn generate-token []
-  (str (-> (js/Math.random)
-           (* 900000)
-           (+ 100000)
-           (js/Math.floor))))
 
 (defn generate-token-and-set-cookies
   [res user-id]
   (let [secret "mysecret"
         options #js {:expiresIn "7d"}
         token (.sign jwt (clj->js {:user-id user-id}) secret options)]
-    (-> (.cookie res "auth" token #js {:httpOnly true
-                                       :secure   false
-                                       :sameSite "strict"
-                                       :maxAge   (* 7 24 60 60 1000)}))
+    (-> (.cookie ^js res "auth" token #js {:httpOnly true
+                                           :secure   false
+                                           :sameSite "strict"
+                                           :maxAge   (* 7 24 60 60 1000)}))
     token))
+
+(defn check-auth []
+  (fn [req res]
+    (->
+     (p/let [user (.findById models/user (.-userId ^js req))]
+       (when-not user
+         (-> res
+             (.status 400)
+             (.json #js {:success false
+                         :message "Invalid password"})))
+
+       (set! (.-password ^js user) nil)
+
+       (-> res
+           (.status 200)
+           (.json   {:success true
+                     :user    ^js user})))
+     (p/catch
+      (fn [e]
+        (-> res
+            (.status 400)
+            (.json #js {:success false
+                        :message (.-message e)})))))))
 
 (defn handle-sign-up
   [res {:keys [email password name]}]
   (let [token-expires-at   (+ (* 24 60 60 1000) (.now js/Date))
-        verification-token (generate-token)]
+        verification-token (utils/generate-code)]
     (-> (bcryptjs/hash password 10)
-        (.then (fn [hashed-password]
-                 (let [user (models/user. #js {:email                      email
-                                               :password                   hashed-password
-                                               :name                       name
-                                               :verificationTokenExpiredAt token-expires-at
-                                               :verificationToken          verification-token})]
-                   (->
-                    (p/let [saved-user (.save user)]
-                      (set! (.-password saved-user) nil)
-                      (generate-token-and-set-cookies res (:_id (js->clj saved-user)))
-                      (emails/send-verification-email (get-env "EMAIL") verification-token)
-                      (-> res
-                          (.status 201)
-                          (.json #js {:success true
-                                      :message "User created successfully"
-                                      :user    (js->clj saved-user)})))
-                    (p/catch (fn [err]
-                               (-> res
-                                   (.status 500)
-                                   (.json #js {:success false
-                                               :message "Error saving user"
-                                               :error   (.-message err)}))))))))
-        (.catch (fn [err]
-                  (-> res
-                      (.status 500)
-                      (.json #js {:success false
-                                  :message "Error hashing password"
-                                  :error   (.-message err)})))))))
+        (.then
+         (fn [hashed-password]
+           (let [user (models/user. #js {:email                      email
+                                         :password                   hashed-password
+                                         :name                       name
+                                         :verificationTokenExpiredAt token-expires-at
+                                         :verificationToken          verification-token})]
+
+             (.save ^js user)
+             (.then
+              (fn []
+                (set! (.-password user) nil)
+                (generate-token-and-set-cookies res (:_id (js->clj user)))
+                (emails/send-verification-email (utils/get-env "EMAIL") verification-token)
+                (-> res
+                    (.status 201)
+                    (.json #js {:success true
+                                :message "User created successfully"
+                                :user    (js->clj user)}))))
+             (.catch
+              (fn [err]
+                (-> res
+                    (.status 500)
+                    (.json #js {:success false
+                                :message "Error saving user"
+                                :error   (.-message err)})))))))
+        (.catch
+         (fn [err]
+           (-> res
+               (.status 500)
+               (.json #js {:success false
+                           :message "Error hashing password"
+                           :error   (.-message err)})))))))
 
 
 (defn sign-up []
   (fn [req res]
     (let [body (js->clj (.-body req) :keywordize-keys true)
           {:keys [email password name]} body]
-      (println res)
       (p/let [user-exist? (.findOne models/user #js {:email email})]
         (if user-exist?
           (-> res
@@ -106,9 +125,9 @@
        (p/let [user (.findOne models/user #js {:email email})]
          (if user
            (do
-             (isPasswordValid res password user)
-             (generate-token-and-set-cookies res (.-_id user))
-             (set! (.-lastLogin user) (js/Date.))
+             (isPasswordValid res password ^js user)
+             (generate-token-and-set-cookies res (.-_id ^js user))
+             (set! (.-lastLogin ^js user) (js/Date.))
 
              (->
               (.save user)
@@ -119,7 +138,7 @@
                      (.status 200)
                      (.json #js {:success true
                                  :message "Logged in successfully"
-                                 :user    user}))))))
+                                 :user    ^js user}))))))
 
            (->
             res
@@ -136,7 +155,7 @@
 
 (defn logout []
   (fn [req res]
-    (.clearCookie res "token")
+    (.clearCookie  ^js res "token")
     (-> res
         (.status 200)
         (.json #js {:success true
@@ -151,20 +170,20 @@
        (p/let [user (.findOne models/user #js {:verificationToken code
                                                :verificationTokenExpiredAt #js {:$gt (js/Date.now)}})]
 
-         (when-not user
+         (when-not ^js user
            (-> res
                (.status 400)
                (.json #js {:subject false
                            :message "Invalid or expired verification code"})))
 
-         (set! (.-isVerified user) true)
-         (set! (.-verificationToken user) nil)
-         (set! (.-verificationTokenExpiredAt user) nil)
+         (set! (.-isVerified ^js user) true)
+         (set! (.-verificationToken ^js user) nil)
+         (set! (.-verificationTokenExpiredAt ^js user) nil)
 
          (->
           (.save user)
           (p/then (fn [_]
-                    (emails/send-welcome-email (.-email user) (.-name user))
+                    (emails/send-welcome-email (.-email ^js user) (.-name ^js user))
                     (set! (.-password user) nil)
                     (-> res
                         (.status 200)
@@ -186,17 +205,17 @@
           email (.-email body)
           token (.toString (.randomBytes crypto 20) "hex")
           expire-at (+ (* 1 60 60 1000) (.now js/Date))
-          reset-url (str (get-env "CLIENT_URL") "/reset-password/" token)]
+          reset-url (str (utils/get-env "CLIENT_URL") "/reset-password/" token)]
       (->
        (p/let [user (.findOne models/user #js {:email email})]
 
-         (when-not user
+         (when-not ^js user
            (-> res
                (.status 400)
                (.json #js {:subject false
                            :message "User not found"})))
-         (set! (.-resetPasswordToken user) token)
-         (set! (.-resetPasswordExpiredAt user) expire-at)
+         (set! (.-resetPasswordToken ^js user) token)
+         (set! (.-resetPasswordExpiredAt ^js user) expire-at)
 
          (->
           (.save user)
@@ -211,23 +230,24 @@
 
 (defn reset-password []
   (fn [req res]
-    (let [token (-> req (.-params) (.-token))
-          password (-> req (.-body) (.-password))
-          hashed-password (-> (bcryptjs/hash password 10))]
-            (js/console.log " reset url ***** " password)
+    (let [body  (.-body ^js req)
+          params (.-params ^js req)
+          token (.-token ^js params)
+          password (.-password ^js body)
+          hashed-password (bcryptjs/hash password 10)]
 
       (->
        (p/let [user (.findOne models/user #js {:resetPasswordToken         token
-                                               :resetPasswordExpiredAt #js {:&gt (js/Date.now)}})]
+                                               :resetPasswordExpiredAt #js {:$gt (js/Date.now)}})]
          (when-not user
            (-> res
                (.status 400)
                (.json #js {:subject false
                            :message "User not found"})))
 
-         (set! (.-password user) hashed-password)
-         (set! (.-resetPasswordToken user) nil)
-         (set! (.-resetPasswordExpiredAt user) nil)
+         (set! (.-password ^js user) hashed-password)
+         (set! (.-resetPasswordToken ^js user) nil)
+         (set! (.-resetPasswordExpiredAt ^js user) nil)
 
          (->
           (.save user)

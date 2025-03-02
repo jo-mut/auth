@@ -1,17 +1,14 @@
 (ns backend.core
   (:require
-   [reagent.core :as reagent]
+   [backend.utils.core :as utils]
    [backend.server :as server]))
-
-(defn get-env []
-  (aget js/process.env "MONGO_URI"))
 
 (defn start []
   (println "Server listening")
   (server/listening))
 
 (defn ^:export init []
-  (js/console.log  "enviroment variables" (get-env))
+  (js/console.log  "enviroment variables" (utils/get-env "MONGO_URI"))
   (start))
 
 (defn stop []

@@ -1,0 +1,1 @@
+["^ ","~$verify-token",["^ ","~:row",6,"~:col",1,"~:fixed-arities",["~#set",[0]],"~:name","^0","~:ns","~$backend.middleware.verify-token","~:top-ns","^7","~:arities",["^ ","~i0",["^ ","~:ret","~:fn","~:arglist-str","[]"]],"~:type","^;"],"~:filename","/Users/john/Documents/developer/web/clojure/auth/backend/src/backend/middleware/verify_token.cljs"]

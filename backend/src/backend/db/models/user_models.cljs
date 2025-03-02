@@ -1,5 +1,6 @@
 (ns backend.db.models.user-models
-  (:require ["mongoose" :as mongoose]))
+  (:require 
+   ["mongoose" :as mongoose]))
 
 
 (def user-schema
