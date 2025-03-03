@@ -54,9 +54,9 @@
         :whileHover {:scale 1.02}
         :whileTop   {:scale 0.98}
         :type       "submit"}
-       "Sign Up"]]
-     
-     [password-meter/view password]
+       "Sign Up"]
+
+      [password-meter/view password]]
 
      [:div {:className "px-8 py-4 bg-gray-900 bg-opacity-50 flex justify-center"}
       [:p {:className "text-sm text-gray-400"}
