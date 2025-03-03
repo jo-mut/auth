@@ -1,0 +1,1 @@
+{"version":3,"sources":["frontend/pages/home.cljs"],"mappings":";AAEA,2BAAA,3BAAMA;AAAN,AAAA","names":["frontend.pages.home/view"],"sourcesContent":["(ns frontend.pages.home)\n\n(defn view [])"]}

@@ -1,0 +1,1 @@
+{"version":3,"sources":["frontend/pages/login.cljs"],"mappings":";AAEA,4BAAA,5BAAMA;AAAN,AACE,YAAA,ZAACC;;AADH,0FAAA,mDAAA,mFAAA,8CAAA","names":["frontend.pages.login/view","js/console.log"],"sourcesContent":["(ns frontend.pages.login)\n\n(defn view []\n  (js/console.log \"login page\")\n  [:div \n   [:p \"Login page\"]])"]}

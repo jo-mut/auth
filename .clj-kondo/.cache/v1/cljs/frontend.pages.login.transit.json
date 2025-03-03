@@ -1,0 +1,1 @@
+["^ ","~$view",["^ ","~:row",3,"~:col",1,"~:fixed-arities",["~#set",[0]],"~:name","^0","~:ns","~$frontend.pages.login","~:top-ns","^7","~:arities",["^ ","~i0",["^ ","~:ret","~:vector","~:arglist-str","[]"]],"~:type","~:fn"],"~:filename","/Users/john/Documents/developer/web/clojure/auth/frontend/src/frontend/pages/login.cljs"]

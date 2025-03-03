@@ -1,0 +1,13 @@
+goog.provide('frontend.components.input');
+frontend.components.input.view = (function frontend$components$input$view(props){
+var map__13507 = props;
+var map__13507__$1 = cljs.core.__destructure_map(map__13507);
+var icon = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__13507__$1,new cljs.core.Keyword(null,"icon","icon",1679606541));
+var type = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__13507__$1,new cljs.core.Keyword(null,"type","type",1174270348));
+var placeholder = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__13507__$1,new cljs.core.Keyword(null,"placeholder","placeholder",-104873083));
+var on_change = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__13507__$1,new cljs.core.Keyword(null,"on-change","on-change",-732046149));
+var value = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__13507__$1,new cljs.core.Keyword(null,"value","value",305978217));
+return new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div","div",1057191632),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"className","className",-1983287057),"relative mb-6"], null),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div","div",1057191632),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"className","className",-1983287057),"absolute inset-y-0 left-0 flex \n                          items-center pl-3 pointer-events-none"], null),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,">",">",-555517146),icon,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"className","className",-1983287057),"size-5 text-orange-500"], null)], null)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"input","input",556931961),new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"placeholder","placeholder",-104873083),placeholder,new cljs.core.Keyword(null,"value","value",305978217),value,new cljs.core.Keyword(null,"onChange","onChange",-312891301),on_change,new cljs.core.Keyword(null,"type","type",1174270348),type,new cljs.core.Keyword(null,"className","className",-1983287057),"w-full pl-10 pr-3 py-2 bg-gray-800 bg-opacity-100 rounded-lg \n                           border border-gray-700 focus:border-orange-500 \n                           focus:ring-2 focus:ring-orange-500 text-white placeholder-gray-400 \n                           transition duration-200"], null)], null)], null);
+});
+
+//# sourceMappingURL=frontend.components.input.js.map
