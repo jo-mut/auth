@@ -37,19 +37,23 @@ return cljs.core.deref(strength);
 });
 frontend.components.password_meter.strength_title = (function frontend$components$password_meter$strength_title(password){
 if(cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(frontend.components.password_meter.strength_meter(password),(0))){
+return "Very weak";
 } else {
 if(cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(frontend.components.password_meter.strength_meter(password),(1))){
+return "Weak";
 } else {
 if(cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(frontend.components.password_meter.strength_meter(password),(2))){
+return "Fair";
 } else {
 if(cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(frontend.components.password_meter.strength_meter(password),(3))){
+return "Good";
 } else {
-}
-}
-}
-}
-
 return "Very weak";
+
+}
+}
+}
+}
 });
 frontend.components.password_meter.get_color = (function frontend$components$password_meter$get_color(strength){
 if(cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(strength,(0))){

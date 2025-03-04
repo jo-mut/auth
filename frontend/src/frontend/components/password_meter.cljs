@@ -63,31 +63,32 @@
 
      :else "bg-green-500"))
 
- [:div {:className "mt-2"}
-  [:div {:className "flex justify-between items-center mb-1"}
-   [:span {:className "text-xs text-gray-400 "}
-    "Password strength"]
-   [:span {:className "text-xs text-gray-400"}
-    (strength-title password)]]
-  [:div {:className "flex space-x-1"}
-   (map
-    (fn [item]
-      (js/console.log "item: "  (strength-meter password))
-      (let [strength  (strength-meter password)
-            color   (if (< item strength)
-                      (get-color strength)
-                      "bg-gray-600")]
-        [:div {:key       item
-               :className (str "h-1 w-1/4 rounded-full transition-colors duration-300 " color)}]))
-    (range 4))]
-  [:div {:className "mt-2 space-y-1"}
-   (map
-    (fn [item]
-      [:div {:key (:label item)
-             :className "flex items-center text-xs"}
-       (if (:met item)
-         [:> Check {:className "size-4 text-orange-500 mr-2"}]
-         [:> X {:className "size-4 text-gray-500 mr-2"}])
-       [:span {:className (if (:met item) "text-orange-500" "text-gray-400")}
-        (:label item)]])
-    (creteria password))]])
+ (defn view [password]
+   [:div {:className "mt-2"}
+    [:div {:className "flex justify-between items-center mb-1"}
+     [:span {:className "text-xs text-gray-400 "}
+      "Password strength"]
+     [:span {:className "text-xs text-gray-400"}
+      (strength-title password)]]
+    [:div {:className "flex space-x-1"}
+     (map
+      (fn [item]
+        (js/console.log "item: "  (strength-meter password))
+        (let [strength  (strength-meter password)
+              color   (if (< item strength)
+                        (get-color strength)
+                        "bg-gray-600")]
+          [:div {:key       item
+                 :className (str "h-1 w-1/4 rounded-full transition-colors duration-300 " color)}]))
+      (range 4))]
+    [:div {:className "mt-2 space-y-1"}
+     (map
+      (fn [item]
+        [:div {:key (:label item)
+               :className "flex items-center text-xs"}
+         (if (:met item)
+           [:> Check {:className "size-4 text-orange-500 mr-2"}]
+           [:> X {:className "size-4 text-gray-500 mr-2"}])
+         [:span {:className (if (:met item) "text-orange-500" "text-gray-400")}
+          (:label item)]])
+      (creteria password))]])
