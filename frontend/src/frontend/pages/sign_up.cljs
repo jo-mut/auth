@@ -9,7 +9,7 @@
 
 (defn handle-sign-up [])
 
-(defn- f-view []
+(defn- f-view [props]
   (let [[full-name set-full-name] (react/useState "")
         [email set-email] (react/useState "")
         [password set-password] (react/useState "")]
@@ -31,6 +31,9 @@
          :type        "text"
          :placeholder "Full name"
          :value       full-name
+         :class-name  "w-full pl-10 pr-3 py-2 bg-gray-800 bg-opacity-100 rounded-lg 
+                       border border-gray-700 focus:border-orange-500 focus:ring-2 
+                       focus:ring-orange-500 text-white placeholder-gray-400 transition duration-200"
          :on-change    (fn [e]
                          (set-full-name (-> e .-target .-value)))}]
        [input/view
@@ -38,6 +41,10 @@
          :type        "text"
          :placeholder "Emaill address"
          :value       email
+         :class-name  "w-full pl-10 pr-3 py-2 bg-gray-800 bg-opacity-100 rounded-lg 
+                       border border-gray-700 focus:border-orange-500 
+                       focus:ring-2 focus:ring-orange-500 text-white placeholder-gray-400 
+                       transition duration-200"
          :on-change    (fn [e]
                          (set-email (-> e .-target .-value)))}]
        [input/view
@@ -45,6 +52,10 @@
          :type        "text"
          :placeholder "Password"
          :value       password
+         :class-name  "w-full pl-10 pr-3 py-2 bg-gray-800 bg-opacity-100 rounded-lg 
+                       border border-gray-700 focus:border-orange-500 
+                       focus:ring-2 focus:ring-orange-500 text-white placeholder-gray-400 
+                       transition duration-200"
          :on-change    (fn [e]
                          (set-password (-> e .-target .-value)))}]]
       [:> motion.button

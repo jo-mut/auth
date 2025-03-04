@@ -8,7 +8,7 @@
 
 (defn handle-login [])
 
-(defn- f-view []
+(defn- f-view [props]
   (let [[email set-email] (react/useState "")
         [password set-password] (react/useState "")
         [loading? set-loading?] (react/useState false)]
@@ -47,9 +47,10 @@
          "Forgot your password"]]]
       
       [:> motion.button
-       {:className "mt-5 w-full py-3 px-4 bg-gradient-to-r from-yellow-500 to-emerald-600 text-white font-bold rounded-lg 
-                               shadow-lg hover:from-orange-600 hover:to-emerald-700 focus:outline-none focus:ring-2 focus:ring-orange-500 
-                               focus:fing-offset-2 focus:ring-offset-gray-900 transition duration-200"
+       {:className "mt-5 w-full py-3 px-4 bg-gradient-to-r from-yellow-500 to-emerald-600 text-white 
+                    font-bold rounded-lg shadow-lg hover:from-orange-600 hover:to-emerald-700 focus:outline-none 
+                    focus:ring-2 focus:ring-orange-500 focus:fing-offset-2 focus:ring-offset-gray-900 transition 
+                    duration-200"
         :whileHover {:scale 1.02}
         :whileTop   {:scale 0.98}
         :type       "submit"}
