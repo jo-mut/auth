@@ -6,6 +6,7 @@
    [frontend.pages.login :as login]
    [frontend.pages.sign-up :as signup]
    [frontend.pages.home :as home]
+   [frontend.pages.email-verification :as email-verification]
    [frontend.components.floating-shape :as floating-shape]))
 
 (defn floating-shapes []
@@ -33,6 +34,7 @@
   [:> Routes
    [:> Route {:path "/" :element (r/as-element [home/view])}]
    [:> Route {:path "/signup" :element (r/as-element [signup/view])}]
+   [:> Route {:path "/verify-email" :element (r/as-element [email-verification/view])}]
    [:> Route {:path "/login" :element (r/as-element [login/view])}]])
 
 (defn app []
