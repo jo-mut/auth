@@ -16,7 +16,7 @@ res.status((401)).json(({"success": false, "message": "Unauthorised - no token p
 (req.userId = decoded.userId);
 
 return (next.cljs$core$IFn$_invoke$arity$0 ? next.cljs$core$IFn$_invoke$arity$0() : next.call(null, ));
-}catch (e11989){var e = e11989;
+}catch (e13669){var e = e13669;
 return res.status((500)).json(({"success": false, "message": "Server error"}));
 }});
 });

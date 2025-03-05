@@ -9,7 +9,8 @@
             ["express" "^4.21.2"]
             ["jsonwebtoken" "^9.0.2"]
             ["mailtrap" "^3.4.0"]
-            ["mongoose" "^8.9.3"]]
+            ["mongoose" "^8.9.3"]
+            ["cors" "2.8.5"]]
  
 
  :dependencies [[binaryage/devtools "0.9.7"]

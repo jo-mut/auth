@@ -3,11 +3,14 @@
    ["react-router-dom" :refer [BrowserRouter Route Routes]]
    [reagent.dom :as rdom]
    [reagent.core :as r]
+   [re-frame.core :as rf]
    [frontend.pages.login :as login]
    [frontend.pages.sign-up :as signup]
    [frontend.pages.home :as home]
    [frontend.pages.email-verification :as email-verification]
-   [frontend.components.floating-shape :as floating-shape]))
+   [frontend.components.floating-shape :as floating-shape]
+   frontend.subs
+   frontend.events))
 
 (defn floating-shapes []
   [:div
@@ -45,4 +48,5 @@
     [app-routes]]])
 
 (defn ^:export init []
+  (rf/dispatch [:init-app-db])
   (rdom/render [app] (.getElementById js/document "root")))

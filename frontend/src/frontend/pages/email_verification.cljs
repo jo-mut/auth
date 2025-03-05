@@ -62,9 +62,7 @@
              :type        "text"
              :value       digit
              :on-change    (fn [e]
-                             (handle-on-change input-refs code set-code index (-> e .-target .-value)))
-             :class-name   "w-12 h-12 text-center justify-center text-2xl font-bold bg-gray-700 text-white
-                           border-2 border-gray-500 rounded-lg focus:border-green-500 focus:outline-none"}])
+                             (handle-on-change input-refs code set-code index (-> e .-target .-value)))}])
          code)]
        [:> motion.button
         {:className "mt-5 w-full py-3 px-4 bg-gradient-to-r from-yellow-500 to-emerald-600 text-white 

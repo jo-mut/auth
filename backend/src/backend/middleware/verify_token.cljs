@@ -5,7 +5,7 @@
 
 (defn verify-token []
   (fn [req res next]
-    (let [token (-> ^js req (.-cookies) (.-token))]
+    (let [token (-> ^js req .-cookies .-token)]
       (try
         (when-not token
           (-> res
