@@ -26,7 +26,7 @@
   (let [[name set-name]             (react/useState "")
         [email set-email]           (react/useState "")
         [password set-password]     (react/useState "")
-        [{:keys [error loading?]}]  (rf/subscribe [:get-auth-error])]
+        [{:keys [error loading?]}]  (rf/subscribe [:get-auth-data])]
     [:> motion.div
      {:initial {:opacity 0
                 :y       20}
@@ -80,6 +80,7 @@
 
       (when error
         [:p {:className "text-red-500 font-semibold mt-2"} error])
+      
       [password-meter/view password]]
 
      [:div {:className "px-8 py-4 bg-gray-900 bg-opacity-50 flex justify-center"}

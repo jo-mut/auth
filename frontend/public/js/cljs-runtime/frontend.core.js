@@ -10,10 +10,10 @@ return console.log("is user authenticated",auth_state);
 }));
 });
 frontend.core.redirect_authenticated_user = (function frontend$core$redirect_authenticated_user(children){
-var map__14036 = cljs.core.deref(re_frame.core.subscribe.cljs$core$IFn$_invoke$arity$1(new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"get-auth-data","get-auth-data",-1689545573)], null)));
-var map__14036__$1 = cljs.core.__destructure_map(map__14036);
-var authenticated_QMARK_ = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__14036__$1,new cljs.core.Keyword(null,"authenticated?","authenticated?",-1988130123));
-var user = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__14036__$1,new cljs.core.Keyword(null,"user","user",1532431356));
+var map__15311 = cljs.core.deref(re_frame.core.subscribe.cljs$core$IFn$_invoke$arity$1(new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"get-auth-data","get-auth-data",-1689545573)], null)));
+var map__15311__$1 = cljs.core.__destructure_map(map__15311);
+var authenticated_QMARK_ = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__15311__$1,new cljs.core.Keyword(null,"authenticated?","authenticated?",-1988130123));
+var user = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__15311__$1,new cljs.core.Keyword(null,"user","user",1532431356));
 if(cljs.core.truth_((function (){var and__5000__auto__ = authenticated_QMARK_;
 if(cljs.core.truth_(and__5000__auto__)){
 return new cljs.core.Keyword(null,"is-verified","is-verified",-2036107091).cljs$core$IFn$_invoke$arity$1(user);
@@ -27,10 +27,10 @@ return children;
 }
 });
 frontend.core.protected_routes = (function frontend$core$protected_routes(children){
-var map__14037 = cljs.core.deref(re_frame.core.subscribe.cljs$core$IFn$_invoke$arity$1(new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"get-auth-data","get-auth-data",-1689545573)], null)));
-var map__14037__$1 = cljs.core.__destructure_map(map__14037);
-var authenticated_QMARK_ = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__14037__$1,new cljs.core.Keyword(null,"authenticated?","authenticated?",-1988130123));
-var user = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__14037__$1,new cljs.core.Keyword(null,"user","user",1532431356));
+var map__15312 = cljs.core.deref(re_frame.core.subscribe.cljs$core$IFn$_invoke$arity$1(new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"get-auth-data","get-auth-data",-1689545573)], null)));
+var map__15312__$1 = cljs.core.__destructure_map(map__15312);
+var authenticated_QMARK_ = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__15312__$1,new cljs.core.Keyword(null,"authenticated?","authenticated?",-1988130123));
+var user = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__15312__$1,new cljs.core.Keyword(null,"user","user",1532431356));
 if(cljs.core.not(authenticated_QMARK_)){
 return reagent.core.as_element.cljs$core$IFn$_invoke$arity$1(new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,">",">",-555517146),module$node_modules$react_router_dom$dist$main.Navigate,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"to","to",192099007),"/login",new cljs.core.Keyword(null,"replace","replace",-786587770),cljs.core.replace], null)], null));
 } else {

@@ -4,6 +4,7 @@
    ["react" :as react]
    ["lucide-react" :refer [Mail Lock Loader]]
    ["react-router-dom" :refer [Link]]
+   [re-frame.core :as rf]
    [frontend.components.input :as input]))
 
 (defn handle-login [])
@@ -11,7 +12,8 @@
 (defn- f-view [props]
   (let [[email set-email] (react/useState "")
         [password set-password] (react/useState "")
-        [loading? set-loading?] (react/useState false)]
+        [loading? set-loading?] (react/useState false)
+        {:keys [error]} @(rf/subscribe [:get-auth-data])]
     [:> motion.div
      {:initial {:opacity 0
                 :y       20}
@@ -53,6 +55,10 @@
         [:> Link {:to "/login"
                   :className "text-green-400 hover:underline"}
          "Forgot your password"]]]
+
+      (when error
+        [:p {:className "text-red-500 font-semibold mb-2"}
+         error])
 
       [:> motion.button
        {:className "mt-5 w-full py-3 px-4 bg-gradient-to-r from-yellow-500 to-emerald-600 text-white 

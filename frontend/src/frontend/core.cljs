@@ -73,10 +73,18 @@
                                        (r/as-element [login/view]))}]])
 
 (defn app []
+  
+  ;; TODO check auth status when the site is loaded
+  
   ;; (react/useEffect
   ;;  (fn []
   ;;    (checking-auth))
   ;;  [])
+  
+  ;; TODO add a loading spinner
+  ;; (when checking-auth
+  ;;   [loading-spinner])
+
   [:> BrowserRouter
    [:div {:className "min-h-screen bg-gradient-to-br from-gray-900 via-yellow-900 to-emerald-900 
                       flex items-center justify-center relative overflow-hidden"}
