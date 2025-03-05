@@ -30,6 +30,7 @@
          :type        "text"
          :placeholder "Emaill address"
          :value       email
+         :sub-type     :default
          :class-name  "w-full pl-10 pr-3 py-2 bg-gray-800 bg-opacity-100 rounded-lg 
                        border border-gray-700 focus:border-orange-500 focus:ring-2 
                        focus:ring-orange-500 text-white placeholder-gray-400 transition duration-200"
@@ -40,6 +41,7 @@
          :type        "text"
          :placeholder "Password"
          :value       password
+         :sub-type     :default
          :class-name  "w-full pl-10 pr-3 py-2 bg-gray-800 bg-opacity-100 rounded-lg 
                        border border-gray-700 focus:border-orange-500 focus:ring-2 
                        focus:ring-orange-500 text-white placeholder-gray-400 transition duration-200"

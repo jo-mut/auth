@@ -3,6 +3,6 @@
    [re-frame.core :as rf]))
 
 (rf/reg-sub
- :messages
+ :get-auth-data
  (fn [db _]
-   (:messages db)))
+   (:auth db)))

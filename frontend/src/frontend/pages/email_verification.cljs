@@ -2,6 +2,8 @@
   (:require
    ["react" :as react]
    ["framer-motion" :refer [motion]]
+   ["react-router-dom" :refer [Link useNavigate]]
+   [frontend.api.core :as api]
    [frontend.components.input :as input]))
 
 (defn handle-on-change
@@ -23,7 +25,13 @@
 (defn handle-submit [code  event]
   ;; TODO: auto submit once the input if filled
   (.preventDefault event)
-  (js/console.log "submited " code))
+  (js/console.log "submited " code)
+  (->
+   (api/verify-email code)
+   (.then
+    (fn []
+      (let [navigate (useNavigate)]
+        (navigate "/"))))))
 
 (defn- f-view [props]
   (let [[code set-code] (react/useState ["" "" "" "" "" ""])
@@ -46,7 +54,7 @@
                        text-transparent bg-clip-text"}
        "Enter the 6 digit code sent to your email"]
 
-      [:form 
+      [:form
        {:on-submit  #(handle-submit code %)
         :className "space-y-6"}
        [:div {:className "flex justify-between"}

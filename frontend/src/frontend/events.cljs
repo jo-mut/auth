@@ -5,7 +5,7 @@
                     :authenticated?  false
                     :error           nil
                     :loading?        false
-                    :checkingAuth?   true}})
+                    :checking-auth?  true}})
 
 (rf/reg-event-fx
  :init-app-db
@@ -15,17 +15,19 @@
 (rf/reg-event-fx
  :save-auth-response
  (fn [{:keys [db]} [_ auth-object]]
-   {:db (-> db
-            (assoc-in [:auth :user] (:user auth-object))
-            (assoc-in [:auth :loading?] (:loading? auth-object))
-            (assoc-in [:auth :authenticated?] (:authenticated? auth-object)))}))
+   {:db (update-in db [:auth] merge auth-object)}))
 
 (rf/reg-event-fx
  :authentication-error
  (fn [{:keys [db]} [_ error]]
-   {:db (assoc-in db [:auth :error] error)}))
+   {:db (update-in db [:auth :error] error)}))
+
+(rf/reg-event-fx
+ :checking-auth
+ (fn [{:keys [db]} [_ error]]
+   {:db (update-in db [:auth :checking-auth?] error)}))
 
 (rf/reg-event-fx
  :update-loading-state
  (fn [{:keys [db]} [_ loading?]]
-   {:db (assoc-in db [:auth :loading?] loading?)}))
+   {:db (update-in db [:auth :loading?] loading?)}))
