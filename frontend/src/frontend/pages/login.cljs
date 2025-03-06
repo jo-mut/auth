@@ -12,8 +12,7 @@
 (defn- f-view [props]
   (let [[email set-email] (react/useState "")
         [password set-password] (react/useState "")
-        [loading? set-loading?] (react/useState false)
-        {:keys [error]} @(rf/subscribe [:get-auth-data])]
+        {:keys [error loading?]} @(rf/subscribe [:get-auth-data])]
     [:> motion.div
      {:initial {:opacity 0
                 :y       20}
@@ -72,6 +71,7 @@
          [:> Loader {:className "w-6 h-6 animate-spin mx-auto"}]
          "Login")]]
      [:div {:className "px-8 py-4 bg-gray-900 bg-opacity-50 flex justify-center"}
+      ;; [:> icon {:className "size-5 text-orange-500"}]
       [:p {:className "text-sm text-gray-400"}
        "Don't have an account? " [:> Link {:to "/signup"
                                            :className "text-green-400 hover:underline"}

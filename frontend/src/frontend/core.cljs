@@ -10,9 +10,11 @@
    [frontend.pages.home :as home]
    [frontend.pages.email-verification :as email-verification]
    [frontend.components.floating-shape :as floating-shape]
+   [frontend.pages.forgot-password :as forgot-password]
+   [frontend.pages.reset-password :as reset-password]
+   [frontend.api.core :as api]
    frontend.subs
-   frontend.events
-   [frontend.api.core :as api]))
+   frontend.events))
 
 (defn floating-shapes []
   [:div
@@ -54,12 +56,12 @@
   [children]
   (let [{:keys [authenticated? user]} @(rf/subscribe [:get-auth-data])]
     (cond
-      (not authenticated?) 
-      (r/as-element [:> Navigate {:to "/login"
-                                  :replace replace}])
-      (not (:is-verified user))
-      (r/as-element [:> Navigate {:to "/verify-email"
-                                  :replace replace}])
+      ;; (not authenticated?) 
+      ;; (r/as-element [:> Navigate {:to "/login"
+      ;;                             :replace replace}])
+      ;; (not (:is-verified user))
+      ;; (r/as-element [:> Navigate {:to "/verify-email"
+      ;;                             :replace replace}])
       :else children)))
 
 (defn app-routes []
@@ -69,18 +71,20 @@
    [:> Route {:path "/signup" :element (redirect-authenticated-user
                                         (r/as-element [signup/view]))}]
    [:> Route {:path "/verify-email" :element (r/as-element [email-verification/view])}]
+   [:> Route {:path "/forgot-password" :element (r/as-element [forgot-password/view])}]
+   [:> Route {:path "/reset-password" :element (r/as-element [reset-password/view])}]
    [:> Route {:path "/login" :element (redirect-authenticated-user
                                        (r/as-element [login/view]))}]])
 
 (defn app []
-  
+
   ;; TODO check auth status when the site is loaded
-  
+
   ;; (react/useEffect
   ;;  (fn []
   ;;    (checking-auth))
   ;;  [])
-  
+
   ;; TODO add a loading spinner
   ;; (when checking-auth
   ;;   [loading-spinner])

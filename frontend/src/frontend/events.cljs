@@ -5,7 +5,9 @@
                     :authenticated?  false
                     :error           nil
                     :loading?        false
-                    :checking-auth?  true}})
+                    :checking-auth?  true
+                    :password-reset?  false
+                    :reset-link-sent? false}})
 
 (rf/reg-event-fx
  :init-app-db

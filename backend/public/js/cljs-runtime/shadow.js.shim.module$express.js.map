@@ -1,0 +1,9 @@
+{
+"version":3,
+"file":"shadow.js.shim.module$express.js",
+"lineCount":5,
+"mappings":"AAAAA,IAAKC,CAAAA,OAAL,CAAa,+BAAb,CAAA;AACAD,IAAKC,CAAAA,OAAL,CAAa,sCAAb,CAAA;AACAC,MAAOC,CAAAA,EAAGC,CAAAA,IAAKC,CAAAA,cAAf,GAAgCH,MAAOC,CAAAA,EAAGG,CAAAA,cAAV,CAAyB,SAAzB,CAAhC,GAAsEC,OAAA,CAAQ,SAAR,CAAtE;AACAC,oCAAqCC,CAAAA,OAArC,GAA+CP,MAAOC,CAAAA,EAAGC,CAAAA,IAAKC,CAAAA,cAA9D;;",
+"sources":["shadow.js.shim.module$express.js"],
+"sourcesContent":["goog.provide(\"shadow.js.shim.module$express\");\ngoog.provide(\"module$shadow_js_shim_module$express\");\nshadow.js.shim.module$express = shadow.js.nativeProvides[\"express\"] = require(\"express\");\nmodule$shadow_js_shim_module$express.default = shadow.js.shim.module$express;\n"],
+"names":["goog","provide","shadow","js","shim","module$express","nativeProvides","require","module$shadow_js_shim_module$express","default"]
+}
