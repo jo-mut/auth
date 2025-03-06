@@ -24,9 +24,9 @@
  {:app 
   {:target 
         :node-script
-        :output-to  "public/backend/main.js"
-        :output-dir "public/backend"
-        :asset-path "/backend"
+        :output-to  "public/js/main.js"
+        :output-dir "public/js"
+        :asset-path "/js"
 
         :main backend.core/init
         

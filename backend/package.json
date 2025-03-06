@@ -1,12 +1,12 @@
 {
   "scripts": {
     "deps": "yarn install",
-    "start": "node public/backend/main.js",
+    "start": "node public/main.js",
     "watch": "shadow-cljs watch app;",
-    "dev": "nodemon --verbose --watch src --watch public/backend/main.js --exec \"node public/backend/main.js\"",
+    "dev": "nodemon --verbose --watch src --watch public/main.js --exec \"node public/main.js\"",
     "release": "shadow-cljs release app;",
     "server": "shadow-cljs server;",
-    "clean": "rm -rf target; rm -rf public/backend"
+    "clean": "rm -rf target; rm -rf public"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",

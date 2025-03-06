@@ -1,0 +1,37 @@
+{
+  "name": "auth",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "deps": "yarn install",
+    "start": "NODE_ENV=production node backend/public/js/main.js",
+    "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend",
+    "watch": "shadow-cljs watch app;",
+    "dev": "NODE_ENV=development nodemon --verbose --watch src --watch backend/public/js/main.js --exec \"node backend/public/js/main.js\"",
+    "release": "shadow-cljs release app;",
+    "server": "shadow-cljs server;",
+    "clean": "rm -rf target; rm -rf backend/public/js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "create-react-class": "^15.6.2",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "mailtrap": "^3.4.0",
+    "mongoose": "^8.9.3",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "shadow-cljs": "^2.0.80"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

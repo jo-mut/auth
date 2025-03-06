@@ -46,6 +46,72 @@ re_frame.core.dispatch(new cljs.core.PersistentVector(null, 2, 5, cljs.core.Pers
 throw Error("Failed to fetch login data");
 }));
 });
+frontend.api.core.logout = (function frontend$api$core$logout(){
+re_frame.core.dispatch(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"update-loading-state","update-loading-state",1480978253),true], null));
+
+return fetch([frontend.api.core.url,"/logout"].join('')).then((function (response){
+console.log(response);
+
+if(cljs.core.truth_(response.ok)){
+return response.json();
+} else {
+throw Error("Failed to fetch logout data");
+}
+})).then((function (data){
+data.message;
+
+var auth = new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"user","user",1532431356),null,new cljs.core.Keyword(null,"authenticated?","authenticated?",-1988130123),false,new cljs.core.Keyword(null,"loading?","loading?",1905707049),false], null);
+return re_frame.core.dispatch(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"save-auth-response","save-auth-response",-2129202041),auth], null));
+})).catch((function (error){
+re_frame.core.dispatch(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"authentication-error","authentication-error",-1410602033),error], null));
+
+throw Error("Failed to fetch login data");
+}));
+});
+frontend.api.core.forgot_password = (function frontend$api$core$forgot_password(email){
+re_frame.core.dispatch(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"save-auth-response","save-auth-response",-2129202041),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"loading?","loading?",1905707049),true,new cljs.core.Keyword(null,"error","error",-978969032),null], null)], null));
+
+return fetch([frontend.api.core.url,"/forgot-password"].join(''),({"method": "POST", "headers": ({"Content-Type": "application/json", "Accept": "application/json"}), "body": JSON.stringify(({"email": email}))})).then((function (response){
+console.log(response);
+
+if(cljs.core.truth_(response.ok)){
+return response.json();
+} else {
+throw Error("Failed to fetch forgot password data");
+}
+})).then((function (data){
+data.message;
+
+var auth = new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"loading?","loading?",1905707049),false,new cljs.core.Keyword(null,"reset-link-sent?","reset-link-sent?",485835087),true], null);
+return re_frame.core.dispatch(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"save-auth-response","save-auth-response",-2129202041),auth], null));
+})).catch((function (error){
+re_frame.core.dispatch(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"authentication-error","authentication-error",-1410602033),error], null));
+
+throw Error("Failed to fetch forgot password data");
+}));
+});
+frontend.api.core.reset_password = (function frontend$api$core$reset_password(token,password){
+re_frame.core.dispatch(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"save-auth-response","save-auth-response",-2129202041),new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"loading?","loading?",1905707049),true,new cljs.core.Keyword(null,"error","error",-978969032),null,new cljs.core.Keyword(null,"password-reset?","password-reset?",-210988501),false], null)], null));
+
+return fetch([frontend.api.core.url,"/forgot-password",cljs.core.str.cljs$core$IFn$_invoke$arity$1(token)].join(''),({"method": "POST", "headers": ({"Content-Type": "application/json", "Accept": "application/json"}), "body": JSON.stringify(({"password": password}))})).then((function (response){
+console.log(response);
+
+if(cljs.core.truth_(response.ok)){
+return response.json();
+} else {
+throw Error("Failed to fetch forgot password data");
+}
+})).then((function (data){
+data.message;
+
+var auth = new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"loading?","loading?",1905707049),false,new cljs.core.Keyword(null,"password-reset?","password-reset?",-210988501),true], null);
+return re_frame.core.dispatch(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"save-auth-response","save-auth-response",-2129202041),auth], null));
+})).catch((function (error){
+re_frame.core.dispatch(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"authentication-error","authentication-error",-1410602033),error], null));
+
+throw Error("Failed to fetch forgot password data");
+}));
+});
 frontend.api.core.verify_email = (function frontend$api$core$verify_email(verification_code){
 re_frame.core.dispatch(new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"authentication-error","authentication-error",-1410602033)], null));
 
