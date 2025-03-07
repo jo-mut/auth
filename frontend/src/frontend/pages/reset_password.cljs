@@ -2,7 +2,7 @@
   (:require
    ["framer-motion" :refer [motion]]
    ["react" :as react]
-   ["lucide-react" :refer [Lock Loader]]
+   ["lucide-react" :refer [Lock]]
    ["react-router-dom" :refer [useNavigate useParams]]
    [re-frame.core :as rf]
    [frontend.api.core :as api]
@@ -13,7 +13,7 @@
   (let [navigate (useNavigate)
         params    (useParams)]
     (->
-     (api/reset-passwrod (:token params) password)
+     (api/reset-password (:token params) password)
      (.then
       (fn []
         (navigate "/reset-password"))))))

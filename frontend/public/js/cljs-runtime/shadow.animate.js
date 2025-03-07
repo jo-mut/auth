@@ -5,7 +5,7 @@ goog.provide('shadow.animate');
  */
 shadow.animate.Animation = function(){};
 
-var shadow$animate$Animation$_animate_from$dyn_20558 = (function (this$){
+var shadow$animate$Animation$_animate_from$dyn_20420 = (function (this$){
 var x__5350__auto__ = (((this$ == null))?null:this$);
 var m__5351__auto__ = (shadow.animate._animate_from[goog.typeOf(x__5350__auto__)]);
 if((!((m__5351__auto__ == null)))){
@@ -26,11 +26,11 @@ shadow.animate._animate_from = (function shadow$animate$_animate_from(this$){
 if((((!((this$ == null)))) && ((!((this$.shadow$animate$Animation$_animate_from$arity$1 == null)))))){
 return this$.shadow$animate$Animation$_animate_from$arity$1(this$);
 } else {
-return shadow$animate$Animation$_animate_from$dyn_20558(this$);
+return shadow$animate$Animation$_animate_from$dyn_20420(this$);
 }
 });
 
-var shadow$animate$Animation$_animate_to$dyn_20559 = (function (this$){
+var shadow$animate$Animation$_animate_to$dyn_20421 = (function (this$){
 var x__5350__auto__ = (((this$ == null))?null:this$);
 var m__5351__auto__ = (shadow.animate._animate_to[goog.typeOf(x__5350__auto__)]);
 if((!((m__5351__auto__ == null)))){
@@ -51,11 +51,11 @@ shadow.animate._animate_to = (function shadow$animate$_animate_to(this$){
 if((((!((this$ == null)))) && ((!((this$.shadow$animate$Animation$_animate_to$arity$1 == null)))))){
 return this$.shadow$animate$Animation$_animate_to$arity$1(this$);
 } else {
-return shadow$animate$Animation$_animate_to$dyn_20559(this$);
+return shadow$animate$Animation$_animate_to$dyn_20421(this$);
 }
 });
 
-var shadow$animate$Animation$_animate_toggles$dyn_20560 = (function (this$){
+var shadow$animate$Animation$_animate_toggles$dyn_20422 = (function (this$){
 var x__5350__auto__ = (((this$ == null))?null:this$);
 var m__5351__auto__ = (shadow.animate._animate_toggles[goog.typeOf(x__5350__auto__)]);
 if((!((m__5351__auto__ == null)))){
@@ -76,11 +76,11 @@ shadow.animate._animate_toggles = (function shadow$animate$_animate_toggles(this
 if((((!((this$ == null)))) && ((!((this$.shadow$animate$Animation$_animate_toggles$arity$1 == null)))))){
 return this$.shadow$animate$Animation$_animate_toggles$arity$1(this$);
 } else {
-return shadow$animate$Animation$_animate_toggles$dyn_20560(this$);
+return shadow$animate$Animation$_animate_toggles$dyn_20422(this$);
 }
 });
 
-var shadow$animate$Animation$_animate_timings$dyn_20564 = (function (this$){
+var shadow$animate$Animation$_animate_timings$dyn_20423 = (function (this$){
 var x__5350__auto__ = (((this$ == null))?null:this$);
 var m__5351__auto__ = (shadow.animate._animate_timings[goog.typeOf(x__5350__auto__)]);
 if((!((m__5351__auto__ == null)))){
@@ -101,11 +101,11 @@ shadow.animate._animate_timings = (function shadow$animate$_animate_timings(this
 if((((!((this$ == null)))) && ((!((this$.shadow$animate$Animation$_animate_timings$arity$1 == null)))))){
 return this$.shadow$animate$Animation$_animate_timings$arity$1(this$);
 } else {
-return shadow$animate$Animation$_animate_timings$dyn_20564(this$);
+return shadow$animate$Animation$_animate_timings$dyn_20423(this$);
 }
 });
 
-var shadow$animate$Animation$_animate_delays$dyn_20570 = (function (this$){
+var shadow$animate$Animation$_animate_delays$dyn_20424 = (function (this$){
 var x__5350__auto__ = (((this$ == null))?null:this$);
 var m__5351__auto__ = (shadow.animate._animate_delays[goog.typeOf(x__5350__auto__)]);
 if((!((m__5351__auto__ == null)))){
@@ -126,17 +126,17 @@ shadow.animate._animate_delays = (function shadow$animate$_animate_delays(this$)
 if((((!((this$ == null)))) && ((!((this$.shadow$animate$Animation$_animate_delays$arity$1 == null)))))){
 return this$.shadow$animate$Animation$_animate_delays$arity$1(this$);
 } else {
-return shadow$animate$Animation$_animate_delays$dyn_20570(this$);
+return shadow$animate$Animation$_animate_delays$dyn_20424(this$);
 }
 });
 
 shadow.animate.transition_string = (function shadow$animate$transition_string(duration,adef){
 var timings = shadow.animate._animate_timings(adef);
 var delays = shadow.animate._animate_delays(adef);
-return clojure.string.join.cljs$core$IFn$_invoke$arity$2(", ",cljs.core.map.cljs$core$IFn$_invoke$arity$2((function (p__20006){
-var vec__20007 = p__20006;
-var attr = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__20007,(0),null);
-var timing = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__20007,(1),null);
+return clojure.string.join.cljs$core$IFn$_invoke$arity$2(", ",cljs.core.map.cljs$core$IFn$_invoke$arity$2((function (p__19866){
+var vec__19867 = p__19866;
+var attr = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__19867,(0),null);
+var timing = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__19867,(1),null);
 return [cljs.core.name(attr)," ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(duration),"ms"," ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(timing),(function (){var delay = cljs.core.get.cljs$core$IFn$_invoke$arity$2(delays,attr);
 if(cljs.core.truth_((function (){var and__5000__auto__ = delay;
 if(cljs.core.truth_(and__5000__auto__)){
@@ -158,7 +158,7 @@ return null;
  */
 shadow.animate.IAnimator = function(){};
 
-var shadow$animate$IAnimator$get_duration$dyn_20617 = (function (animator){
+var shadow$animate$IAnimator$get_duration$dyn_20427 = (function (animator){
 var x__5350__auto__ = (((animator == null))?null:animator);
 var m__5351__auto__ = (shadow.animate.get_duration[goog.typeOf(x__5350__auto__)]);
 if((!((m__5351__auto__ == null)))){
@@ -176,11 +176,11 @@ shadow.animate.get_duration = (function shadow$animate$get_duration(animator){
 if((((!((animator == null)))) && ((!((animator.shadow$animate$IAnimator$get_duration$arity$1 == null)))))){
 return animator.shadow$animate$IAnimator$get_duration$arity$1(animator);
 } else {
-return shadow$animate$IAnimator$get_duration$dyn_20617(animator);
+return shadow$animate$IAnimator$get_duration$dyn_20427(animator);
 }
 });
 
-var shadow$animate$IAnimator$init_BANG_$dyn_20623 = (function (animator){
+var shadow$animate$IAnimator$init_BANG_$dyn_20430 = (function (animator){
 var x__5350__auto__ = (((animator == null))?null:animator);
 var m__5351__auto__ = (shadow.animate.init_BANG_[goog.typeOf(x__5350__auto__)]);
 if((!((m__5351__auto__ == null)))){
@@ -201,11 +201,11 @@ shadow.animate.init_BANG_ = (function shadow$animate$init_BANG_(animator){
 if((((!((animator == null)))) && ((!((animator.shadow$animate$IAnimator$init_BANG_$arity$1 == null)))))){
 return animator.shadow$animate$IAnimator$init_BANG_$arity$1(animator);
 } else {
-return shadow$animate$IAnimator$init_BANG_$dyn_20623(animator);
+return shadow$animate$IAnimator$init_BANG_$dyn_20430(animator);
 }
 });
 
-var shadow$animate$IAnimator$start_BANG_$dyn_20625 = (function (animator){
+var shadow$animate$IAnimator$start_BANG_$dyn_20433 = (function (animator){
 var x__5350__auto__ = (((animator == null))?null:animator);
 var m__5351__auto__ = (shadow.animate.start_BANG_[goog.typeOf(x__5350__auto__)]);
 if((!((m__5351__auto__ == null)))){
@@ -226,11 +226,11 @@ shadow.animate.start_BANG_ = (function shadow$animate$start_BANG_(animator){
 if((((!((animator == null)))) && ((!((animator.shadow$animate$IAnimator$start_BANG_$arity$1 == null)))))){
 return animator.shadow$animate$IAnimator$start_BANG_$arity$1(animator);
 } else {
-return shadow$animate$IAnimator$start_BANG_$dyn_20625(animator);
+return shadow$animate$IAnimator$start_BANG_$dyn_20433(animator);
 }
 });
 
-var shadow$animate$IAnimator$finish_BANG_$dyn_20626 = (function (animator){
+var shadow$animate$IAnimator$finish_BANG_$dyn_20434 = (function (animator){
 var x__5350__auto__ = (((animator == null))?null:animator);
 var m__5351__auto__ = (shadow.animate.finish_BANG_[goog.typeOf(x__5350__auto__)]);
 if((!((m__5351__auto__ == null)))){
@@ -251,7 +251,7 @@ shadow.animate.finish_BANG_ = (function shadow$animate$finish_BANG_(animator){
 if((((!((animator == null)))) && ((!((animator.shadow$animate$IAnimator$finish_BANG_$arity$1 == null)))))){
 return animator.shadow$animate$IAnimator$finish_BANG_$arity$1(animator);
 } else {
-return shadow$animate$IAnimator$finish_BANG_$dyn_20626(animator);
+return shadow$animate$IAnimator$finish_BANG_$dyn_20434(animator);
 }
 });
 
@@ -276,17 +276,17 @@ return self__.duration;
 var self__ = this;
 var ___$1 = this;
 var n__5593__auto__ = self__.items.length;
-var i__14427__auto__ = (0);
+var i__14293__auto__ = (0);
 while(true){
-if((i__14427__auto__ < n__5593__auto__)){
-var map__20074_20628 = (self__.items[i__14427__auto__]);
-var map__20074_20629__$1 = cljs.core.__destructure_map(map__20074_20628);
-var el_20630 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__20074_20629__$1,new cljs.core.Keyword(null,"el","el",-1618201118));
-var from_20631 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__20074_20629__$1,new cljs.core.Keyword(null,"from","from",1815293044));
-goog.style.setStyle(el_20630,from_20631);
+if((i__14293__auto__ < n__5593__auto__)){
+var map__19905_20435 = (self__.items[i__14293__auto__]);
+var map__19905_20436__$1 = cljs.core.__destructure_map(map__19905_20435);
+var el_20437 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__19905_20436__$1,new cljs.core.Keyword(null,"el","el",-1618201118));
+var from_20438 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__19905_20436__$1,new cljs.core.Keyword(null,"from","from",1815293044));
+goog.style.setStyle(el_20437,from_20438);
 
-var G__20632 = (i__14427__auto__ + (1));
-i__14427__auto__ = G__20632;
+var G__20439 = (i__14293__auto__ + (1));
+i__14293__auto__ = G__20439;
 continue;
 } else {
 return null;
@@ -299,20 +299,20 @@ break;
 var self__ = this;
 var ___$1 = this;
 var n__5593__auto__ = self__.items.length;
-var i__14427__auto__ = (0);
+var i__14293__auto__ = (0);
 while(true){
-if((i__14427__auto__ < n__5593__auto__)){
-var map__20090_20633 = (self__.items[i__14427__auto__]);
-var map__20090_20634__$1 = cljs.core.__destructure_map(map__20090_20633);
-var el_20635 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__20090_20634__$1,new cljs.core.Keyword(null,"el","el",-1618201118));
-var to_20636 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__20090_20634__$1,new cljs.core.Keyword(null,"to","to",192099007));
-var transition_20637 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__20090_20634__$1,new cljs.core.Keyword(null,"transition","transition",765692007));
-(to_20636["transition"] = transition_20637);
+if((i__14293__auto__ < n__5593__auto__)){
+var map__19906_20441 = (self__.items[i__14293__auto__]);
+var map__19906_20442__$1 = cljs.core.__destructure_map(map__19906_20441);
+var el_20443 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__19906_20442__$1,new cljs.core.Keyword(null,"el","el",-1618201118));
+var to_20444 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__19906_20442__$1,new cljs.core.Keyword(null,"to","to",192099007));
+var transition_20445 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__19906_20442__$1,new cljs.core.Keyword(null,"transition","transition",765692007));
+(to_20444["transition"] = transition_20445);
 
-goog.style.setStyle(el_20635,to_20636);
+goog.style.setStyle(el_20443,to_20444);
 
-var G__20638 = (i__14427__auto__ + (1));
-i__14427__auto__ = G__20638;
+var G__20446 = (i__14293__auto__ + (1));
+i__14293__auto__ = G__20446;
 continue;
 } else {
 return null;
@@ -325,19 +325,19 @@ break;
 var self__ = this;
 var ___$1 = this;
 var n__5593__auto__ = self__.items.length;
-var i__14427__auto__ = (0);
+var i__14293__auto__ = (0);
 while(true){
-if((i__14427__auto__ < n__5593__auto__)){
-var map__20097_20639 = (self__.items[i__14427__auto__]);
-var map__20097_20640__$1 = cljs.core.__destructure_map(map__20097_20639);
-var el_20641 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__20097_20640__$1,new cljs.core.Keyword(null,"el","el",-1618201118));
-var toggles_20642 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__20097_20640__$1,new cljs.core.Keyword(null,"toggles","toggles",1077909479));
-(toggles_20642["transition"] = null);
+if((i__14293__auto__ < n__5593__auto__)){
+var map__19909_20447 = (self__.items[i__14293__auto__]);
+var map__19909_20448__$1 = cljs.core.__destructure_map(map__19909_20447);
+var el_20449 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__19909_20448__$1,new cljs.core.Keyword(null,"el","el",-1618201118));
+var toggles_20450 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__19909_20448__$1,new cljs.core.Keyword(null,"toggles","toggles",1077909479));
+(toggles_20450["transition"] = null);
 
-goog.style.setStyle(el_20641,toggles_20642);
+goog.style.setStyle(el_20449,toggles_20450);
 
-var G__20643 = (i__14427__auto__ + (1));
-i__14427__auto__ = G__20643;
+var G__20451 = (i__14293__auto__ + (1));
+i__14293__auto__ = G__20451;
 continue;
 } else {
 return null;
@@ -402,12 +402,12 @@ var this__5300__auto____$1 = this;
 return this__5300__auto____$1.cljs$core$ILookup$_lookup$arity$3(null, k__5301__auto__,null);
 }));
 
-(shadow.animate.AnimationStep.prototype.cljs$core$ILookup$_lookup$arity$3 = (function (this__5302__auto__,k20104,else__5303__auto__){
+(shadow.animate.AnimationStep.prototype.cljs$core$ILookup$_lookup$arity$3 = (function (this__5302__auto__,k19918,else__5303__auto__){
 var self__ = this;
 var this__5302__auto____$1 = this;
-var G__20129 = k20104;
-var G__20129__$1 = (((G__20129 instanceof cljs.core.Keyword))?G__20129.fqn:null);
-switch (G__20129__$1) {
+var G__19934 = k19918;
+var G__19934__$1 = (((G__19934 instanceof cljs.core.Keyword))?G__19934.fqn:null);
+switch (G__19934__$1) {
 case "el":
 return self__.el;
 
@@ -429,7 +429,7 @@ return self__.transition;
 
 break;
 default:
-return cljs.core.get.cljs$core$IFn$_invoke$arity$3(self__.__extmap,k20104,else__5303__auto__);
+return cljs.core.get.cljs$core$IFn$_invoke$arity$3(self__.__extmap,k19918,else__5303__auto__);
 
 }
 }));
@@ -437,10 +437,10 @@ return cljs.core.get.cljs$core$IFn$_invoke$arity$3(self__.__extmap,k20104,else__
 (shadow.animate.AnimationStep.prototype.cljs$core$IKVReduce$_kv_reduce$arity$3 = (function (this__5320__auto__,f__5321__auto__,init__5322__auto__){
 var self__ = this;
 var this__5320__auto____$1 = this;
-return cljs.core.reduce.cljs$core$IFn$_invoke$arity$3((function (ret__5323__auto__,p__20134){
-var vec__20135 = p__20134;
-var k__5324__auto__ = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__20135,(0),null);
-var v__5325__auto__ = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__20135,(1),null);
+return cljs.core.reduce.cljs$core$IFn$_invoke$arity$3((function (ret__5323__auto__,p__19941){
+var vec__19944 = p__19941;
+var k__5324__auto__ = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__19944,(0),null);
+var v__5325__auto__ = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__19944,(1),null);
 return (f__5321__auto__.cljs$core$IFn$_invoke$arity$3 ? f__5321__auto__.cljs$core$IFn$_invoke$arity$3(ret__5323__auto__,k__5324__auto__,v__5325__auto__) : f__5321__auto__.call(null, ret__5323__auto__,k__5324__auto__,v__5325__auto__));
 }),init__5322__auto__,this__5320__auto____$1);
 }));
@@ -454,10 +454,10 @@ return cljs.core.pr_sequential_writer(writer__5316__auto__,cljs.core.pr_writer,"
 return cljs.core.pr_sequential_writer(writer__5316__auto__,pr_pair__5318__auto__,"#shadow.animate.AnimationStep{",", ","}",opts__5317__auto__,cljs.core.concat.cljs$core$IFn$_invoke$arity$2(new cljs.core.PersistentVector(null, 5, 5, cljs.core.PersistentVector.EMPTY_NODE, [(new cljs.core.PersistentVector(null,2,(5),cljs.core.PersistentVector.EMPTY_NODE,[new cljs.core.Keyword(null,"el","el",-1618201118),self__.el],null)),(new cljs.core.PersistentVector(null,2,(5),cljs.core.PersistentVector.EMPTY_NODE,[new cljs.core.Keyword(null,"from","from",1815293044),self__.from],null)),(new cljs.core.PersistentVector(null,2,(5),cljs.core.PersistentVector.EMPTY_NODE,[new cljs.core.Keyword(null,"to","to",192099007),self__.to],null)),(new cljs.core.PersistentVector(null,2,(5),cljs.core.PersistentVector.EMPTY_NODE,[new cljs.core.Keyword(null,"toggles","toggles",1077909479),self__.toggles],null)),(new cljs.core.PersistentVector(null,2,(5),cljs.core.PersistentVector.EMPTY_NODE,[new cljs.core.Keyword(null,"transition","transition",765692007),self__.transition],null))], null),self__.__extmap));
 }));
 
-(shadow.animate.AnimationStep.prototype.cljs$core$IIterable$_iterator$arity$1 = (function (G__20103){
+(shadow.animate.AnimationStep.prototype.cljs$core$IIterable$_iterator$arity$1 = (function (G__19917){
 var self__ = this;
-var G__20103__$1 = this;
-return (new cljs.core.RecordIter((0),G__20103__$1,5,new cljs.core.PersistentVector(null, 5, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"el","el",-1618201118),new cljs.core.Keyword(null,"from","from",1815293044),new cljs.core.Keyword(null,"to","to",192099007),new cljs.core.Keyword(null,"toggles","toggles",1077909479),new cljs.core.Keyword(null,"transition","transition",765692007)], null),(cljs.core.truth_(self__.__extmap)?cljs.core._iterator(self__.__extmap):cljs.core.nil_iter())));
+var G__19917__$1 = this;
+return (new cljs.core.RecordIter((0),G__19917__$1,5,new cljs.core.PersistentVector(null, 5, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"el","el",-1618201118),new cljs.core.Keyword(null,"from","from",1815293044),new cljs.core.Keyword(null,"to","to",192099007),new cljs.core.Keyword(null,"toggles","toggles",1077909479),new cljs.core.Keyword(null,"transition","transition",765692007)], null),(cljs.core.truth_(self__.__extmap)?cljs.core._iterator(self__.__extmap):cljs.core.nil_iter())));
 }));
 
 (shadow.animate.AnimationStep.prototype.cljs$core$IMeta$_meta$arity$1 = (function (this__5298__auto__){
@@ -494,10 +494,10 @@ return h__5111__auto____$1;
 }
 }));
 
-(shadow.animate.AnimationStep.prototype.cljs$core$IEquiv$_equiv$arity$2 = (function (this20105,other20106){
+(shadow.animate.AnimationStep.prototype.cljs$core$IEquiv$_equiv$arity$2 = (function (this19923,other19924){
 var self__ = this;
-var this20105__$1 = this;
-return (((!((other20106 == null)))) && ((((this20105__$1.constructor === other20106.constructor)) && (((cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(this20105__$1.el,other20106.el)) && (((cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(this20105__$1.from,other20106.from)) && (((cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(this20105__$1.to,other20106.to)) && (((cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(this20105__$1.toggles,other20106.toggles)) && (((cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(this20105__$1.transition,other20106.transition)) && (cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(this20105__$1.__extmap,other20106.__extmap)))))))))))))));
+var this19923__$1 = this;
+return (((!((other19924 == null)))) && ((((this19923__$1.constructor === other19924.constructor)) && (((cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(this19923__$1.el,other19924.el)) && (((cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(this19923__$1.from,other19924.from)) && (((cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(this19923__$1.to,other19924.to)) && (((cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(this19923__$1.toggles,other19924.toggles)) && (((cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(this19923__$1.transition,other19924.transition)) && (cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(this19923__$1.__extmap,other19924.__extmap)))))))))))))));
 }));
 
 (shadow.animate.AnimationStep.prototype.cljs$core$IMap$_dissoc$arity$2 = (function (this__5310__auto__,k__5311__auto__){
@@ -510,12 +510,12 @@ return (new shadow.animate.AnimationStep(self__.el,self__.from,self__.to,self__.
 }
 }));
 
-(shadow.animate.AnimationStep.prototype.cljs$core$IAssociative$_contains_key_QMARK_$arity$2 = (function (this__5307__auto__,k20104){
+(shadow.animate.AnimationStep.prototype.cljs$core$IAssociative$_contains_key_QMARK_$arity$2 = (function (this__5307__auto__,k19918){
 var self__ = this;
 var this__5307__auto____$1 = this;
-var G__20275 = k20104;
-var G__20275__$1 = (((G__20275 instanceof cljs.core.Keyword))?G__20275.fqn:null);
-switch (G__20275__$1) {
+var G__19968 = k19918;
+var G__19968__$1 = (((G__19968 instanceof cljs.core.Keyword))?G__19968.fqn:null);
+switch (G__19968__$1) {
 case "el":
 case "from":
 case "to":
@@ -525,32 +525,32 @@ return true;
 
 break;
 default:
-return cljs.core.contains_QMARK_(self__.__extmap,k20104);
+return cljs.core.contains_QMARK_(self__.__extmap,k19918);
 
 }
 }));
 
-(shadow.animate.AnimationStep.prototype.cljs$core$IAssociative$_assoc$arity$3 = (function (this__5308__auto__,k__5309__auto__,G__20103){
+(shadow.animate.AnimationStep.prototype.cljs$core$IAssociative$_assoc$arity$3 = (function (this__5308__auto__,k__5309__auto__,G__19917){
 var self__ = this;
 var this__5308__auto____$1 = this;
-var pred__20276 = cljs.core.keyword_identical_QMARK_;
-var expr__20277 = k__5309__auto__;
-if(cljs.core.truth_((pred__20276.cljs$core$IFn$_invoke$arity$2 ? pred__20276.cljs$core$IFn$_invoke$arity$2(new cljs.core.Keyword(null,"el","el",-1618201118),expr__20277) : pred__20276.call(null, new cljs.core.Keyword(null,"el","el",-1618201118),expr__20277)))){
-return (new shadow.animate.AnimationStep(G__20103,self__.from,self__.to,self__.toggles,self__.transition,self__.__meta,self__.__extmap,null));
+var pred__19969 = cljs.core.keyword_identical_QMARK_;
+var expr__19970 = k__5309__auto__;
+if(cljs.core.truth_((pred__19969.cljs$core$IFn$_invoke$arity$2 ? pred__19969.cljs$core$IFn$_invoke$arity$2(new cljs.core.Keyword(null,"el","el",-1618201118),expr__19970) : pred__19969.call(null, new cljs.core.Keyword(null,"el","el",-1618201118),expr__19970)))){
+return (new shadow.animate.AnimationStep(G__19917,self__.from,self__.to,self__.toggles,self__.transition,self__.__meta,self__.__extmap,null));
 } else {
-if(cljs.core.truth_((pred__20276.cljs$core$IFn$_invoke$arity$2 ? pred__20276.cljs$core$IFn$_invoke$arity$2(new cljs.core.Keyword(null,"from","from",1815293044),expr__20277) : pred__20276.call(null, new cljs.core.Keyword(null,"from","from",1815293044),expr__20277)))){
-return (new shadow.animate.AnimationStep(self__.el,G__20103,self__.to,self__.toggles,self__.transition,self__.__meta,self__.__extmap,null));
+if(cljs.core.truth_((pred__19969.cljs$core$IFn$_invoke$arity$2 ? pred__19969.cljs$core$IFn$_invoke$arity$2(new cljs.core.Keyword(null,"from","from",1815293044),expr__19970) : pred__19969.call(null, new cljs.core.Keyword(null,"from","from",1815293044),expr__19970)))){
+return (new shadow.animate.AnimationStep(self__.el,G__19917,self__.to,self__.toggles,self__.transition,self__.__meta,self__.__extmap,null));
 } else {
-if(cljs.core.truth_((pred__20276.cljs$core$IFn$_invoke$arity$2 ? pred__20276.cljs$core$IFn$_invoke$arity$2(new cljs.core.Keyword(null,"to","to",192099007),expr__20277) : pred__20276.call(null, new cljs.core.Keyword(null,"to","to",192099007),expr__20277)))){
-return (new shadow.animate.AnimationStep(self__.el,self__.from,G__20103,self__.toggles,self__.transition,self__.__meta,self__.__extmap,null));
+if(cljs.core.truth_((pred__19969.cljs$core$IFn$_invoke$arity$2 ? pred__19969.cljs$core$IFn$_invoke$arity$2(new cljs.core.Keyword(null,"to","to",192099007),expr__19970) : pred__19969.call(null, new cljs.core.Keyword(null,"to","to",192099007),expr__19970)))){
+return (new shadow.animate.AnimationStep(self__.el,self__.from,G__19917,self__.toggles,self__.transition,self__.__meta,self__.__extmap,null));
 } else {
-if(cljs.core.truth_((pred__20276.cljs$core$IFn$_invoke$arity$2 ? pred__20276.cljs$core$IFn$_invoke$arity$2(new cljs.core.Keyword(null,"toggles","toggles",1077909479),expr__20277) : pred__20276.call(null, new cljs.core.Keyword(null,"toggles","toggles",1077909479),expr__20277)))){
-return (new shadow.animate.AnimationStep(self__.el,self__.from,self__.to,G__20103,self__.transition,self__.__meta,self__.__extmap,null));
+if(cljs.core.truth_((pred__19969.cljs$core$IFn$_invoke$arity$2 ? pred__19969.cljs$core$IFn$_invoke$arity$2(new cljs.core.Keyword(null,"toggles","toggles",1077909479),expr__19970) : pred__19969.call(null, new cljs.core.Keyword(null,"toggles","toggles",1077909479),expr__19970)))){
+return (new shadow.animate.AnimationStep(self__.el,self__.from,self__.to,G__19917,self__.transition,self__.__meta,self__.__extmap,null));
 } else {
-if(cljs.core.truth_((pred__20276.cljs$core$IFn$_invoke$arity$2 ? pred__20276.cljs$core$IFn$_invoke$arity$2(new cljs.core.Keyword(null,"transition","transition",765692007),expr__20277) : pred__20276.call(null, new cljs.core.Keyword(null,"transition","transition",765692007),expr__20277)))){
-return (new shadow.animate.AnimationStep(self__.el,self__.from,self__.to,self__.toggles,G__20103,self__.__meta,self__.__extmap,null));
+if(cljs.core.truth_((pred__19969.cljs$core$IFn$_invoke$arity$2 ? pred__19969.cljs$core$IFn$_invoke$arity$2(new cljs.core.Keyword(null,"transition","transition",765692007),expr__19970) : pred__19969.call(null, new cljs.core.Keyword(null,"transition","transition",765692007),expr__19970)))){
+return (new shadow.animate.AnimationStep(self__.el,self__.from,self__.to,self__.toggles,G__19917,self__.__meta,self__.__extmap,null));
 } else {
-return (new shadow.animate.AnimationStep(self__.el,self__.from,self__.to,self__.toggles,self__.transition,self__.__meta,cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(self__.__extmap,k__5309__auto__,G__20103),null));
+return (new shadow.animate.AnimationStep(self__.el,self__.from,self__.to,self__.toggles,self__.transition,self__.__meta,cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(self__.__extmap,k__5309__auto__,G__19917),null));
 }
 }
 }
@@ -564,10 +564,10 @@ var this__5313__auto____$1 = this;
 return cljs.core.seq(cljs.core.concat.cljs$core$IFn$_invoke$arity$2(new cljs.core.PersistentVector(null, 5, 5, cljs.core.PersistentVector.EMPTY_NODE, [(new cljs.core.MapEntry(new cljs.core.Keyword(null,"el","el",-1618201118),self__.el,null)),(new cljs.core.MapEntry(new cljs.core.Keyword(null,"from","from",1815293044),self__.from,null)),(new cljs.core.MapEntry(new cljs.core.Keyword(null,"to","to",192099007),self__.to,null)),(new cljs.core.MapEntry(new cljs.core.Keyword(null,"toggles","toggles",1077909479),self__.toggles,null)),(new cljs.core.MapEntry(new cljs.core.Keyword(null,"transition","transition",765692007),self__.transition,null))], null),self__.__extmap));
 }));
 
-(shadow.animate.AnimationStep.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = (function (this__5299__auto__,G__20103){
+(shadow.animate.AnimationStep.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = (function (this__5299__auto__,G__19917){
 var self__ = this;
 var this__5299__auto____$1 = this;
-return (new shadow.animate.AnimationStep(self__.el,self__.from,self__.to,self__.toggles,self__.transition,G__20103,self__.__extmap,self__.__hash));
+return (new shadow.animate.AnimationStep(self__.el,self__.from,self__.to,self__.toggles,self__.transition,G__19917,self__.__extmap,self__.__hash));
 }));
 
 (shadow.animate.AnimationStep.prototype.cljs$core$ICollection$_conj$arity$2 = (function (this__5305__auto__,entry__5306__auto__){
@@ -604,36 +604,36 @@ return (new shadow.animate.AnimationStep(el,from,to,toggles,transition,null,null
 /**
  * Factory function for shadow.animate/AnimationStep, taking a map of keywords to field values.
  */
-shadow.animate.map__GT_AnimationStep = (function shadow$animate$map__GT_AnimationStep(G__20116){
-var extmap__5342__auto__ = (function (){var G__20287 = cljs.core.dissoc.cljs$core$IFn$_invoke$arity$variadic(G__20116,new cljs.core.Keyword(null,"el","el",-1618201118),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"from","from",1815293044),new cljs.core.Keyword(null,"to","to",192099007),new cljs.core.Keyword(null,"toggles","toggles",1077909479),new cljs.core.Keyword(null,"transition","transition",765692007)], 0));
-if(cljs.core.record_QMARK_(G__20116)){
-return cljs.core.into.cljs$core$IFn$_invoke$arity$2(cljs.core.PersistentArrayMap.EMPTY,G__20287);
+shadow.animate.map__GT_AnimationStep = (function shadow$animate$map__GT_AnimationStep(G__19927){
+var extmap__5342__auto__ = (function (){var G__20026 = cljs.core.dissoc.cljs$core$IFn$_invoke$arity$variadic(G__19927,new cljs.core.Keyword(null,"el","el",-1618201118),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"from","from",1815293044),new cljs.core.Keyword(null,"to","to",192099007),new cljs.core.Keyword(null,"toggles","toggles",1077909479),new cljs.core.Keyword(null,"transition","transition",765692007)], 0));
+if(cljs.core.record_QMARK_(G__19927)){
+return cljs.core.into.cljs$core$IFn$_invoke$arity$2(cljs.core.PersistentArrayMap.EMPTY,G__20026);
 } else {
-return G__20287;
+return G__20026;
 }
 })();
-return (new shadow.animate.AnimationStep(new cljs.core.Keyword(null,"el","el",-1618201118).cljs$core$IFn$_invoke$arity$1(G__20116),new cljs.core.Keyword(null,"from","from",1815293044).cljs$core$IFn$_invoke$arity$1(G__20116),new cljs.core.Keyword(null,"to","to",192099007).cljs$core$IFn$_invoke$arity$1(G__20116),new cljs.core.Keyword(null,"toggles","toggles",1077909479).cljs$core$IFn$_invoke$arity$1(G__20116),new cljs.core.Keyword(null,"transition","transition",765692007).cljs$core$IFn$_invoke$arity$1(G__20116),null,cljs.core.not_empty(extmap__5342__auto__),null));
+return (new shadow.animate.AnimationStep(new cljs.core.Keyword(null,"el","el",-1618201118).cljs$core$IFn$_invoke$arity$1(G__19927),new cljs.core.Keyword(null,"from","from",1815293044).cljs$core$IFn$_invoke$arity$1(G__19927),new cljs.core.Keyword(null,"to","to",192099007).cljs$core$IFn$_invoke$arity$1(G__19927),new cljs.core.Keyword(null,"toggles","toggles",1077909479).cljs$core$IFn$_invoke$arity$1(G__19927),new cljs.core.Keyword(null,"transition","transition",765692007).cljs$core$IFn$_invoke$arity$1(G__19927),null,cljs.core.not_empty(extmap__5342__auto__),null));
 });
 
 shadow.animate.setup = (function shadow$animate$setup(duration,elements){
-var items = cljs.core.into_array.cljs$core$IFn$_invoke$arity$1((function (){var iter__5480__auto__ = (function shadow$animate$setup_$_iter__20289(s__20290){
+var items = cljs.core.into_array.cljs$core$IFn$_invoke$arity$1((function (){var iter__5480__auto__ = (function shadow$animate$setup_$_iter__20045(s__20046){
 return (new cljs.core.LazySeq(null,(function (){
-var s__20290__$1 = s__20290;
+var s__20046__$1 = s__20046;
 while(true){
-var temp__5804__auto__ = cljs.core.seq(s__20290__$1);
+var temp__5804__auto__ = cljs.core.seq(s__20046__$1);
 if(temp__5804__auto__){
-var s__20290__$2 = temp__5804__auto__;
-if(cljs.core.chunked_seq_QMARK_(s__20290__$2)){
-var c__5478__auto__ = cljs.core.chunk_first(s__20290__$2);
+var s__20046__$2 = temp__5804__auto__;
+if(cljs.core.chunked_seq_QMARK_(s__20046__$2)){
+var c__5478__auto__ = cljs.core.chunk_first(s__20046__$2);
 var size__5479__auto__ = cljs.core.count(c__5478__auto__);
-var b__20292 = cljs.core.chunk_buffer(size__5479__auto__);
-if((function (){var i__20291 = (0);
+var b__20048 = cljs.core.chunk_buffer(size__5479__auto__);
+if((function (){var i__20047 = (0);
 while(true){
-if((i__20291 < size__5479__auto__)){
-var vec__20299 = cljs.core._nth(c__5478__auto__,i__20291);
-var el = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__20299,(0),null);
-var adef = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__20299,(1),null);
-cljs.core.chunk_append(b__20292,(function (){
+if((i__20047 < size__5479__auto__)){
+var vec__20055 = cljs.core._nth(c__5478__auto__,i__20047);
+var el = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__20055,(0),null);
+var adef = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__20055,(1),null);
+cljs.core.chunk_append(b__20048,(function (){
 if((((!((adef == null))))?((((false) || ((cljs.core.PROTOCOL_SENTINEL === adef.shadow$animate$Animation$))))?true:(((!adef.cljs$lang$protocol_mask$partition$))?cljs.core.native_satisfies_QMARK_(shadow.animate.Animation,adef):false)):cljs.core.native_satisfies_QMARK_(shadow.animate.Animation,adef))){
 } else {
 throw cljs.core.ex_info.cljs$core$IFn$_invoke$arity$2("invalid animation",new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"el","el",-1618201118),el,new cljs.core.Keyword(null,"animation","animation",-1248293244),adef], null));
@@ -646,8 +646,8 @@ return (new shadow.animate.AnimationStep(shadow.dom.dom_node(el),cljs.core.clj__
 })()
 );
 
-var G__20701 = (i__20291 + (1));
-i__20291 = G__20701;
+var G__20456 = (i__20047 + (1));
+i__20047 = G__20456;
 continue;
 } else {
 return true;
@@ -655,14 +655,14 @@ return true;
 break;
 }
 })()){
-return cljs.core.chunk_cons(cljs.core.chunk(b__20292),shadow$animate$setup_$_iter__20289(cljs.core.chunk_rest(s__20290__$2)));
+return cljs.core.chunk_cons(cljs.core.chunk(b__20048),shadow$animate$setup_$_iter__20045(cljs.core.chunk_rest(s__20046__$2)));
 } else {
-return cljs.core.chunk_cons(cljs.core.chunk(b__20292),null);
+return cljs.core.chunk_cons(cljs.core.chunk(b__20048),null);
 }
 } else {
-var vec__20310 = cljs.core.first(s__20290__$2);
-var el = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__20310,(0),null);
-var adef = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__20310,(1),null);
+var vec__20069 = cljs.core.first(s__20046__$2);
+var el = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__20069,(0),null);
+var adef = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__20069,(1),null);
 return cljs.core.cons((function (){
 if((((!((adef == null))))?((((false) || ((cljs.core.PROTOCOL_SENTINEL === adef.shadow$animate$Animation$))))?true:(((!adef.cljs$lang$protocol_mask$partition$))?cljs.core.native_satisfies_QMARK_(shadow.animate.Animation,adef):false)):cljs.core.native_satisfies_QMARK_(shadow.animate.Animation,adef))){
 } else {
@@ -674,7 +674,7 @@ var to = shadow.animate._animate_to(adef);
 var toggles = shadow.animate._animate_toggles(adef);
 return (new shadow.animate.AnimationStep(shadow.dom.dom_node(el),cljs.core.clj__GT_js(from),cljs.core.clj__GT_js(to),cljs.core.clj__GT_js(toggles),shadow.animate.transition_string(duration,adef),null,null,null));
 })()
-,shadow$animate$setup_$_iter__20289(cljs.core.rest(s__20290__$2)));
+,shadow$animate$setup_$_iter__20045(cljs.core.rest(s__20046__$2)));
 }
 } else {
 return null;
@@ -690,101 +690,101 @@ return (new shadow.animate.Animator(duration,items));
 shadow.animate.continue_BANG_ = (function shadow$animate$continue_BANG_(animator){
 shadow.animate.start_BANG_(animator);
 
-var c__15140__auto__ = cljs.core.async.chan.cljs$core$IFn$_invoke$arity$1((1));
+var c__15073__auto__ = cljs.core.async.chan.cljs$core$IFn$_invoke$arity$1((1));
 cljs.core.async.impl.dispatch.run((function (){
-var f__15141__auto__ = (function (){var switch__14363__auto__ = (function (state_20349){
-var state_val_20350 = (state_20349[(1)]);
-if((state_val_20350 === (1))){
-var inst_20340 = shadow.animate.get_duration(animator);
-var inst_20341 = cljs.core.async.timeout(inst_20340);
-var state_20349__$1 = state_20349;
-return cljs.core.async.impl.ioc_helpers.take_BANG_(state_20349__$1,(2),inst_20341);
+var f__15074__auto__ = (function (){var switch__14217__auto__ = (function (state_20113){
+var state_val_20114 = (state_20113[(1)]);
+if((state_val_20114 === (1))){
+var inst_20107 = shadow.animate.get_duration(animator);
+var inst_20108 = cljs.core.async.timeout(inst_20107);
+var state_20113__$1 = state_20113;
+return cljs.core.async.impl.ioc_helpers.take_BANG_(state_20113__$1,(2),inst_20108);
 } else {
-if((state_val_20350 === (2))){
-var inst_20343 = (state_20349[(2)]);
-var inst_20344 = shadow.animate.finish_BANG_(animator);
-var state_20349__$1 = (function (){var statearr_20354 = state_20349;
-(statearr_20354[(7)] = inst_20343);
+if((state_val_20114 === (2))){
+var inst_20110 = (state_20113[(2)]);
+var inst_20111 = shadow.animate.finish_BANG_(animator);
+var state_20113__$1 = (function (){var statearr_20134 = state_20113;
+(statearr_20134[(7)] = inst_20111);
 
-(statearr_20354[(8)] = inst_20344);
+(statearr_20134[(8)] = inst_20110);
 
-return statearr_20354;
+return statearr_20134;
 })();
-return cljs.core.async.impl.ioc_helpers.return_chan(state_20349__$1,new cljs.core.Keyword(null,"done","done",-889844188));
+return cljs.core.async.impl.ioc_helpers.return_chan(state_20113__$1,new cljs.core.Keyword(null,"done","done",-889844188));
 } else {
 return null;
 }
 }
 });
 return (function() {
-var shadow$animate$continue_BANG__$_state_machine__14364__auto__ = null;
-var shadow$animate$continue_BANG__$_state_machine__14364__auto____0 = (function (){
-var statearr_20355 = [null,null,null,null,null,null,null,null,null];
-(statearr_20355[(0)] = shadow$animate$continue_BANG__$_state_machine__14364__auto__);
+var shadow$animate$continue_BANG__$_state_machine__14218__auto__ = null;
+var shadow$animate$continue_BANG__$_state_machine__14218__auto____0 = (function (){
+var statearr_20145 = [null,null,null,null,null,null,null,null,null];
+(statearr_20145[(0)] = shadow$animate$continue_BANG__$_state_machine__14218__auto__);
 
-(statearr_20355[(1)] = (1));
+(statearr_20145[(1)] = (1));
 
-return statearr_20355;
+return statearr_20145;
 });
-var shadow$animate$continue_BANG__$_state_machine__14364__auto____1 = (function (state_20349){
+var shadow$animate$continue_BANG__$_state_machine__14218__auto____1 = (function (state_20113){
 while(true){
-var ret_value__14365__auto__ = (function (){try{while(true){
-var result__14367__auto__ = switch__14363__auto__(state_20349);
-if(cljs.core.keyword_identical_QMARK_(result__14367__auto__,new cljs.core.Keyword(null,"recur","recur",-437573268))){
+var ret_value__14219__auto__ = (function (){try{while(true){
+var result__14220__auto__ = switch__14217__auto__(state_20113);
+if(cljs.core.keyword_identical_QMARK_(result__14220__auto__,new cljs.core.Keyword(null,"recur","recur",-437573268))){
 continue;
 } else {
-return result__14367__auto__;
+return result__14220__auto__;
 }
 break;
 }
-}catch (e20356){var ex__14368__auto__ = e20356;
-var statearr_20357_20709 = state_20349;
-(statearr_20357_20709[(2)] = ex__14368__auto__);
+}catch (e20147){var ex__14221__auto__ = e20147;
+var statearr_20148_20457 = state_20113;
+(statearr_20148_20457[(2)] = ex__14221__auto__);
 
 
-if(cljs.core.seq((state_20349[(4)]))){
-var statearr_20358_20710 = state_20349;
-(statearr_20358_20710[(1)] = cljs.core.first((state_20349[(4)])));
+if(cljs.core.seq((state_20113[(4)]))){
+var statearr_20149_20458 = state_20113;
+(statearr_20149_20458[(1)] = cljs.core.first((state_20113[(4)])));
 
 } else {
-throw ex__14368__auto__;
+throw ex__14221__auto__;
 }
 
 return new cljs.core.Keyword(null,"recur","recur",-437573268);
 }})();
-if(cljs.core.keyword_identical_QMARK_(ret_value__14365__auto__,new cljs.core.Keyword(null,"recur","recur",-437573268))){
-var G__20714 = state_20349;
-state_20349 = G__20714;
+if(cljs.core.keyword_identical_QMARK_(ret_value__14219__auto__,new cljs.core.Keyword(null,"recur","recur",-437573268))){
+var G__20459 = state_20113;
+state_20113 = G__20459;
 continue;
 } else {
-return ret_value__14365__auto__;
+return ret_value__14219__auto__;
 }
 break;
 }
 });
-shadow$animate$continue_BANG__$_state_machine__14364__auto__ = function(state_20349){
+shadow$animate$continue_BANG__$_state_machine__14218__auto__ = function(state_20113){
 switch(arguments.length){
 case 0:
-return shadow$animate$continue_BANG__$_state_machine__14364__auto____0.call(this);
+return shadow$animate$continue_BANG__$_state_machine__14218__auto____0.call(this);
 case 1:
-return shadow$animate$continue_BANG__$_state_machine__14364__auto____1.call(this,state_20349);
+return shadow$animate$continue_BANG__$_state_machine__14218__auto____1.call(this,state_20113);
 }
 throw(new Error('Invalid arity: ' + arguments.length));
 };
-shadow$animate$continue_BANG__$_state_machine__14364__auto__.cljs$core$IFn$_invoke$arity$0 = shadow$animate$continue_BANG__$_state_machine__14364__auto____0;
-shadow$animate$continue_BANG__$_state_machine__14364__auto__.cljs$core$IFn$_invoke$arity$1 = shadow$animate$continue_BANG__$_state_machine__14364__auto____1;
-return shadow$animate$continue_BANG__$_state_machine__14364__auto__;
+shadow$animate$continue_BANG__$_state_machine__14218__auto__.cljs$core$IFn$_invoke$arity$0 = shadow$animate$continue_BANG__$_state_machine__14218__auto____0;
+shadow$animate$continue_BANG__$_state_machine__14218__auto__.cljs$core$IFn$_invoke$arity$1 = shadow$animate$continue_BANG__$_state_machine__14218__auto____1;
+return shadow$animate$continue_BANG__$_state_machine__14218__auto__;
 })()
 })();
-var state__15142__auto__ = (function (){var statearr_20361 = f__15141__auto__();
-(statearr_20361[(6)] = c__15140__auto__);
+var state__15075__auto__ = (function (){var statearr_20152 = f__15074__auto__();
+(statearr_20152[(6)] = c__15073__auto__);
 
-return statearr_20361;
+return statearr_20152;
 })();
-return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped(state__15142__auto__);
+return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped(state__15075__auto__);
 }));
 
-return c__15140__auto__;
+return c__15073__auto__;
 });
 shadow.animate.start = (function shadow$animate$start(duration,elements){
 var animator = shadow.animate.setup(duration,elements);
@@ -799,77 +799,77 @@ return shadow.animate.continue_BANG_(animator);
  * @implements {cljs.core.IMeta}
  * @implements {cljs.core.IWithMeta}
 */
-shadow.animate.t_shadow$animate20364 = (function (attr,from,to,timing,delay,meta20365){
+shadow.animate.t_shadow$animate20216 = (function (attr,from,to,timing,delay,meta20217){
 this.attr = attr;
 this.from = from;
 this.to = to;
 this.timing = timing;
 this.delay = delay;
-this.meta20365 = meta20365;
+this.meta20217 = meta20217;
 this.cljs$lang$protocol_mask$partition0$ = 393216;
 this.cljs$lang$protocol_mask$partition1$ = 0;
 });
-(shadow.animate.t_shadow$animate20364.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = (function (_20366,meta20365__$1){
+(shadow.animate.t_shadow$animate20216.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = (function (_20218,meta20217__$1){
 var self__ = this;
-var _20366__$1 = this;
-return (new shadow.animate.t_shadow$animate20364(self__.attr,self__.from,self__.to,self__.timing,self__.delay,meta20365__$1));
+var _20218__$1 = this;
+return (new shadow.animate.t_shadow$animate20216(self__.attr,self__.from,self__.to,self__.timing,self__.delay,meta20217__$1));
 }));
 
-(shadow.animate.t_shadow$animate20364.prototype.cljs$core$IMeta$_meta$arity$1 = (function (_20366){
+(shadow.animate.t_shadow$animate20216.prototype.cljs$core$IMeta$_meta$arity$1 = (function (_20218){
 var self__ = this;
-var _20366__$1 = this;
-return self__.meta20365;
+var _20218__$1 = this;
+return self__.meta20217;
 }));
 
-(shadow.animate.t_shadow$animate20364.prototype.shadow$animate$Animation$ = cljs.core.PROTOCOL_SENTINEL);
+(shadow.animate.t_shadow$animate20216.prototype.shadow$animate$Animation$ = cljs.core.PROTOCOL_SENTINEL);
 
-(shadow.animate.t_shadow$animate20364.prototype.shadow$animate$Animation$_animate_from$arity$1 = (function (_){
+(shadow.animate.t_shadow$animate20216.prototype.shadow$animate$Animation$_animate_from$arity$1 = (function (_){
 var self__ = this;
 var ___$1 = this;
 return cljs.core.PersistentArrayMap.createAsIfByAssoc([self__.attr,self__.from]);
 }));
 
-(shadow.animate.t_shadow$animate20364.prototype.shadow$animate$Animation$_animate_to$arity$1 = (function (_){
+(shadow.animate.t_shadow$animate20216.prototype.shadow$animate$Animation$_animate_to$arity$1 = (function (_){
 var self__ = this;
 var ___$1 = this;
 return cljs.core.PersistentArrayMap.createAsIfByAssoc([self__.attr,self__.to]);
 }));
 
-(shadow.animate.t_shadow$animate20364.prototype.shadow$animate$Animation$_animate_toggles$arity$1 = (function (_){
+(shadow.animate.t_shadow$animate20216.prototype.shadow$animate$Animation$_animate_toggles$arity$1 = (function (_){
 var self__ = this;
 var ___$1 = this;
 return cljs.core.PersistentArrayMap.EMPTY;
 }));
 
-(shadow.animate.t_shadow$animate20364.prototype.shadow$animate$Animation$_animate_timings$arity$1 = (function (_){
+(shadow.animate.t_shadow$animate20216.prototype.shadow$animate$Animation$_animate_timings$arity$1 = (function (_){
 var self__ = this;
 var ___$1 = this;
 return cljs.core.PersistentArrayMap.createAsIfByAssoc([self__.attr,self__.timing]);
 }));
 
-(shadow.animate.t_shadow$animate20364.prototype.shadow$animate$Animation$_animate_delays$arity$1 = (function (_){
+(shadow.animate.t_shadow$animate20216.prototype.shadow$animate$Animation$_animate_delays$arity$1 = (function (_){
 var self__ = this;
 var ___$1 = this;
 return cljs.core.PersistentArrayMap.createAsIfByAssoc([self__.attr,self__.delay]);
 }));
 
-(shadow.animate.t_shadow$animate20364.getBasis = (function (){
-return new cljs.core.PersistentVector(null, 6, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Symbol(null,"attr","attr",1036399174,null),new cljs.core.Symbol(null,"from","from",-839142725,null),new cljs.core.Symbol(null,"to","to",1832630534,null),new cljs.core.Symbol(null,"timing","timing",-208693668,null),new cljs.core.Symbol(null,"delay","delay",1066306308,null),new cljs.core.Symbol(null,"meta20365","meta20365",-1450996086,null)], null);
+(shadow.animate.t_shadow$animate20216.getBasis = (function (){
+return new cljs.core.PersistentVector(null, 6, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Symbol(null,"attr","attr",1036399174,null),new cljs.core.Symbol(null,"from","from",-839142725,null),new cljs.core.Symbol(null,"to","to",1832630534,null),new cljs.core.Symbol(null,"timing","timing",-208693668,null),new cljs.core.Symbol(null,"delay","delay",1066306308,null),new cljs.core.Symbol(null,"meta20217","meta20217",-1610604082,null)], null);
 }));
 
-(shadow.animate.t_shadow$animate20364.cljs$lang$type = true);
+(shadow.animate.t_shadow$animate20216.cljs$lang$type = true);
 
-(shadow.animate.t_shadow$animate20364.cljs$lang$ctorStr = "shadow.animate/t_shadow$animate20364");
+(shadow.animate.t_shadow$animate20216.cljs$lang$ctorStr = "shadow.animate/t_shadow$animate20216");
 
-(shadow.animate.t_shadow$animate20364.cljs$lang$ctorPrWriter = (function (this__5287__auto__,writer__5288__auto__,opt__5289__auto__){
-return cljs.core._write(writer__5288__auto__,"shadow.animate/t_shadow$animate20364");
+(shadow.animate.t_shadow$animate20216.cljs$lang$ctorPrWriter = (function (this__5287__auto__,writer__5288__auto__,opt__5289__auto__){
+return cljs.core._write(writer__5288__auto__,"shadow.animate/t_shadow$animate20216");
 }));
 
 /**
- * Positional factory function for shadow.animate/t_shadow$animate20364.
+ * Positional factory function for shadow.animate/t_shadow$animate20216.
  */
-shadow.animate.__GT_t_shadow$animate20364 = (function shadow$animate$__GT_t_shadow$animate20364(attr,from,to,timing,delay,meta20365){
-return (new shadow.animate.t_shadow$animate20364(attr,from,to,timing,delay,meta20365));
+shadow.animate.__GT_t_shadow$animate20216 = (function shadow$animate$__GT_t_shadow$animate20216(attr,from,to,timing,delay,meta20217){
+return (new shadow.animate.t_shadow$animate20216(attr,from,to,timing,delay,meta20217));
 });
 
 
@@ -878,8 +878,8 @@ return (new shadow.animate.t_shadow$animate20364(attr,from,to,timing,delay,meta2
  * timing defaults to ease, delay to 0
  */
 shadow.animate.transition = (function shadow$animate$transition(var_args){
-var G__20363 = arguments.length;
-switch (G__20363) {
+var G__20190 = arguments.length;
+switch (G__20190) {
 case 3:
 return shadow.animate.transition.cljs$core$IFn$_invoke$arity$3((arguments[(0)]),(arguments[(1)]),(arguments[(2)]));
 
@@ -907,7 +907,7 @@ return shadow.animate.transition.cljs$core$IFn$_invoke$arity$5(attr,from,to,timi
 }));
 
 (shadow.animate.transition.cljs$core$IFn$_invoke$arity$5 = (function (attr,from,to,timing,delay){
-return (new shadow.animate.t_shadow$animate20364(attr,from,to,timing,delay,cljs.core.PersistentArrayMap.EMPTY));
+return (new shadow.animate.t_shadow$animate20216(attr,from,to,timing,delay,cljs.core.PersistentArrayMap.EMPTY));
 }));
 
 (shadow.animate.transition.cljs$lang$maxFixedArity = 5);
@@ -919,80 +919,80 @@ return (new shadow.animate.t_shadow$animate20364(attr,from,to,timing,delay,cljs.
  * @implements {cljs.core.IMeta}
  * @implements {cljs.core.IWithMeta}
 */
-shadow.animate.t_shadow$animate20371 = (function (attr,from,to,meta20372){
+shadow.animate.t_shadow$animate20254 = (function (attr,from,to,meta20255){
 this.attr = attr;
 this.from = from;
 this.to = to;
-this.meta20372 = meta20372;
+this.meta20255 = meta20255;
 this.cljs$lang$protocol_mask$partition0$ = 393216;
 this.cljs$lang$protocol_mask$partition1$ = 0;
 });
-(shadow.animate.t_shadow$animate20371.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = (function (_20373,meta20372__$1){
+(shadow.animate.t_shadow$animate20254.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = (function (_20256,meta20255__$1){
 var self__ = this;
-var _20373__$1 = this;
-return (new shadow.animate.t_shadow$animate20371(self__.attr,self__.from,self__.to,meta20372__$1));
+var _20256__$1 = this;
+return (new shadow.animate.t_shadow$animate20254(self__.attr,self__.from,self__.to,meta20255__$1));
 }));
 
-(shadow.animate.t_shadow$animate20371.prototype.cljs$core$IMeta$_meta$arity$1 = (function (_20373){
+(shadow.animate.t_shadow$animate20254.prototype.cljs$core$IMeta$_meta$arity$1 = (function (_20256){
 var self__ = this;
-var _20373__$1 = this;
-return self__.meta20372;
+var _20256__$1 = this;
+return self__.meta20255;
 }));
 
-(shadow.animate.t_shadow$animate20371.prototype.shadow$animate$Animation$ = cljs.core.PROTOCOL_SENTINEL);
+(shadow.animate.t_shadow$animate20254.prototype.shadow$animate$Animation$ = cljs.core.PROTOCOL_SENTINEL);
 
-(shadow.animate.t_shadow$animate20371.prototype.shadow$animate$Animation$_animate_to$arity$1 = (function (_){
+(shadow.animate.t_shadow$animate20254.prototype.shadow$animate$Animation$_animate_to$arity$1 = (function (_){
 var self__ = this;
 var ___$1 = this;
 return cljs.core.PersistentArrayMap.EMPTY;
 }));
 
-(shadow.animate.t_shadow$animate20371.prototype.shadow$animate$Animation$_animate_from$arity$1 = (function (_){
+(shadow.animate.t_shadow$animate20254.prototype.shadow$animate$Animation$_animate_from$arity$1 = (function (_){
 var self__ = this;
 var ___$1 = this;
 return cljs.core.PersistentArrayMap.createAsIfByAssoc([self__.attr,self__.from]);
 }));
 
-(shadow.animate.t_shadow$animate20371.prototype.shadow$animate$Animation$_animate_toggles$arity$1 = (function (_){
+(shadow.animate.t_shadow$animate20254.prototype.shadow$animate$Animation$_animate_toggles$arity$1 = (function (_){
 var self__ = this;
 var ___$1 = this;
 return cljs.core.PersistentArrayMap.createAsIfByAssoc([self__.attr,self__.to]);
 }));
 
-(shadow.animate.t_shadow$animate20371.prototype.shadow$animate$Animation$_animate_timings$arity$1 = (function (_){
+(shadow.animate.t_shadow$animate20254.prototype.shadow$animate$Animation$_animate_timings$arity$1 = (function (_){
 var self__ = this;
 var ___$1 = this;
 return cljs.core.PersistentArrayMap.EMPTY;
 }));
 
-(shadow.animate.t_shadow$animate20371.prototype.shadow$animate$Animation$_animate_delays$arity$1 = (function (_){
+(shadow.animate.t_shadow$animate20254.prototype.shadow$animate$Animation$_animate_delays$arity$1 = (function (_){
 var self__ = this;
 var ___$1 = this;
 return cljs.core.PersistentArrayMap.EMPTY;
 }));
 
-(shadow.animate.t_shadow$animate20371.getBasis = (function (){
-return new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Symbol(null,"attr","attr",1036399174,null),new cljs.core.Symbol(null,"from","from",-839142725,null),new cljs.core.Symbol(null,"to","to",1832630534,null),new cljs.core.Symbol(null,"meta20372","meta20372",1981980330,null)], null);
+(shadow.animate.t_shadow$animate20254.getBasis = (function (){
+return new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Symbol(null,"attr","attr",1036399174,null),new cljs.core.Symbol(null,"from","from",-839142725,null),new cljs.core.Symbol(null,"to","to",1832630534,null),new cljs.core.Symbol(null,"meta20255","meta20255",-509876464,null)], null);
 }));
 
-(shadow.animate.t_shadow$animate20371.cljs$lang$type = true);
+(shadow.animate.t_shadow$animate20254.cljs$lang$type = true);
 
-(shadow.animate.t_shadow$animate20371.cljs$lang$ctorStr = "shadow.animate/t_shadow$animate20371");
+(shadow.animate.t_shadow$animate20254.cljs$lang$ctorStr = "shadow.animate/t_shadow$animate20254");
 
-(shadow.animate.t_shadow$animate20371.cljs$lang$ctorPrWriter = (function (this__5287__auto__,writer__5288__auto__,opt__5289__auto__){
-return cljs.core._write(writer__5288__auto__,"shadow.animate/t_shadow$animate20371");
+(shadow.animate.t_shadow$animate20254.cljs$lang$ctorPrWriter = (function (this__5287__auto__,writer__5288__auto__,opt__5289__auto__){
+return cljs.core._write(writer__5288__auto__,"shadow.animate/t_shadow$animate20254");
 }));
 
 /**
- * Positional factory function for shadow.animate/t_shadow$animate20371.
+ * Positional factory function for shadow.animate/t_shadow$animate20254.
  */
-shadow.animate.__GT_t_shadow$animate20371 = (function shadow$animate$__GT_t_shadow$animate20371(attr,from,to,meta20372){
-return (new shadow.animate.t_shadow$animate20371(attr,from,to,meta20372));
+shadow.animate.__GT_t_shadow$animate20254 = (function shadow$animate$__GT_t_shadow$animate20254(attr,from,to,meta20255){
+return (new shadow.animate.t_shadow$animate20254(attr,from,to,meta20255));
 });
 
 
 shadow.animate.toggle = (function shadow$animate$toggle(attr,from,to){
-return (new shadow.animate.t_shadow$animate20371(attr,from,to,cljs.core.PersistentArrayMap.EMPTY));
+return (new shadow.animate.t_shadow$animate20254(attr,from,to,cljs.core.PersistentArrayMap.EMPTY));
 });
 
 /**
@@ -1001,73 +1001,73 @@ return (new shadow.animate.t_shadow$animate20371(attr,from,to,cljs.core.Persiste
  * @implements {cljs.core.IMeta}
  * @implements {cljs.core.IWithMeta}
 */
-shadow.animate.t_shadow$animate20390 = (function (attrs,meta20391){
+shadow.animate.t_shadow$animate20262 = (function (attrs,meta20263){
 this.attrs = attrs;
-this.meta20391 = meta20391;
+this.meta20263 = meta20263;
 this.cljs$lang$protocol_mask$partition0$ = 393216;
 this.cljs$lang$protocol_mask$partition1$ = 0;
 });
-(shadow.animate.t_shadow$animate20390.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = (function (_20392,meta20391__$1){
+(shadow.animate.t_shadow$animate20262.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = (function (_20264,meta20263__$1){
 var self__ = this;
-var _20392__$1 = this;
-return (new shadow.animate.t_shadow$animate20390(self__.attrs,meta20391__$1));
+var _20264__$1 = this;
+return (new shadow.animate.t_shadow$animate20262(self__.attrs,meta20263__$1));
 }));
 
-(shadow.animate.t_shadow$animate20390.prototype.cljs$core$IMeta$_meta$arity$1 = (function (_20392){
+(shadow.animate.t_shadow$animate20262.prototype.cljs$core$IMeta$_meta$arity$1 = (function (_20264){
 var self__ = this;
-var _20392__$1 = this;
-return self__.meta20391;
+var _20264__$1 = this;
+return self__.meta20263;
 }));
 
-(shadow.animate.t_shadow$animate20390.prototype.shadow$animate$Animation$ = cljs.core.PROTOCOL_SENTINEL);
+(shadow.animate.t_shadow$animate20262.prototype.shadow$animate$Animation$ = cljs.core.PROTOCOL_SENTINEL);
 
-(shadow.animate.t_shadow$animate20390.prototype.shadow$animate$Animation$_animate_to$arity$1 = (function (_){
+(shadow.animate.t_shadow$animate20262.prototype.shadow$animate$Animation$_animate_to$arity$1 = (function (_){
 var self__ = this;
 var ___$1 = this;
 return cljs.core.PersistentArrayMap.EMPTY;
 }));
 
-(shadow.animate.t_shadow$animate20390.prototype.shadow$animate$Animation$_animate_from$arity$1 = (function (_){
+(shadow.animate.t_shadow$animate20262.prototype.shadow$animate$Animation$_animate_from$arity$1 = (function (_){
 var self__ = this;
 var ___$1 = this;
 return self__.attrs;
 }));
 
-(shadow.animate.t_shadow$animate20390.prototype.shadow$animate$Animation$_animate_toggles$arity$1 = (function (_){
+(shadow.animate.t_shadow$animate20262.prototype.shadow$animate$Animation$_animate_toggles$arity$1 = (function (_){
 var self__ = this;
 var ___$1 = this;
 return cljs.core.PersistentArrayMap.EMPTY;
 }));
 
-(shadow.animate.t_shadow$animate20390.prototype.shadow$animate$Animation$_animate_timings$arity$1 = (function (_){
+(shadow.animate.t_shadow$animate20262.prototype.shadow$animate$Animation$_animate_timings$arity$1 = (function (_){
 var self__ = this;
 var ___$1 = this;
 return cljs.core.PersistentArrayMap.EMPTY;
 }));
 
-(shadow.animate.t_shadow$animate20390.prototype.shadow$animate$Animation$_animate_delays$arity$1 = (function (_){
+(shadow.animate.t_shadow$animate20262.prototype.shadow$animate$Animation$_animate_delays$arity$1 = (function (_){
 var self__ = this;
 var ___$1 = this;
 return cljs.core.PersistentArrayMap.EMPTY;
 }));
 
-(shadow.animate.t_shadow$animate20390.getBasis = (function (){
-return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Symbol(null,"attrs","attrs",-450137186,null),new cljs.core.Symbol(null,"meta20391","meta20391",88660691,null)], null);
+(shadow.animate.t_shadow$animate20262.getBasis = (function (){
+return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Symbol(null,"attrs","attrs",-450137186,null),new cljs.core.Symbol(null,"meta20263","meta20263",-1401045598,null)], null);
 }));
 
-(shadow.animate.t_shadow$animate20390.cljs$lang$type = true);
+(shadow.animate.t_shadow$animate20262.cljs$lang$type = true);
 
-(shadow.animate.t_shadow$animate20390.cljs$lang$ctorStr = "shadow.animate/t_shadow$animate20390");
+(shadow.animate.t_shadow$animate20262.cljs$lang$ctorStr = "shadow.animate/t_shadow$animate20262");
 
-(shadow.animate.t_shadow$animate20390.cljs$lang$ctorPrWriter = (function (this__5287__auto__,writer__5288__auto__,opt__5289__auto__){
-return cljs.core._write(writer__5288__auto__,"shadow.animate/t_shadow$animate20390");
+(shadow.animate.t_shadow$animate20262.cljs$lang$ctorPrWriter = (function (this__5287__auto__,writer__5288__auto__,opt__5289__auto__){
+return cljs.core._write(writer__5288__auto__,"shadow.animate/t_shadow$animate20262");
 }));
 
 /**
- * Positional factory function for shadow.animate/t_shadow$animate20390.
+ * Positional factory function for shadow.animate/t_shadow$animate20262.
  */
-shadow.animate.__GT_t_shadow$animate20390 = (function shadow$animate$__GT_t_shadow$animate20390(attrs,meta20391){
-return (new shadow.animate.t_shadow$animate20390(attrs,meta20391));
+shadow.animate.__GT_t_shadow$animate20262 = (function shadow$animate$__GT_t_shadow$animate20262(attrs,meta20263){
+return (new shadow.animate.t_shadow$animate20262(attrs,meta20263));
 });
 
 
@@ -1075,8 +1075,8 @@ return (new shadow.animate.t_shadow$animate20390(attrs,meta20391));
  * set attr to value when the animation starts
  */
 shadow.animate.set_attr = (function shadow$animate$set_attr(var_args){
-var G__20389 = arguments.length;
-switch (G__20389) {
+var G__20261 = arguments.length;
+switch (G__20261) {
 case 1:
 return shadow.animate.set_attr.cljs$core$IFn$_invoke$arity$1((arguments[(0)]));
 
@@ -1092,7 +1092,7 @@ throw (new Error(["Invalid arity: ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(
 });
 
 (shadow.animate.set_attr.cljs$core$IFn$_invoke$arity$1 = (function (attrs){
-return (new shadow.animate.t_shadow$animate20390(attrs,cljs.core.PersistentArrayMap.EMPTY));
+return (new shadow.animate.t_shadow$animate20262(attrs,cljs.core.PersistentArrayMap.EMPTY));
 }));
 
 (shadow.animate.set_attr.cljs$core$IFn$_invoke$arity$2 = (function (attr,value){
@@ -1108,73 +1108,73 @@ return shadow.animate.set_attr.cljs$core$IFn$_invoke$arity$1(cljs.core.Persisten
  * @implements {cljs.core.IMeta}
  * @implements {cljs.core.IWithMeta}
 */
-shadow.animate.t_shadow$animate20396 = (function (attr,meta20397){
+shadow.animate.t_shadow$animate20296 = (function (attr,meta20297){
 this.attr = attr;
-this.meta20397 = meta20397;
+this.meta20297 = meta20297;
 this.cljs$lang$protocol_mask$partition0$ = 393216;
 this.cljs$lang$protocol_mask$partition1$ = 0;
 });
-(shadow.animate.t_shadow$animate20396.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = (function (_20398,meta20397__$1){
+(shadow.animate.t_shadow$animate20296.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = (function (_20298,meta20297__$1){
 var self__ = this;
-var _20398__$1 = this;
-return (new shadow.animate.t_shadow$animate20396(self__.attr,meta20397__$1));
+var _20298__$1 = this;
+return (new shadow.animate.t_shadow$animate20296(self__.attr,meta20297__$1));
 }));
 
-(shadow.animate.t_shadow$animate20396.prototype.cljs$core$IMeta$_meta$arity$1 = (function (_20398){
+(shadow.animate.t_shadow$animate20296.prototype.cljs$core$IMeta$_meta$arity$1 = (function (_20298){
 var self__ = this;
-var _20398__$1 = this;
-return self__.meta20397;
+var _20298__$1 = this;
+return self__.meta20297;
 }));
 
-(shadow.animate.t_shadow$animate20396.prototype.shadow$animate$Animation$ = cljs.core.PROTOCOL_SENTINEL);
+(shadow.animate.t_shadow$animate20296.prototype.shadow$animate$Animation$ = cljs.core.PROTOCOL_SENTINEL);
 
-(shadow.animate.t_shadow$animate20396.prototype.shadow$animate$Animation$_animate_to$arity$1 = (function (_){
-var self__ = this;
-var ___$1 = this;
-return cljs.core.PersistentArrayMap.EMPTY;
-}));
-
-(shadow.animate.t_shadow$animate20396.prototype.shadow$animate$Animation$_animate_from$arity$1 = (function (_){
+(shadow.animate.t_shadow$animate20296.prototype.shadow$animate$Animation$_animate_to$arity$1 = (function (_){
 var self__ = this;
 var ___$1 = this;
 return cljs.core.PersistentArrayMap.EMPTY;
 }));
 
-(shadow.animate.t_shadow$animate20396.prototype.shadow$animate$Animation$_animate_toggles$arity$1 = (function (_){
+(shadow.animate.t_shadow$animate20296.prototype.shadow$animate$Animation$_animate_from$arity$1 = (function (_){
+var self__ = this;
+var ___$1 = this;
+return cljs.core.PersistentArrayMap.EMPTY;
+}));
+
+(shadow.animate.t_shadow$animate20296.prototype.shadow$animate$Animation$_animate_toggles$arity$1 = (function (_){
 var self__ = this;
 var ___$1 = this;
 return cljs.core.PersistentArrayMap.createAsIfByAssoc([self__.attr,null]);
 }));
 
-(shadow.animate.t_shadow$animate20396.prototype.shadow$animate$Animation$_animate_timings$arity$1 = (function (_){
+(shadow.animate.t_shadow$animate20296.prototype.shadow$animate$Animation$_animate_timings$arity$1 = (function (_){
 var self__ = this;
 var ___$1 = this;
 return cljs.core.PersistentArrayMap.EMPTY;
 }));
 
-(shadow.animate.t_shadow$animate20396.prototype.shadow$animate$Animation$_animate_delays$arity$1 = (function (_){
+(shadow.animate.t_shadow$animate20296.prototype.shadow$animate$Animation$_animate_delays$arity$1 = (function (_){
 var self__ = this;
 var ___$1 = this;
 return cljs.core.PersistentArrayMap.EMPTY;
 }));
 
-(shadow.animate.t_shadow$animate20396.getBasis = (function (){
-return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Symbol(null,"attr","attr",1036399174,null),new cljs.core.Symbol(null,"meta20397","meta20397",1148470782,null)], null);
+(shadow.animate.t_shadow$animate20296.getBasis = (function (){
+return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Symbol(null,"attr","attr",1036399174,null),new cljs.core.Symbol(null,"meta20297","meta20297",-1778323074,null)], null);
 }));
 
-(shadow.animate.t_shadow$animate20396.cljs$lang$type = true);
+(shadow.animate.t_shadow$animate20296.cljs$lang$type = true);
 
-(shadow.animate.t_shadow$animate20396.cljs$lang$ctorStr = "shadow.animate/t_shadow$animate20396");
+(shadow.animate.t_shadow$animate20296.cljs$lang$ctorStr = "shadow.animate/t_shadow$animate20296");
 
-(shadow.animate.t_shadow$animate20396.cljs$lang$ctorPrWriter = (function (this__5287__auto__,writer__5288__auto__,opt__5289__auto__){
-return cljs.core._write(writer__5288__auto__,"shadow.animate/t_shadow$animate20396");
+(shadow.animate.t_shadow$animate20296.cljs$lang$ctorPrWriter = (function (this__5287__auto__,writer__5288__auto__,opt__5289__auto__){
+return cljs.core._write(writer__5288__auto__,"shadow.animate/t_shadow$animate20296");
 }));
 
 /**
- * Positional factory function for shadow.animate/t_shadow$animate20396.
+ * Positional factory function for shadow.animate/t_shadow$animate20296.
  */
-shadow.animate.__GT_t_shadow$animate20396 = (function shadow$animate$__GT_t_shadow$animate20396(attr,meta20397){
-return (new shadow.animate.t_shadow$animate20396(attr,meta20397));
+shadow.animate.__GT_t_shadow$animate20296 = (function shadow$animate$__GT_t_shadow$animate20296(attr,meta20297){
+return (new shadow.animate.t_shadow$animate20296(attr,meta20297));
 });
 
 
@@ -1184,7 +1184,7 @@ return (new shadow.animate.t_shadow$animate20396(attr,meta20397));
  * inherited and we only used for previous transitions
  */
 shadow.animate.delete_attr = (function shadow$animate$delete_attr(attr){
-return (new shadow.animate.t_shadow$animate20396(attr,cljs.core.PersistentArrayMap.EMPTY));
+return (new shadow.animate.t_shadow$animate20296(attr,cljs.core.PersistentArrayMap.EMPTY));
 });
 
 /**
@@ -1193,7 +1193,7 @@ return (new shadow.animate.t_shadow$animate20396(attr,cljs.core.PersistentArrayM
  * @implements {cljs.core.IMeta}
  * @implements {cljs.core.IWithMeta}
 */
-shadow.animate.t_shadow$animate20419 = (function (transitions,to,from,toggles,timings,delays,temp__5802__auto__,meta20420){
+shadow.animate.t_shadow$animate20340 = (function (transitions,to,from,toggles,timings,delays,temp__5802__auto__,meta20341){
 this.transitions = transitions;
 this.to = to;
 this.from = from;
@@ -1201,71 +1201,71 @@ this.toggles = toggles;
 this.timings = timings;
 this.delays = delays;
 this.temp__5802__auto__ = temp__5802__auto__;
-this.meta20420 = meta20420;
+this.meta20341 = meta20341;
 this.cljs$lang$protocol_mask$partition0$ = 393216;
 this.cljs$lang$protocol_mask$partition1$ = 0;
 });
-(shadow.animate.t_shadow$animate20419.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = (function (_20421,meta20420__$1){
+(shadow.animate.t_shadow$animate20340.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = (function (_20342,meta20341__$1){
 var self__ = this;
-var _20421__$1 = this;
-return (new shadow.animate.t_shadow$animate20419(self__.transitions,self__.to,self__.from,self__.toggles,self__.timings,self__.delays,self__.temp__5802__auto__,meta20420__$1));
+var _20342__$1 = this;
+return (new shadow.animate.t_shadow$animate20340(self__.transitions,self__.to,self__.from,self__.toggles,self__.timings,self__.delays,self__.temp__5802__auto__,meta20341__$1));
 }));
 
-(shadow.animate.t_shadow$animate20419.prototype.cljs$core$IMeta$_meta$arity$1 = (function (_20421){
+(shadow.animate.t_shadow$animate20340.prototype.cljs$core$IMeta$_meta$arity$1 = (function (_20342){
 var self__ = this;
-var _20421__$1 = this;
-return self__.meta20420;
+var _20342__$1 = this;
+return self__.meta20341;
 }));
 
-(shadow.animate.t_shadow$animate20419.prototype.shadow$animate$Animation$ = cljs.core.PROTOCOL_SENTINEL);
+(shadow.animate.t_shadow$animate20340.prototype.shadow$animate$Animation$ = cljs.core.PROTOCOL_SENTINEL);
 
-(shadow.animate.t_shadow$animate20419.prototype.shadow$animate$Animation$_animate_from$arity$1 = (function (_){
+(shadow.animate.t_shadow$animate20340.prototype.shadow$animate$Animation$_animate_from$arity$1 = (function (_){
 var self__ = this;
 var ___$1 = this;
 return self__.from;
 }));
 
-(shadow.animate.t_shadow$animate20419.prototype.shadow$animate$Animation$_animate_to$arity$1 = (function (_){
+(shadow.animate.t_shadow$animate20340.prototype.shadow$animate$Animation$_animate_to$arity$1 = (function (_){
 var self__ = this;
 var ___$1 = this;
 return self__.to;
 }));
 
-(shadow.animate.t_shadow$animate20419.prototype.shadow$animate$Animation$_animate_toggles$arity$1 = (function (_){
+(shadow.animate.t_shadow$animate20340.prototype.shadow$animate$Animation$_animate_toggles$arity$1 = (function (_){
 var self__ = this;
 var ___$1 = this;
 return self__.toggles;
 }));
 
-(shadow.animate.t_shadow$animate20419.prototype.shadow$animate$Animation$_animate_timings$arity$1 = (function (_){
+(shadow.animate.t_shadow$animate20340.prototype.shadow$animate$Animation$_animate_timings$arity$1 = (function (_){
 var self__ = this;
 var ___$1 = this;
 return self__.timings;
 }));
 
-(shadow.animate.t_shadow$animate20419.prototype.shadow$animate$Animation$_animate_delays$arity$1 = (function (_){
+(shadow.animate.t_shadow$animate20340.prototype.shadow$animate$Animation$_animate_delays$arity$1 = (function (_){
 var self__ = this;
 var ___$1 = this;
 return self__.delays;
 }));
 
-(shadow.animate.t_shadow$animate20419.getBasis = (function (){
-return new cljs.core.PersistentVector(null, 8, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Symbol(null,"transitions","transitions",-405684594,null),new cljs.core.Symbol(null,"to","to",1832630534,null),new cljs.core.Symbol(null,"from","from",-839142725,null),new cljs.core.Symbol(null,"toggles","toggles",-1576526290,null),new cljs.core.Symbol(null,"timings","timings",-569636600,null),new cljs.core.Symbol(null,"delays","delays",-873843187,null),new cljs.core.Symbol(null,"temp__5802__auto__","temp__5802__auto__",-1659442335,null),new cljs.core.Symbol(null,"meta20420","meta20420",1616995203,null)], null);
+(shadow.animate.t_shadow$animate20340.getBasis = (function (){
+return new cljs.core.PersistentVector(null, 8, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Symbol(null,"transitions","transitions",-405684594,null),new cljs.core.Symbol(null,"to","to",1832630534,null),new cljs.core.Symbol(null,"from","from",-839142725,null),new cljs.core.Symbol(null,"toggles","toggles",-1576526290,null),new cljs.core.Symbol(null,"timings","timings",-569636600,null),new cljs.core.Symbol(null,"delays","delays",-873843187,null),new cljs.core.Symbol(null,"temp__5802__auto__","temp__5802__auto__",-1659442335,null),new cljs.core.Symbol(null,"meta20341","meta20341",-1709773926,null)], null);
 }));
 
-(shadow.animate.t_shadow$animate20419.cljs$lang$type = true);
+(shadow.animate.t_shadow$animate20340.cljs$lang$type = true);
 
-(shadow.animate.t_shadow$animate20419.cljs$lang$ctorStr = "shadow.animate/t_shadow$animate20419");
+(shadow.animate.t_shadow$animate20340.cljs$lang$ctorStr = "shadow.animate/t_shadow$animate20340");
 
-(shadow.animate.t_shadow$animate20419.cljs$lang$ctorPrWriter = (function (this__5287__auto__,writer__5288__auto__,opt__5289__auto__){
-return cljs.core._write(writer__5288__auto__,"shadow.animate/t_shadow$animate20419");
+(shadow.animate.t_shadow$animate20340.cljs$lang$ctorPrWriter = (function (this__5287__auto__,writer__5288__auto__,opt__5289__auto__){
+return cljs.core._write(writer__5288__auto__,"shadow.animate/t_shadow$animate20340");
 }));
 
 /**
- * Positional factory function for shadow.animate/t_shadow$animate20419.
+ * Positional factory function for shadow.animate/t_shadow$animate20340.
  */
-shadow.animate.__GT_t_shadow$animate20419 = (function shadow$animate$__GT_t_shadow$animate20419(transitions,to,from,toggles,timings,delays,temp__5802__auto__,meta20420){
-return (new shadow.animate.t_shadow$animate20419(transitions,to,from,toggles,timings,delays,temp__5802__auto__,meta20420));
+shadow.animate.__GT_t_shadow$animate20340 = (function shadow$animate$__GT_t_shadow$animate20340(transitions,to,from,toggles,timings,delays,temp__5802__auto__,meta20341){
+return (new shadow.animate.t_shadow$animate20340(transitions,to,from,toggles,timings,delays,temp__5802__auto__,meta20341));
 });
 
 
@@ -1276,7 +1276,7 @@ return (new shadow.animate.t_shadow$animate20419(transitions,to,from,toggles,tim
  * @implements {cljs.core.IMeta}
  * @implements {cljs.core.IWithMeta}
 */
-shadow.animate.t_shadow$animate20423 = (function (transitions,to,from,toggles,timings,delays,temp__5802__auto__,meta20424){
+shadow.animate.t_shadow$animate20353 = (function (transitions,to,from,toggles,timings,delays,temp__5802__auto__,meta20354){
 this.transitions = transitions;
 this.to = to;
 this.from = from;
@@ -1284,84 +1284,84 @@ this.toggles = toggles;
 this.timings = timings;
 this.delays = delays;
 this.temp__5802__auto__ = temp__5802__auto__;
-this.meta20424 = meta20424;
+this.meta20354 = meta20354;
 this.cljs$lang$protocol_mask$partition0$ = 393216;
 this.cljs$lang$protocol_mask$partition1$ = 0;
 });
-(shadow.animate.t_shadow$animate20423.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = (function (_20425,meta20424__$1){
+(shadow.animate.t_shadow$animate20353.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = (function (_20355,meta20354__$1){
 var self__ = this;
-var _20425__$1 = this;
-return (new shadow.animate.t_shadow$animate20423(self__.transitions,self__.to,self__.from,self__.toggles,self__.timings,self__.delays,self__.temp__5802__auto__,meta20424__$1));
+var _20355__$1 = this;
+return (new shadow.animate.t_shadow$animate20353(self__.transitions,self__.to,self__.from,self__.toggles,self__.timings,self__.delays,self__.temp__5802__auto__,meta20354__$1));
 }));
 
-(shadow.animate.t_shadow$animate20423.prototype.cljs$core$IMeta$_meta$arity$1 = (function (_20425){
+(shadow.animate.t_shadow$animate20353.prototype.cljs$core$IMeta$_meta$arity$1 = (function (_20355){
 var self__ = this;
-var _20425__$1 = this;
-return self__.meta20424;
+var _20355__$1 = this;
+return self__.meta20354;
 }));
 
-(shadow.animate.t_shadow$animate20423.prototype.shadow$animate$Animation$ = cljs.core.PROTOCOL_SENTINEL);
+(shadow.animate.t_shadow$animate20353.prototype.shadow$animate$Animation$ = cljs.core.PROTOCOL_SENTINEL);
 
-(shadow.animate.t_shadow$animate20423.prototype.shadow$animate$Animation$_animate_from$arity$1 = (function (_){
+(shadow.animate.t_shadow$animate20353.prototype.shadow$animate$Animation$_animate_from$arity$1 = (function (_){
 var self__ = this;
 var ___$1 = this;
 return self__.from;
 }));
 
-(shadow.animate.t_shadow$animate20423.prototype.shadow$animate$Animation$_animate_to$arity$1 = (function (_){
+(shadow.animate.t_shadow$animate20353.prototype.shadow$animate$Animation$_animate_to$arity$1 = (function (_){
 var self__ = this;
 var ___$1 = this;
 return self__.to;
 }));
 
-(shadow.animate.t_shadow$animate20423.prototype.shadow$animate$Animation$_animate_toggles$arity$1 = (function (_){
+(shadow.animate.t_shadow$animate20353.prototype.shadow$animate$Animation$_animate_toggles$arity$1 = (function (_){
 var self__ = this;
 var ___$1 = this;
 return self__.toggles;
 }));
 
-(shadow.animate.t_shadow$animate20423.prototype.shadow$animate$Animation$_animate_timings$arity$1 = (function (_){
+(shadow.animate.t_shadow$animate20353.prototype.shadow$animate$Animation$_animate_timings$arity$1 = (function (_){
 var self__ = this;
 var ___$1 = this;
 return self__.timings;
 }));
 
-(shadow.animate.t_shadow$animate20423.prototype.shadow$animate$Animation$_animate_delays$arity$1 = (function (_){
+(shadow.animate.t_shadow$animate20353.prototype.shadow$animate$Animation$_animate_delays$arity$1 = (function (_){
 var self__ = this;
 var ___$1 = this;
 return self__.delays;
 }));
 
-(shadow.animate.t_shadow$animate20423.getBasis = (function (){
-return new cljs.core.PersistentVector(null, 8, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Symbol(null,"transitions","transitions",-405684594,null),cljs.core.with_meta(new cljs.core.Symbol(null,"to","to",1832630534,null),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"tag","tag",-1290361223),new cljs.core.Symbol(null,"any","any",-948528346,null)], null)),cljs.core.with_meta(new cljs.core.Symbol(null,"from","from",-839142725,null),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"tag","tag",-1290361223),new cljs.core.Symbol(null,"any","any",-948528346,null)], null)),cljs.core.with_meta(new cljs.core.Symbol(null,"toggles","toggles",-1576526290,null),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"tag","tag",-1290361223),new cljs.core.Symbol(null,"any","any",-948528346,null)], null)),cljs.core.with_meta(new cljs.core.Symbol(null,"timings","timings",-569636600,null),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"tag","tag",-1290361223),new cljs.core.Symbol(null,"any","any",-948528346,null)], null)),cljs.core.with_meta(new cljs.core.Symbol(null,"delays","delays",-873843187,null),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"tag","tag",-1290361223),new cljs.core.Symbol(null,"any","any",-948528346,null)], null)),new cljs.core.Symbol(null,"temp__5802__auto__","temp__5802__auto__",-1659442335,null),new cljs.core.Symbol(null,"meta20424","meta20424",94224613,null)], null);
+(shadow.animate.t_shadow$animate20353.getBasis = (function (){
+return new cljs.core.PersistentVector(null, 8, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Symbol(null,"transitions","transitions",-405684594,null),cljs.core.with_meta(new cljs.core.Symbol(null,"to","to",1832630534,null),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"tag","tag",-1290361223),new cljs.core.Symbol(null,"any","any",-948528346,null)], null)),cljs.core.with_meta(new cljs.core.Symbol(null,"from","from",-839142725,null),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"tag","tag",-1290361223),new cljs.core.Symbol(null,"any","any",-948528346,null)], null)),cljs.core.with_meta(new cljs.core.Symbol(null,"toggles","toggles",-1576526290,null),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"tag","tag",-1290361223),new cljs.core.Symbol(null,"any","any",-948528346,null)], null)),cljs.core.with_meta(new cljs.core.Symbol(null,"timings","timings",-569636600,null),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"tag","tag",-1290361223),new cljs.core.Symbol(null,"any","any",-948528346,null)], null)),cljs.core.with_meta(new cljs.core.Symbol(null,"delays","delays",-873843187,null),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"tag","tag",-1290361223),new cljs.core.Symbol(null,"any","any",-948528346,null)], null)),new cljs.core.Symbol(null,"temp__5802__auto__","temp__5802__auto__",-1659442335,null),new cljs.core.Symbol(null,"meta20354","meta20354",480033960,null)], null);
 }));
 
-(shadow.animate.t_shadow$animate20423.cljs$lang$type = true);
+(shadow.animate.t_shadow$animate20353.cljs$lang$type = true);
 
-(shadow.animate.t_shadow$animate20423.cljs$lang$ctorStr = "shadow.animate/t_shadow$animate20423");
+(shadow.animate.t_shadow$animate20353.cljs$lang$ctorStr = "shadow.animate/t_shadow$animate20353");
 
-(shadow.animate.t_shadow$animate20423.cljs$lang$ctorPrWriter = (function (this__5287__auto__,writer__5288__auto__,opt__5289__auto__){
-return cljs.core._write(writer__5288__auto__,"shadow.animate/t_shadow$animate20423");
+(shadow.animate.t_shadow$animate20353.cljs$lang$ctorPrWriter = (function (this__5287__auto__,writer__5288__auto__,opt__5289__auto__){
+return cljs.core._write(writer__5288__auto__,"shadow.animate/t_shadow$animate20353");
 }));
 
 /**
- * Positional factory function for shadow.animate/t_shadow$animate20423.
+ * Positional factory function for shadow.animate/t_shadow$animate20353.
  */
-shadow.animate.__GT_t_shadow$animate20423 = (function shadow$animate$__GT_t_shadow$animate20423(transitions,to,from,toggles,timings,delays,temp__5802__auto__,meta20424){
-return (new shadow.animate.t_shadow$animate20423(transitions,to,from,toggles,timings,delays,temp__5802__auto__,meta20424));
+shadow.animate.__GT_t_shadow$animate20353 = (function shadow$animate$__GT_t_shadow$animate20353(transitions,to,from,toggles,timings,delays,temp__5802__auto__,meta20354){
+return (new shadow.animate.t_shadow$animate20353(transitions,to,from,toggles,timings,delays,temp__5802__auto__,meta20354));
 });
 
 
 shadow.animate.combine = (function shadow$animate$combine(var_args){
 var args__5732__auto__ = [];
-var len__5726__auto___20754 = arguments.length;
-var i__5727__auto___20755 = (0);
+var len__5726__auto___20464 = arguments.length;
+var i__5727__auto___20465 = (0);
 while(true){
-if((i__5727__auto___20755 < len__5726__auto___20754)){
-args__5732__auto__.push((arguments[i__5727__auto___20755]));
+if((i__5727__auto___20465 < len__5726__auto___20464)){
+args__5732__auto__.push((arguments[i__5727__auto___20465]));
 
-var G__20756 = (i__5727__auto___20755 + (1));
-i__5727__auto___20755 = G__20756;
+var G__20466 = (i__5727__auto___20465 + (1));
+i__5727__auto___20465 = G__20466;
 continue;
 } else {
 }
@@ -1383,21 +1383,21 @@ while(true){
 var temp__5802__auto__ = cljs.core.first(transitions__$1);
 if(cljs.core.truth_(temp__5802__auto__)){
 var adef = temp__5802__auto__;
-var G__20757 = cljs.core.merge.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([to,shadow.animate._animate_to(adef)], 0));
-var G__20758 = cljs.core.merge.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([from,shadow.animate._animate_from(adef)], 0));
-var G__20759 = cljs.core.merge.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([toggles,shadow.animate._animate_toggles(adef)], 0));
-var G__20760 = cljs.core.merge.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([timings,shadow.animate._animate_timings(adef)], 0));
-var G__20761 = cljs.core.merge.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([delays,shadow.animate._animate_delays(adef)], 0));
-var G__20762 = cljs.core.rest(transitions__$1);
-to = G__20757;
-from = G__20758;
-toggles = G__20759;
-timings = G__20760;
-delays = G__20761;
-transitions__$1 = G__20762;
+var G__20467 = cljs.core.merge.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([to,shadow.animate._animate_to(adef)], 0));
+var G__20468 = cljs.core.merge.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([from,shadow.animate._animate_from(adef)], 0));
+var G__20469 = cljs.core.merge.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([toggles,shadow.animate._animate_toggles(adef)], 0));
+var G__20470 = cljs.core.merge.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([timings,shadow.animate._animate_timings(adef)], 0));
+var G__20471 = cljs.core.merge.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([delays,shadow.animate._animate_delays(adef)], 0));
+var G__20472 = cljs.core.rest(transitions__$1);
+to = G__20467;
+from = G__20468;
+toggles = G__20469;
+timings = G__20470;
+delays = G__20471;
+transitions__$1 = G__20472;
 continue;
 } else {
-return (new shadow.animate.t_shadow$animate20423(transitions__$1,to,from,toggles,timings,delays,temp__5802__auto__,cljs.core.PersistentArrayMap.EMPTY));
+return (new shadow.animate.t_shadow$animate20353(transitions__$1,to,from,toggles,timings,delays,temp__5802__auto__,cljs.core.PersistentArrayMap.EMPTY));
 }
 break;
 }
@@ -1406,14 +1406,14 @@ break;
 (shadow.animate.combine.cljs$lang$maxFixedArity = (0));
 
 /** @this {Function} */
-(shadow.animate.combine.cljs$lang$applyTo = (function (seq20412){
+(shadow.animate.combine.cljs$lang$applyTo = (function (seq20330){
 var self__5712__auto__ = this;
-return self__5712__auto__.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq(seq20412));
+return self__5712__auto__.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq(seq20330));
 }));
 
 shadow.animate.fade_in = (function shadow$animate$fade_in(var_args){
-var G__20439 = arguments.length;
-switch (G__20439) {
+var G__20384 = arguments.length;
+switch (G__20384) {
 case 0:
 return shadow.animate.fade_in.cljs$core$IFn$_invoke$arity$0();
 
@@ -1439,8 +1439,8 @@ return shadow.animate.transition.cljs$core$IFn$_invoke$arity$4(new cljs.core.Key
 (shadow.animate.fade_in.cljs$lang$maxFixedArity = 1);
 
 shadow.animate.fade_out = (function shadow$animate$fade_out(var_args){
-var G__20443 = arguments.length;
-switch (G__20443) {
+var G__20386 = arguments.length;
+switch (G__20386) {
 case 0:
 return shadow.animate.fade_out.cljs$core$IFn$_invoke$arity$0();
 
@@ -1474,82 +1474,82 @@ shadow.animate.vendor_transform = cljs.core.keyword.cljs$core$IFn$_invoke$arity$
  * @implements {cljs.core.IMeta}
  * @implements {cljs.core.IWithMeta}
 */
-shadow.animate.t_shadow$animate20467 = (function (from,to,timing,delay,meta20468){
+shadow.animate.t_shadow$animate20391 = (function (from,to,timing,delay,meta20392){
 this.from = from;
 this.to = to;
 this.timing = timing;
 this.delay = delay;
-this.meta20468 = meta20468;
+this.meta20392 = meta20392;
 this.cljs$lang$protocol_mask$partition0$ = 393216;
 this.cljs$lang$protocol_mask$partition1$ = 0;
 });
-(shadow.animate.t_shadow$animate20467.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = (function (_20469,meta20468__$1){
+(shadow.animate.t_shadow$animate20391.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = (function (_20393,meta20392__$1){
 var self__ = this;
-var _20469__$1 = this;
-return (new shadow.animate.t_shadow$animate20467(self__.from,self__.to,self__.timing,self__.delay,meta20468__$1));
+var _20393__$1 = this;
+return (new shadow.animate.t_shadow$animate20391(self__.from,self__.to,self__.timing,self__.delay,meta20392__$1));
 }));
 
-(shadow.animate.t_shadow$animate20467.prototype.cljs$core$IMeta$_meta$arity$1 = (function (_20469){
+(shadow.animate.t_shadow$animate20391.prototype.cljs$core$IMeta$_meta$arity$1 = (function (_20393){
 var self__ = this;
-var _20469__$1 = this;
-return self__.meta20468;
+var _20393__$1 = this;
+return self__.meta20392;
 }));
 
-(shadow.animate.t_shadow$animate20467.prototype.shadow$animate$Animation$ = cljs.core.PROTOCOL_SENTINEL);
+(shadow.animate.t_shadow$animate20391.prototype.shadow$animate$Animation$ = cljs.core.PROTOCOL_SENTINEL);
 
-(shadow.animate.t_shadow$animate20467.prototype.shadow$animate$Animation$_animate_from$arity$1 = (function (_){
+(shadow.animate.t_shadow$animate20391.prototype.shadow$animate$Animation$_animate_from$arity$1 = (function (_){
 var self__ = this;
 var ___$1 = this;
 return new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"transform","transform",1381301764),["translateY(",cljs.core.str.cljs$core$IFn$_invoke$arity$1(self__.from),")"].join('')], null);
 }));
 
-(shadow.animate.t_shadow$animate20467.prototype.shadow$animate$Animation$_animate_to$arity$1 = (function (_){
+(shadow.animate.t_shadow$animate20391.prototype.shadow$animate$Animation$_animate_to$arity$1 = (function (_){
 var self__ = this;
 var ___$1 = this;
 return new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"transform","transform",1381301764),["translateY(",cljs.core.str.cljs$core$IFn$_invoke$arity$1(self__.to),")"].join('')], null);
 }));
 
-(shadow.animate.t_shadow$animate20467.prototype.shadow$animate$Animation$_animate_timings$arity$1 = (function (_){
+(shadow.animate.t_shadow$animate20391.prototype.shadow$animate$Animation$_animate_timings$arity$1 = (function (_){
 var self__ = this;
 var ___$1 = this;
 return cljs.core.PersistentArrayMap.createAsIfByAssoc([shadow.animate.vendor_transform,self__.timing]);
 }));
 
-(shadow.animate.t_shadow$animate20467.prototype.shadow$animate$Animation$_animate_toggles$arity$1 = (function (_){
+(shadow.animate.t_shadow$animate20391.prototype.shadow$animate$Animation$_animate_toggles$arity$1 = (function (_){
 var self__ = this;
 var ___$1 = this;
 return cljs.core.PersistentArrayMap.EMPTY;
 }));
 
-(shadow.animate.t_shadow$animate20467.prototype.shadow$animate$Animation$_animate_delays$arity$1 = (function (_){
+(shadow.animate.t_shadow$animate20391.prototype.shadow$animate$Animation$_animate_delays$arity$1 = (function (_){
 var self__ = this;
 var ___$1 = this;
 return cljs.core.PersistentArrayMap.createAsIfByAssoc([shadow.animate.vendor_transform,self__.delay]);
 }));
 
-(shadow.animate.t_shadow$animate20467.getBasis = (function (){
-return new cljs.core.PersistentVector(null, 5, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Symbol(null,"from","from",-839142725,null),new cljs.core.Symbol(null,"to","to",1832630534,null),new cljs.core.Symbol(null,"timing","timing",-208693668,null),new cljs.core.Symbol(null,"delay","delay",1066306308,null),new cljs.core.Symbol(null,"meta20468","meta20468",1341147995,null)], null);
+(shadow.animate.t_shadow$animate20391.getBasis = (function (){
+return new cljs.core.PersistentVector(null, 5, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Symbol(null,"from","from",-839142725,null),new cljs.core.Symbol(null,"to","to",1832630534,null),new cljs.core.Symbol(null,"timing","timing",-208693668,null),new cljs.core.Symbol(null,"delay","delay",1066306308,null),new cljs.core.Symbol(null,"meta20392","meta20392",-1604154618,null)], null);
 }));
 
-(shadow.animate.t_shadow$animate20467.cljs$lang$type = true);
+(shadow.animate.t_shadow$animate20391.cljs$lang$type = true);
 
-(shadow.animate.t_shadow$animate20467.cljs$lang$ctorStr = "shadow.animate/t_shadow$animate20467");
+(shadow.animate.t_shadow$animate20391.cljs$lang$ctorStr = "shadow.animate/t_shadow$animate20391");
 
-(shadow.animate.t_shadow$animate20467.cljs$lang$ctorPrWriter = (function (this__5287__auto__,writer__5288__auto__,opt__5289__auto__){
-return cljs.core._write(writer__5288__auto__,"shadow.animate/t_shadow$animate20467");
+(shadow.animate.t_shadow$animate20391.cljs$lang$ctorPrWriter = (function (this__5287__auto__,writer__5288__auto__,opt__5289__auto__){
+return cljs.core._write(writer__5288__auto__,"shadow.animate/t_shadow$animate20391");
 }));
 
 /**
- * Positional factory function for shadow.animate/t_shadow$animate20467.
+ * Positional factory function for shadow.animate/t_shadow$animate20391.
  */
-shadow.animate.__GT_t_shadow$animate20467 = (function shadow$animate$__GT_t_shadow$animate20467(from,to,timing,delay,meta20468){
-return (new shadow.animate.t_shadow$animate20467(from,to,timing,delay,meta20468));
+shadow.animate.__GT_t_shadow$animate20391 = (function shadow$animate$__GT_t_shadow$animate20391(from,to,timing,delay,meta20392){
+return (new shadow.animate.t_shadow$animate20391(from,to,timing,delay,meta20392));
 });
 
 
 shadow.animate.translate_y = (function shadow$animate$translate_y(var_args){
-var G__20459 = arguments.length;
-switch (G__20459) {
+var G__20390 = arguments.length;
+switch (G__20390) {
 case 3:
 return shadow.animate.translate_y.cljs$core$IFn$_invoke$arity$3((arguments[(0)]),(arguments[(1)]),(arguments[(2)]));
 
@@ -1569,7 +1569,7 @@ return shadow.animate.translate_y.cljs$core$IFn$_invoke$arity$4(from,to,timing,(
 }));
 
 (shadow.animate.translate_y.cljs$core$IFn$_invoke$arity$4 = (function (from,to,timing,delay){
-return (new shadow.animate.t_shadow$animate20467(from,to,timing,delay,cljs.core.PersistentArrayMap.EMPTY));
+return (new shadow.animate.t_shadow$animate20391(from,to,timing,delay,cljs.core.PersistentArrayMap.EMPTY));
 }));
 
 (shadow.animate.translate_y.cljs$lang$maxFixedArity = 4);
@@ -1581,82 +1581,82 @@ return (new shadow.animate.t_shadow$animate20467(from,to,timing,delay,cljs.core.
  * @implements {cljs.core.IMeta}
  * @implements {cljs.core.IWithMeta}
 */
-shadow.animate.t_shadow$animate20521 = (function (from,to,timing,delay,meta20522){
+shadow.animate.t_shadow$animate20414 = (function (from,to,timing,delay,meta20415){
 this.from = from;
 this.to = to;
 this.timing = timing;
 this.delay = delay;
-this.meta20522 = meta20522;
+this.meta20415 = meta20415;
 this.cljs$lang$protocol_mask$partition0$ = 393216;
 this.cljs$lang$protocol_mask$partition1$ = 0;
 });
-(shadow.animate.t_shadow$animate20521.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = (function (_20523,meta20522__$1){
+(shadow.animate.t_shadow$animate20414.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = (function (_20416,meta20415__$1){
 var self__ = this;
-var _20523__$1 = this;
-return (new shadow.animate.t_shadow$animate20521(self__.from,self__.to,self__.timing,self__.delay,meta20522__$1));
+var _20416__$1 = this;
+return (new shadow.animate.t_shadow$animate20414(self__.from,self__.to,self__.timing,self__.delay,meta20415__$1));
 }));
 
-(shadow.animate.t_shadow$animate20521.prototype.cljs$core$IMeta$_meta$arity$1 = (function (_20523){
+(shadow.animate.t_shadow$animate20414.prototype.cljs$core$IMeta$_meta$arity$1 = (function (_20416){
 var self__ = this;
-var _20523__$1 = this;
-return self__.meta20522;
+var _20416__$1 = this;
+return self__.meta20415;
 }));
 
-(shadow.animate.t_shadow$animate20521.prototype.shadow$animate$Animation$ = cljs.core.PROTOCOL_SENTINEL);
+(shadow.animate.t_shadow$animate20414.prototype.shadow$animate$Animation$ = cljs.core.PROTOCOL_SENTINEL);
 
-(shadow.animate.t_shadow$animate20521.prototype.shadow$animate$Animation$_animate_from$arity$1 = (function (_){
+(shadow.animate.t_shadow$animate20414.prototype.shadow$animate$Animation$_animate_from$arity$1 = (function (_){
 var self__ = this;
 var ___$1 = this;
 return new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"transform","transform",1381301764),["translateX(",cljs.core.str.cljs$core$IFn$_invoke$arity$1(self__.from),")"].join('')], null);
 }));
 
-(shadow.animate.t_shadow$animate20521.prototype.shadow$animate$Animation$_animate_to$arity$1 = (function (_){
+(shadow.animate.t_shadow$animate20414.prototype.shadow$animate$Animation$_animate_to$arity$1 = (function (_){
 var self__ = this;
 var ___$1 = this;
 return new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"transform","transform",1381301764),["translateX(",cljs.core.str.cljs$core$IFn$_invoke$arity$1(self__.to),")"].join('')], null);
 }));
 
-(shadow.animate.t_shadow$animate20521.prototype.shadow$animate$Animation$_animate_timings$arity$1 = (function (_){
+(shadow.animate.t_shadow$animate20414.prototype.shadow$animate$Animation$_animate_timings$arity$1 = (function (_){
 var self__ = this;
 var ___$1 = this;
 return cljs.core.PersistentArrayMap.createAsIfByAssoc([shadow.animate.vendor_transform,self__.timing]);
 }));
 
-(shadow.animate.t_shadow$animate20521.prototype.shadow$animate$Animation$_animate_toggles$arity$1 = (function (_){
+(shadow.animate.t_shadow$animate20414.prototype.shadow$animate$Animation$_animate_toggles$arity$1 = (function (_){
 var self__ = this;
 var ___$1 = this;
 return cljs.core.PersistentArrayMap.EMPTY;
 }));
 
-(shadow.animate.t_shadow$animate20521.prototype.shadow$animate$Animation$_animate_delays$arity$1 = (function (_){
+(shadow.animate.t_shadow$animate20414.prototype.shadow$animate$Animation$_animate_delays$arity$1 = (function (_){
 var self__ = this;
 var ___$1 = this;
 return cljs.core.PersistentArrayMap.createAsIfByAssoc([shadow.animate.vendor_transform,self__.delay]);
 }));
 
-(shadow.animate.t_shadow$animate20521.getBasis = (function (){
-return new cljs.core.PersistentVector(null, 5, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Symbol(null,"from","from",-839142725,null),new cljs.core.Symbol(null,"to","to",1832630534,null),new cljs.core.Symbol(null,"timing","timing",-208693668,null),new cljs.core.Symbol(null,"delay","delay",1066306308,null),new cljs.core.Symbol(null,"meta20522","meta20522",1718142911,null)], null);
+(shadow.animate.t_shadow$animate20414.getBasis = (function (){
+return new cljs.core.PersistentVector(null, 5, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Symbol(null,"from","from",-839142725,null),new cljs.core.Symbol(null,"to","to",1832630534,null),new cljs.core.Symbol(null,"timing","timing",-208693668,null),new cljs.core.Symbol(null,"delay","delay",1066306308,null),new cljs.core.Symbol(null,"meta20415","meta20415",-1967817500,null)], null);
 }));
 
-(shadow.animate.t_shadow$animate20521.cljs$lang$type = true);
+(shadow.animate.t_shadow$animate20414.cljs$lang$type = true);
 
-(shadow.animate.t_shadow$animate20521.cljs$lang$ctorStr = "shadow.animate/t_shadow$animate20521");
+(shadow.animate.t_shadow$animate20414.cljs$lang$ctorStr = "shadow.animate/t_shadow$animate20414");
 
-(shadow.animate.t_shadow$animate20521.cljs$lang$ctorPrWriter = (function (this__5287__auto__,writer__5288__auto__,opt__5289__auto__){
-return cljs.core._write(writer__5288__auto__,"shadow.animate/t_shadow$animate20521");
+(shadow.animate.t_shadow$animate20414.cljs$lang$ctorPrWriter = (function (this__5287__auto__,writer__5288__auto__,opt__5289__auto__){
+return cljs.core._write(writer__5288__auto__,"shadow.animate/t_shadow$animate20414");
 }));
 
 /**
- * Positional factory function for shadow.animate/t_shadow$animate20521.
+ * Positional factory function for shadow.animate/t_shadow$animate20414.
  */
-shadow.animate.__GT_t_shadow$animate20521 = (function shadow$animate$__GT_t_shadow$animate20521(from,to,timing,delay,meta20522){
-return (new shadow.animate.t_shadow$animate20521(from,to,timing,delay,meta20522));
+shadow.animate.__GT_t_shadow$animate20414 = (function shadow$animate$__GT_t_shadow$animate20414(from,to,timing,delay,meta20415){
+return (new shadow.animate.t_shadow$animate20414(from,to,timing,delay,meta20415));
 });
 
 
 shadow.animate.translate_x = (function shadow$animate$translate_x(var_args){
-var G__20511 = arguments.length;
-switch (G__20511) {
+var G__20409 = arguments.length;
+switch (G__20409) {
 case 3:
 return shadow.animate.translate_x.cljs$core$IFn$_invoke$arity$3((arguments[(0)]),(arguments[(1)]),(arguments[(2)]));
 
@@ -1676,7 +1676,7 @@ return shadow.animate.translate_x.cljs$core$IFn$_invoke$arity$4(from,to,timing,(
 }));
 
 (shadow.animate.translate_x.cljs$core$IFn$_invoke$arity$4 = (function (from,to,timing,delay){
-return (new shadow.animate.t_shadow$animate20521(from,to,timing,delay,cljs.core.PersistentArrayMap.EMPTY));
+return (new shadow.animate.t_shadow$animate20414(from,to,timing,delay,cljs.core.PersistentArrayMap.EMPTY));
 }));
 
 (shadow.animate.translate_x.cljs$lang$maxFixedArity = 4);

@@ -10,10 +10,10 @@ return console.log("is user authenticated",auth_state);
 }));
 });
 frontend.core.redirect_authenticated_user = (function frontend$core$redirect_authenticated_user(children){
-var map__17200 = cljs.core.deref(re_frame.core.subscribe.cljs$core$IFn$_invoke$arity$1(new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"get-auth-data","get-auth-data",-1689545573)], null)));
-var map__17200__$1 = cljs.core.__destructure_map(map__17200);
-var authenticated_QMARK_ = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__17200__$1,new cljs.core.Keyword(null,"authenticated?","authenticated?",-1988130123));
-var user = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__17200__$1,new cljs.core.Keyword(null,"user","user",1532431356));
+var map__23396 = cljs.core.deref(re_frame.core.subscribe.cljs$core$IFn$_invoke$arity$1(new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"get-auth-data","get-auth-data",-1689545573)], null)));
+var map__23396__$1 = cljs.core.__destructure_map(map__23396);
+var authenticated_QMARK_ = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__23396__$1,new cljs.core.Keyword(null,"authenticated?","authenticated?",-1988130123));
+var user = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__23396__$1,new cljs.core.Keyword(null,"user","user",1532431356));
 if(cljs.core.truth_((function (){var and__5000__auto__ = authenticated_QMARK_;
 if(cljs.core.truth_(and__5000__auto__)){
 return new cljs.core.Keyword(null,"is-verified","is-verified",-2036107091).cljs$core$IFn$_invoke$arity$1(user);
@@ -27,10 +27,10 @@ return children;
 }
 });
 frontend.core.protected_routes = (function frontend$core$protected_routes(children){
-var map__17201 = cljs.core.deref(re_frame.core.subscribe.cljs$core$IFn$_invoke$arity$1(new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"get-auth-data","get-auth-data",-1689545573)], null)));
-var map__17201__$1 = cljs.core.__destructure_map(map__17201);
-var authenticated_QMARK_ = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__17201__$1,new cljs.core.Keyword(null,"authenticated?","authenticated?",-1988130123));
-var user = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__17201__$1,new cljs.core.Keyword(null,"user","user",1532431356));
+var map__23397 = cljs.core.deref(re_frame.core.subscribe.cljs$core$IFn$_invoke$arity$1(new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"get-auth-data","get-auth-data",-1689545573)], null)));
+var map__23397__$1 = cljs.core.__destructure_map(map__23397);
+var authenticated_QMARK_ = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__23397__$1,new cljs.core.Keyword(null,"authenticated?","authenticated?",-1988130123));
+var user = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__23397__$1,new cljs.core.Keyword(null,"user","user",1532431356));
 return children;
 
 });
