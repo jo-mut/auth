@@ -1,9 +1,0 @@
-{
-"version":3,
-"file":"shadow.js.shim.module$jsonwebtoken.js",
-"lineCount":5,
-"mappings":"AAAAA,IAAKC,CAAAA,OAAL,CAAa,oCAAb,CAAA;AACAD,IAAKC,CAAAA,OAAL,CAAa,2CAAb,CAAA;AACAC,MAAOC,CAAAA,EAAGC,CAAAA,IAAKC,CAAAA,mBAAf,GAAqCH,MAAOC,CAAAA,EAAGG,CAAAA,cAAV,CAAyB,cAAzB,CAArC,GAAgFC,OAAA,CAAQ,cAAR,CAAhF;AACAC,yCAA0CC,CAAAA,OAA1C,GAAoDP,MAAOC,CAAAA,EAAGC,CAAAA,IAAKC,CAAAA,mBAAnE;;",
-"sources":["shadow.js.shim.module$jsonwebtoken.js"],
-"sourcesContent":["goog.provide(\"shadow.js.shim.module$jsonwebtoken\");\ngoog.provide(\"module$shadow_js_shim_module$jsonwebtoken\");\nshadow.js.shim.module$jsonwebtoken = shadow.js.nativeProvides[\"jsonwebtoken\"] = require(\"jsonwebtoken\");\nmodule$shadow_js_shim_module$jsonwebtoken.default = shadow.js.shim.module$jsonwebtoken;\n"],
-"names":["goog","provide","shadow","js","shim","module$jsonwebtoken","nativeProvides","require","module$shadow_js_shim_module$jsonwebtoken","default"]
-}
