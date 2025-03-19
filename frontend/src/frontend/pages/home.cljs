@@ -69,7 +69,8 @@
         :whileHover {:scale 1.02}
         :whileTop   {:scale 0.98}
         :type       "submit"
-        :onClick    (handle-logout)}
+        :on-click    (fn []
+                      (handle-logout))}
        (if loading?
          [:> Loader {:className "w-6 h-6 animate-spin mx-auto"}]
          "Login")]]]))

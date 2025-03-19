@@ -13,7 +13,7 @@
   (let [navigate (useNavigate)
         params    (useParams)]
     (->
-     (api/reset-passwrod (:token params) password)
+     (api/reset-password (:token params) password)
      (.then
       (fn []
         (navigate "/reset-password"))))))

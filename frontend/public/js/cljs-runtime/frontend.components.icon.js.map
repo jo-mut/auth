@@ -1,1 +1,0 @@
-{"version":3,"sources":["frontend/components/icon.cljs"],"mappings":";AAEA,gCAAA,hCAAMA,wEAAMC;AAAZ,AAAA","names":["frontend.components.icon/view","icon"],"sourcesContent":["(ns frontend.components.icon)\n\n(defn view [icon])"]}

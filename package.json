@@ -4,13 +4,13 @@
   "main": "index.js",
   "scripts": {
     "deps": "yarn install",
-    "start": "NODE_ENV=production node backend/public/js/main.js",
-    "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend",
+    "start": "NODE_ENV=production shadow-cljs release app && node public/js/main.js",
+    "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend && shadow-cljs release app",
     "watch": "shadow-cljs watch app;",
-    "dev": "NODE_ENV=development nodemon --verbose --watch src --watch backend/public/js/main.js --exec \"node backend/public/js/main.js\"",
+    "dev": "NODE_ENV=development nodemon --verbose --watch src --watch public/js/main.js --exec \"node public/js/main.js\"",
     "release": "shadow-cljs release app;",
     "server": "shadow-cljs server;",
-    "clean": "rm -rf target; rm -rf backend/public/js"
+    "clean": "rm -rf target; rm -rf public/js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",

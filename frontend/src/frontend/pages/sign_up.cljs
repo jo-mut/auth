@@ -26,7 +26,7 @@
   (let [[name set-name]             (react/useState "")
         [email set-email]           (react/useState "")
         [password set-password]     (react/useState "")
-        [{:keys [error loading?]}]  (rf/subscribe [:get-auth-data])]
+        {:keys [error loading?]}  (rf/subscribe [:get-auth-data])]
     [:> motion.div
      {:initial {:opacity 0
                 :y       20}
